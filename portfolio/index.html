@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('mpv-portfolio-theme');
+        var theme = saved;
+        if (!theme || (theme !== 'dark' && theme !== 'light')) {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Mahalalil P. Villaflores — Aspiring Full-Stack Web Developer and BS Computer Science student at Biliran Province State University." />
+  <title>Mahalalil P. Villaflores | Aspiring Full-Stack Developer</title>
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://myportfolio-mahalalil.vercel.app/" />
+  <meta property="og:title" content="Mahalalil P. Villaflores | Aspiring Full-Stack Developer" />
+  <meta property="og:description"
+    content="Fourth-year Computer Science student with hands-on project experience building web and mobile applications." />
+  <meta property="og:image" content="https://myportfolio-mahalalil.vercel.app/assets/images/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://myportfolio-mahalalil.vercel.app/" />
+  <meta name="twitter:title" content="Mahalalil P. Villaflores | Aspiring Full-Stack Developer" />
+  <meta name="twitter:description"
+    content="Fourth-year Computer Science student with hands-on project experience building web and mobile applications." />
+  <meta name="twitter:image" content="https://myportfolio-mahalalil.vercel.app/assets/images/og-preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="hero-frame" id="home">
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+
+        <div class="nav__brand">
+          <a class="nav__brand-link" href="#home" aria-label="Mahalalil Villaflores — go to home section">
+            <span class="nav__logo-wrap">
+              <svg class="nav__logo-svg" viewBox="0 0 84 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="nav__logo-white" d="M0 0h12v1h-12zM37 0h9v1h-9zM70 0h13v1h-13zM0 1h13v1h-13zM36 1h10v1h-10zM70 1h13v1h-13zM0 2h14v1h-14zM35 2h12v1h-12zM69 2h13v1h-13zM0 3h15v1h-15zM34 3h13v1h-13zM68 3h14v1h-14zM0 4h16v1h-16zM33 4h15v1h-15zM68 4h13v1h-13zM0 5h17v1h-17zM32 5h16v1h-16zM67 5h14v1h-14zM0 6h18v1h-18zM31 6h18v1h-18zM67 6h13v1h-13zM0 7h18v1h-18zM31 7h18v1h-18zM66 7h14v1h-14zM0 8h19v1h-19zM30 8h20v1h-20zM66 8h13v1h-13zM0 9h20v1h-20zM29 9h21v1h-21zM65 9h13v1h-13zM0 10h21v1h-21zM28 10h23v1h-23zM64 10h14v1h-14zM0 11h22v1h-22zM27 11h24v1h-24zM64 11h13v1h-13zM0 12h23v1h-23zM26 12h26v1h-26zM63 12h13v1h-13zM0 13h24v1h-24zM25 13h27v1h-27zM62 13h14v1h-14zM0 14h52v1h-52zM62 14h13v1h-13zM0 15h53v1h-53zM61 15h14v1h-14zM0 16h53v1h-53zM61 16h13v1h-13zM0 17h38v1h-38zM40 17h14v1h-14zM60 17h14v1h-14zM0 18h37v1h-37zM41 18h13v1h-13zM60 18h13v1h-13zM0 19h12v1h-12zM13 19h23v1h-23zM41 19h14v1h-14zM59 19h13v1h-13zM0 20h12v1h-12zM14 20h21v1h-21zM42 20h13v1h-13zM58 20h14v1h-14zM0 21h12v1h-12zM15 21h19v1h-19zM38 21h1v1h-1zM42 21h14v1h-14zM58 21h13v1h-13zM0 22h12v1h-12zM15 22h18v1h-18zM37 22h2v1h-2zM43 22h13v1h-13zM57 22h14v1h-14zM0 23h12v1h-12zM16 23h17v1h-17zM36 23h4v1h-4zM43 23h27v1h-27zM0 24h12v1h-12zM17 24h15v1h-15zM36 24h5v1h-5zM44 24h25v1h-25zM0 25h12v1h-12zM18 25h13v1h-13zM35 25h6v1h-6zM45 25h24v1h-24zM0 26h12v1h-12zM19 26h11v1h-11zM34 26h8v1h-8zM45 26h23v1h-23zM0 27h12v1h-12zM20 27h9v1h-9zM33 27h9v1h-9zM46 27h21v1h-21zM0 28h12v1h-12zM21 28h7v1h-7zM32 28h11v1h-11zM46 28h21v1h-21zM0 29h12v1h-12zM22 29h5v1h-5zM31 29h12v1h-12zM47 29h19v1h-19zM0 30h12v1h-12zM22 30h5v1h-5zM31 30h13v1h-13zM47 30h19v1h-19zM0 31h12v1h-12zM23 31h3v1h-3zM31 31h13v1h-13zM48 31h17v1h-17zM0 32h12v1h-12zM32 32h13v1h-13zM48 32h16v1h-16zM0 33h12v1h-12zM32 33h13v1h-13zM49 33h15v1h-15zM0 34h12v1h-12zM33 34h13v1h-13zM49 34h14v1h-14zM0 35h12v1h-12zM33 35h14v1h-14zM50 35h12v1h-12zM0 36h12v1h-12zM34 36h13v1h-13zM51 36h11v1h-11zM0 37h12v1h-12zM34 37h14v1h-14zM51 37h10v1h-10zM0 38h12v1h-12zM35 38h13v1h-13zM52 38h8v1h-8zM0 39h12v1h-12zM36 39h13v1h-13zM52 39h8v1h-8zM0 40h12v1h-12zM36 40h13v1h-13zM53 40h6v1h-6zM0 41h12v1h-12zM37 41h13v1h-13zM53 41h6v1h-6zM0 42h12v1h-12zM37 42h13v1h-13zM54 42h4v1h-4z" />
+                <path class="nav__logo-accent" d="M71 23h12v1h-12zM70 24h13v1h-13zM69 25h14v1h-14zM69 26h13v1h-13zM68 27h14v1h-14zM68 28h13v1h-13zM67 29h13v1h-13zM66 30h13v1h-13zM66 31h13v1h-13zM65 32h13v1h-13zM64 33h13v1h-13zM64 34h13v1h-13zM63 35h13v1h-13zM63 36h13v1h-13zM62 37h13v1h-13zM61 38h13v1h-13zM61 39h13v1h-13zM60 40h13v1h-13zM59 41h13v1h-13zM59 42h13v1h-13z" />
+              </svg>
+            </span>
+            <span class="nav__brand-divider" aria-hidden="true"></span>
+            <span class="nav__brand-name">MahalalilVillaflores</span>
+          </a>
+        </div>
+
+        <div class="nav__actions">
+          <ul class="nav__menu" id="navMenu">
+            <li><a class="nav__link" href="#about">ABOUT</a></li>
+            <li><a class="nav__link" href="#skills">SKILLS</a></li>
+            <li><a class="nav__link" href="#projects">PROJECTS</a></li>
+            <li><a class="nav__link" href="#contact">CONTACT</a></li>
+            <li><a class="nav__link" href="resume.html">RESUME</a></li>
+            <li class="nav__menu-theme">
+              <button class="nav__theme-toggle nav__theme-toggle--mobile" id="themeToggleMobile" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+                <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <span class="nav__theme-label" id="themeToggleLabel">Theme</span>
+              </button>
+            </li>
+          </ul>
+
+          <button class="nav__theme-toggle nav__theme-toggle--desktop" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu"
+            aria-label="Open navigation menu">
+            <span class="hamburger" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg-word-mask" aria-hidden="true">
+        <div class="hero__bg-word" id="heroBgWord">
+          <span class="hero__bg-char">P</span><span class="hero__bg-char">O</span><span class="hero__bg-char">R</span><span class="hero__bg-char">T</span><span class="hero__bg-char">F</span><span class="hero__bg-char">O</span><span class="hero__bg-char">L</span><span class="hero__bg-char">I</span><span class="hero__bg-char">O</span>
+        </div>
+      </div>
+
+      <div class="hero__stage">
+
+        <div class="hero__intro">
+          <p class="hero__greeting">Hello, I&rsquo;m</p>
+
+          <h1 class="hero__name" id="hero-heading">
+            <span class="sr-only">MAHALALIL P. VILLAFLORES</span>
+            <span class="hero__name-visual" aria-hidden="true">
+              <span class="hero__name-line">
+                <span class="hero__char">M</span><span class="hero__char">A</span><span class="hero__char">H</span><span class="hero__char">A</span><span class="hero__char">L</span><span class="hero__char">A</span><span class="hero__char">L</span><span class="hero__char">I</span><span class="hero__char">L</span>
+              </span>
+              <span class="hero__name-line">
+                <span class="hero__char">P</span><span class="hero__char">.</span>
+              </span>
+              <span class="hero__name-line">
+                <span class="hero__char">V</span><span class="hero__char">I</span><span class="hero__char">L</span><span class="hero__char">L</span><span class="hero__char">A</span><span class="hero__char">F</span><span class="hero__char">L</span><span class="hero__char">O</span><span class="hero__char">R</span><span class="hero__char">E</span><span class="hero__char">S</span>
+              </span>
+            </span>
+          </h1>
+
+          <p class="hero__role" aria-label="ASPIRING FULL-STACK DEVELOPER">
+            <span class="hero__role-text" id="heroRoleText" aria-hidden="true">ASPIRING FULL-STACK DEVELOPER</span><span class="hero__role-cursor" id="heroRoleCursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero__desc">
+            Building thoughtful digital experiences<br />
+            with code and creativity.
+          </p>
+
+          <div class="hero__actions">
+            <a class="hero__btn hero__btn--primary" href="#projects">VIEW PROJECTS</a>
+            <a class="hero__btn hero__btn--outline" href="#about">ABOUT ME</a>
+          </div>
+
+          <p class="hero__interests" aria-label="Personal interests: Music, Photography, Travel, Graphic Design">
+            <span>MUSIC</span>
+            <span class="hero__dot" aria-hidden="true">&bull;</span>
+            <span>PHOTOGRAPHY</span>
+            <span class="hero__dot" aria-hidden="true">&bull;</span>
+            <span>TRAVEL</span>
+            <span class="hero__dot" aria-hidden="true">&bull;</span>
+            <span>GRAPHIC DESIGN</span>
+          </p>
+        </div>
+
+        <div class="hero__portrait-wrap">
+          <img
+            class="hero__portrait"
+            src="assets/images/profile-cutout.png"
+            alt="Portrait of Mahalalil P. Villaflores"
+            width="836"
+            height="1020"
+            loading="eager"
+          />
+        </div>
+
+        <aside class="hero__right" aria-label="Featured project quick links">
+          <div class="hero__motto">
+            <span class="hero__star-badge" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L14.6 9.4L23 12L14.6 14.6L12 23L9.4 14.6L1 12L9.4 9.4L12 1Z" />
+              </svg>
+            </span>
+            <p class="hero__motto-text">
+              Code with purpose.<br />
+              Create with passion.
+            </p>
+          </div>
+
+          <ul class="hero__project-list">
+            <li class="hero__project-item hero__project-item--1">
+              <a class="hero__project-link" href="#project-printdayon">
+                <span class="hero__project-num">01</span>
+                <span class="hero__project-name">PrintDayon</span>
+              </a>
+            </li>
+            <li class="hero__project-item hero__project-item--2">
+              <a class="hero__project-link" href="#project-roasted-route">
+                <span class="hero__project-num">02</span>
+                <span class="hero__project-name">Roasted Route</span>
+              </a>
+            </li>
+            <li class="hero__project-item hero__project-item--3">
+              <a class="hero__project-link" href="#project-room-management">
+                <span class="hero__project-num">03</span>
+                <span class="hero__project-name">Room<br />Management</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+
+      <div class="hero__bottom-strip">
+        <a class="hero__scroll-cue" href="#about">SCROLL TO EXPLORE &darr;</a>
+        <span class="hero__location">BASED IN THE PHILIPPINES</span>
+      </div>
+    </section>
+  </div>
+
+  <main id="main-content">
+
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="about__ambient" aria-hidden="true">
+        <div class="about__glow-orb about__glow-orb--tl"></div>
+        <div class="about__glow-orb about__glow-orb--br"></div>
+        <svg class="about__bg-wave about__bg-wave--tl" viewBox="0 0 600 220" fill="none" preserveAspectRatio="none">
+          <path d="M-40 190 C 140 180, 320 110, 520 -20" stroke="url(#aboutWaveGrad1)" stroke-width="1.5" />
+          <path d="M-40 215 C 160 195, 350 130, 560 0" stroke="url(#aboutWaveGrad1)" stroke-width="0.8" opacity="0.55" />
+          <defs>
+            <linearGradient id="aboutWaveGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6d001a" stop-opacity="0" />
+              <stop offset="55%" stop-color="#b8143a" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#ff4d79" stop-opacity="0.85" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="about__bg-wave about__bg-wave--br" viewBox="0 0 700 260" fill="none" preserveAspectRatio="none">
+          <path d="M-20 250 C 180 180, 420 160, 720 60" stroke="url(#aboutWaveGrad2)" stroke-width="1.5" />
+          <path d="M80 265 C 280 210, 480 200, 720 140" stroke="url(#aboutWaveGrad2)" stroke-width="1" opacity="0.5" />
+          <defs>
+            <linearGradient id="aboutWaveGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6d001a" stop-opacity="0" />
+              <stop offset="50%" stop-color="#c91842" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#6d001a" stop-opacity="0.15" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="container about__container">
+
+        <div class="about__header-row" data-about-reveal>
+          <div class="about__header-left">
+            <span class="about__pill">01 &mdash; WHO I AM</span>
+            <h2 class="about__heading" id="about-heading" data-about-heading>
+              <span class="sr-only">About Me</span>
+              <span class="about-word-mask" aria-hidden="true"><span class="about-word" data-word-idx="0">About</span></span>
+              <span class="about-word-mask" aria-hidden="true"><span class="about-word" data-word-idx="1">Me</span></span>
+            </h2>
+            <p class="about__subtitle">The person behind the code.</p>
+            <span class="about__header-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="about__stats-strip" aria-label="Key developer statistics">
+            <div class="about__stat-item">
+              <span class="about__stat-val">05+</span>
+              <span class="about__stat-lbl">Projects built</span>
+            </div>
+            <span class="about__stat-divider" aria-hidden="true"></span>
+            <div class="about__stat-item">
+              <span class="about__stat-val">4th</span>
+              <span class="about__stat-lbl">Year BSCS student</span>
+            </div>
+            <span class="about__stat-divider" aria-hidden="true"></span>
+            <div class="about__stat-item about__stat-item--creativity">
+              <span class="about__stat-val about__stat-val--creativity">CODE + CREATIVITY</span>
+              <span class="about__stat-lbl about__stat-lbl--creativity">Development, music &amp; photography</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__main-grid">
+
+          <div class="about__statement-card" data-about-reveal>
+            <span class="about__shimmer" aria-hidden="true"></span>
+
+            <div class="about__orbit" aria-hidden="true">
+              <svg class="about__orbit-svg" viewBox="0 0 500 340" fill="none" preserveAspectRatio="none">
+                <ellipse
+                  cx="330"
+                  cy="185"
+                  rx="195"
+                  ry="112"
+                  transform="rotate(-24 330 185)"
+                  stroke="url(#aboutOrbitGrad)"
+                  stroke-width="1.25"
+                />
+                <defs>
+                  <linearGradient id="aboutOrbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#6d001a" stop-opacity="0.08" />
+                    <stop offset="55%" stop-color="#d41c47" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="#ff7a9a" stop-opacity="0.75" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="about__orbit-dot about__orbit-dot--1"></span>
+              <span class="about__orbit-dot about__orbit-dot--2"></span>
+            </div>
+
+            <div class="about__statement-inner">
+              <span class="about__quote-mark" aria-hidden="true">
+                <svg width="36" height="28" viewBox="0 0 36 28" fill="currentColor">
+                  <path d="M10.4 0C4.6 3.8 0 10.2 0 17.8C0 23.8 3.9 27.6 8.8 27.6C13.3 27.6 16.6 24.4 16.6 20C16.6 15.6 13.4 12.7 9.4 12.7C8.5 12.7 7.4 13 6.9 13.2C7.6 9.1 11.1 5.1 15.2 2.7L10.4 0ZM29.8 0C24 3.8 19.4 10.2 19.4 17.8C19.4 23.8 23.3 27.6 28.2 27.6C32.7 27.6 36 24.4 36 20C36 15.6 32.8 12.7 28.8 12.7C27.9 12.7 26.8 13 26.3 13.2C27 9.1 30.5 5.1 34.6 2.7L29.8 0Z" />
+                </svg>
+              </span>
+
+              <h3 class="about__statement-title">
+                Learning to build,<br />
+                creating to express.
+              </h3>
+
+              <p class="about__statement-sub">
+                I&rsquo;m an aspiring full-stack developer who enjoys turning ideas into working applications. Outside coding, I express my creativity through music and photography.
+              </p>
+
+              <div class="about__statement-footer">
+                <span class="about__code-badge" aria-hidden="true">&lt;/&gt;</span>
+                <span class="about__footer-sep" aria-hidden="true"></span>
+                <span class="about__footer-motto">Growing through practice and creativity.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__story-col" data-about-reveal>
+            <p class="about__story-label">MY STORY</p>
+
+            <p class="about__story-text">
+              I&rsquo;m Mahalalil P. Villaflores, a fourth-year Bachelor of Science in Computer Science student at Biliran Province State University. I&rsquo;m from Brgy. Villa Cornejo, Kawayan, Biliran, and my goal is to become a full-stack web developer.
+            </p>
+
+            <p class="about__story-text">
+              Through my school projects, I&rsquo;ve gained hands-on experience building web applications, working with databases, and developing mobile applications using Dart and Flutter. As the developer of PrintDayon, I worked on its frontend, backend, and database integration. These experiences help me understand how the different parts of an application work together.
+            </p>
+
+            <div class="about__project-pills-wrap">
+              <span class="about__project-pills-label">Projects I&rsquo;ve worked on</span>
+              <div class="about__project-pills" role="list" aria-label="Projects I&rsquo;ve worked on">
+                <a class="about__project-pill" role="listitem" href="#project-printdayon">
+                  <span>PrintDayon</span>
+                  <svg class="about__pill-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a class="about__project-pill" role="listitem" href="#project-roasted-route">
+                  <span>Roasted Route</span>
+                  <svg class="about__pill-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a class="about__project-pill" role="listitem" href="#project-room-management">
+                  <span>Room Management</span>
+                  <svg class="about__pill-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a class="about__project-pill" role="listitem" href="#project-rent-tracker">
+                  <span>Rent Tracker</span>
+                  <svg class="about__pill-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a class="about__project-pill" role="listitem" href="#project-task-queuer">
+                  <span>OS Task Queuer</span>
+                  <svg class="about__pill-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <p class="about__story-closing">
+              Alongside coding, I&rsquo;m also skilled in graphic design. I enjoy creating visuals that communicate ideas clearly and combining my technical and creative skills in my work. Outside technology, I love music, playing instruments, photographing nature, and traveling.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="about__details">
+
+          <div class="about__card about__card--1" data-about-reveal>
+            <span class="about__shimmer" aria-hidden="true"></span>
+            <div class="about__card-top">
+              <div class="about__card-head">
+                <span class="about__card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                </span>
+                <h3 class="about__card-label">EDUCATION</h3>
+              </div>
+              <span class="about__card-index" aria-hidden="true">01</span>
+            </div>
+            <p class="about__card-primary">Biliran Province State University</p>
+            <p class="about__card-secondary">BS Computer Science &middot; Fourth Year</p>
+          </div>
+
+          <div class="about__card about__card--2" data-about-reveal>
+            <span class="about__shimmer" aria-hidden="true"></span>
+            <div class="about__card-top">
+              <div class="about__card-head">
+                <span class="about__card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="5" />
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                  </svg>
+                </span>
+                <h3 class="about__card-label">CAREER GOAL</h3>
+              </div>
+              <span class="about__card-index" aria-hidden="true">02</span>
+            </div>
+            <p class="about__card-primary">Aspiring Full-Stack Developer</p>
+            <p class="about__card-secondary">
+              Continue improving my frontend and backend skills so I can build useful, reliable applications.
+            </p>
+          </div>
+
+          <div class="about__card about__card--3" data-about-reveal>
+            <span class="about__shimmer" aria-hidden="true"></span>
+            <div class="about__card-top">
+              <div class="about__card-head">
+                <span class="about__card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                  </svg>
+                </span>
+                <h3 class="about__card-label">BEYOND THE SCREEN</h3>
+              </div>
+              <span class="about__card-index" aria-hidden="true">03</span>
+            </div>
+            <div class="about__hobby-pills" role="list" aria-label="Personal interests">
+              <span class="about__hobby-pill" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18V5l12-2v13" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+                <span>Music &amp; playing instruments</span>
+              </span>
+              <span class="about__hobby-pill" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+                <span>Nature photography</span>
+              </span>
+              <span class="about__hobby-pill" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+                <span>Travel &amp; exploration</span>
+              </span>
+              <span class="about__hobby-pill" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+                <span>Graphic Design</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="work-gallery__header" data-wg-reveal>
+          <div class="work-gallery__header-left">
+            <span class="work-gallery__pill">SELECTED WORK</span>
+            <h2 class="work-gallery__heading" id="projects-heading" data-wg-heading>
+              <span class="sr-only">Work Gallery</span>
+              <span class="wg-word-mask" aria-hidden="true"><span class="wg-word" data-word-idx="0">Work</span></span>
+              <span class="wg-word-mask" aria-hidden="true"><span class="wg-word" data-word-idx="1">Gallery</span></span>
+            </h2>
+            <span class="work-gallery__header-line" aria-hidden="true"></span>
+            <p class="work-gallery__subtitle">
+              A collection of systems, digital projects, and technical work I&rsquo;ve built.
+            </p>
+          </div>
+          <a class="work-gallery__more-btn" href="https://github.com/mahalalilvillaflores-jpg"
+            target="_blank" rel="noopener noreferrer">
+            <span>View More Projects</span>
+            <span class="work-gallery__more-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
+
+        <div class="work-gallery-wrap" data-wg-reveal>
+          <div class="work-gallery" id="workGallery" role="region" aria-roledescription="carousel" aria-label="Featured Work Projects Carousel">
+            <span class="work-gallery__shimmer" aria-hidden="true"></span>
+            <div class="sr-only" id="wgLiveAnnouncer" aria-live="polite" aria-atomic="true"></div>
+
+            <div class="work-gallery__top-bar">
+              <div class="work-gallery__orbit" aria-hidden="true">
+                <svg class="work-gallery__orbit-svg" viewBox="0 0 900 120" fill="none" preserveAspectRatio="none">
+                  <path d="M 60 110 Q 450 -35 840 110" stroke="url(#wgOrbitGrad)" stroke-width="1.25" />
+                  <defs>
+                    <linearGradient id="wgOrbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#6d001a" stop-opacity="0" />
+                      <stop offset="25%" stop-color="#c81640" stop-opacity="0.65" />
+                      <stop offset="50%" stop-color="#ff6b8b" stop-opacity="0.85" />
+                      <stop offset="75%" stop-color="#c81640" stop-opacity="0.65" />
+                      <stop offset="100%" stop-color="#6d001a" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="work-gallery__orbit-dot work-gallery__orbit-dot--1"></span>
+                <span class="work-gallery__orbit-dot work-gallery__orbit-dot--2"></span>
+              </div>
+
+              <div class="work-gallery__status-pill" id="wgStatusPill">
+                FEATURED PROJECT &middot; 01 / 05
+              </div>
+            </div>
+
+            <div class="work-gallery__viewport" id="wgViewport">
+              <div class="work-gallery__center-glow" aria-hidden="true"></div>
+
+              <button
+                type="button"
+                class="work-gallery__nav-btn work-gallery__nav-btn--prev"
+                id="wgPrevBtn"
+                aria-label="Previous project slide"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div class="work-gallery__stage" id="wgStage">
+                <div
+                  class="wg-slide"
+                  data-index="0"
+                  data-pos="0"
+                  data-nav-title="PrintDayon"
+                  data-status="FEATURED PROJECT"
+                  data-badge="FEATURED FULL-STACK SYSTEM"
+                  data-title="PrintDayon"
+                  data-subtitle="Online Printing Services &amp; Smart Shop Recommendations"
+                  data-desc="Helps customers in Naval, Biliran choose a printing shop based on travel time, live queue, and estimated service time."
+                  data-tech="React,Node.js,MongoDB,MapLibre"
+                  data-role="Full-Stack Developer"
+                  data-demo="https://printdayon-thesis-production-2f2a.up.railway.app/"
+                  data-repo="https://github.com/mahalalilvillaflores-jpg/PrintDayonThesis"
+                  data-gallery-src="assets/images/printdayon-screenshot.png"
+                  data-gallery-caption="PrintDayon — Landing Page &amp; Verified Printing Shop Directory in Naval, Biliran"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="1 of 5: PrintDayon"
+                  tabindex="0"
+                >
+                  <div class="wg-slide__card">
+                    <img
+                      src="assets/images/printdayon-screenshot.png"
+                      alt="PrintDayon landing page and printing shop directory in Naval, Biliran"
+                      loading="eager"
+                      width="900"
+                      height="506"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="wg-slide"
+                  data-index="1"
+                  data-pos="1"
+                  data-nav-title="Roasted Route"
+                  data-status="WEB APPLICATION"
+                  data-badge="FULL-STACK WEB APPLICATION"
+                  data-title="Roasted Route"
+                  data-subtitle="Online Food Ordering &amp; Real-Time Request System"
+                  data-desc="An online ordering system web application for Villa Cornejo's roasted chicken destination, featuring menu browsing, order placement, customer accounts, and real-time request handling."
+                  data-tech="Python,HTML5,CSS3,Render"
+                  data-role="Full-Stack Developer"
+                  data-demo="https://roasted-route-5lw2.onrender.com/"
+                  data-repo=""
+                  data-gallery-src="assets/images/roasted-route-screenshot.jpg"
+                  data-gallery-caption="Roasted Route — Online Ordering System for Villa Cornejo's Roasted Chicken Destination"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="2 of 5: Roasted Route"
+                  tabindex="-1"
+                >
+                  <div class="wg-slide__card">
+                    <img
+                      src="assets/images/roasted-route-screenshot.jpg"
+                      alt="Roasted Route online food ordering platform homepage displaying roasted chicken hero banner"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="wg-slide"
+                  data-index="2"
+                  data-pos="2"
+                  data-nav-title="Room Management"
+                  data-status="CRUD SYSTEM"
+                  data-badge="CRUD MANAGEMENT SYSTEM"
+                  data-title="Room Management"
+                  data-subtitle="Room Inventory &amp; Record Management System"
+                  data-desc="A web-based room management system supporting Create, Read, Update, and Delete (CRUD) operations for tracking room availability, capacities, and records."
+                  data-tech="PHP,MySQL,HTML5,CSS3"
+                  data-role="Full-Stack Developer"
+                  data-demo="#project-room-management"
+                  data-repo=""
+                  data-gallery-src="assets/images/room-management-screenshot.jpg"
+                  data-gallery-caption="Room Management — PHP &amp; MySQL CRUD Application for Managing Room Records"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="3 of 5: Room Management"
+                  tabindex="-1"
+                >
+                  <div class="wg-slide__card">
+                    <img
+                      src="assets/images/room-management-screenshot.jpg"
+                      alt="Room Management CRUD system dashboard showing room inventory and actions"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="wg-slide"
+                  data-index="3"
+                  data-pos="-2"
+                  data-nav-title="Rent Tracker"
+                  data-status="MOBILE APPLICATION"
+                  data-badge="MOBILE APPLICATION"
+                  data-title="Rent Tracker"
+                  data-subtitle="Rental Payment &amp; Tenant Record Management App"
+                  data-desc="A mobile application for tracking monthly rental payments, due dates, and tenant records built with Dart, Flutter, and Firebase."
+                  data-tech="Dart,Flutter,Firebase,MapLibre"
+                  data-role="Full-Stack Developer"
+                  data-demo="#project-rent-tracker"
+                  data-repo=""
+                  data-gallery-src="assets/images/printdayon-map.jpg"
+                  data-gallery-caption="Interactive Map &amp; Route Finder Interface"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="4 of 5: Rent Tracker"
+                  tabindex="-1"
+                >
+                  <div class="wg-slide__card">
+                    <img
+                      src="assets/images/printdayon-map.jpg"
+                      alt="Interactive map and shop finder interface"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="wg-slide"
+                  data-index="4"
+                  data-pos="-1"
+                  data-nav-title="OS Task Queuer"
+                  data-status="CPU SIMULATION"
+                  data-badge="CPU SCHEDULING SIMULATION"
+                  data-title="OS Task Queuer"
+                  data-subtitle="FCFS Process &amp; Task Scheduling Program"
+                  data-desc="Demonstrates operating-system process scheduling in Python by executing queued tasks in arrival order and calculating waiting and turnaround times."
+                  data-tech="Python,FCFS Algorithm"
+                  data-role="Python Developer"
+                  data-demo="#project-task-queuer"
+                  data-repo=""
+                  data-gallery-src="assets/images/printdayon-dashboard.jpg"
+                  data-gallery-caption="OS Task Queuer — CPU Scheduling Simulation in Python"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="5 of 5: OS Task Queuer"
+                  tabindex="-1"
+                >
+                  <div class="wg-slide__card">
+                    <img
+                      src="assets/images/printdayon-dashboard.jpg"
+                      alt="OS Task Queuer CPU scheduling simulation dashboard"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+              </div>
+
+            <button
+                type="button"
+                class="work-gallery__nav-btn work-gallery__nav-btn--next"
+                id="wgNextBtn"
+                aria-label="Next project slide"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="work-gallery__controls-row">
+              <div class="work-gallery__dots" id="wgDots" role="tablist" aria-label="Select project slide"></div>
+            </div>
+
+            <div class="work-gallery__divider" aria-hidden="true"></div>
+
+            <div class="work-gallery__details" id="wgDetails">
+              <div class="work-gallery__info-left">
+                <span class="work-gallery__cat-badge" id="wgBadge">FEATURED FULL-STACK SYSTEM</span>
+                <h3 class="work-gallery__active-title" id="wgTitle">PrintDayon</h3>
+                <p class="work-gallery__active-subtitle" id="wgSubtitle">
+                  Online Printing Services &amp; Smart Shop Recommendations
+                </p>
+                <p class="work-gallery__active-desc" id="wgDesc">
+                  Helps customers in Naval, Biliran choose a printing shop based on travel time, live queue, and estimated service time.
+                </p>
+                <div class="work-gallery__tech" id="wgTech" aria-label="Technologies used"></div>
+              </div>
+
+              <div class="work-gallery__info-right">
+                <div class="work-gallery__role-block">
+                  <span class="work-gallery__role-label">MY ROLE</span>
+                  <p class="work-gallery__role-value" id="wgRole">Full-Stack Developer</p>
+                </div>
+
+                <div class="work-gallery__actions" id="wgLinks">
+                  <a
+                    class="work-gallery__btn work-gallery__btn--primary"
+                    id="wgDemoLink"
+                    href="https://printdayon-thesis-production-2f2a.up.railway.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>View Project</span>
+                    <svg class="work-gallery__btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+
+                  <a
+                    class="work-gallery__btn work-gallery__btn--outline"
+                    id="wgRepoLink"
+                    href="https://github.com/mahalalilvillaflores-jpg/PrintDayonThesis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg class="work-gallery__github-icon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0.3C5.37 0.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 22.1 24 17.6 24 12.3 24 5.67 18.63 0.3 12 0.3z" />
+                    </svg>
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-gallery__bottom-bar">
+            <div class="work-gallery__selectors" id="wgSelectors" role="tablist" aria-label="Quick project selector"></div>
+            <div class="work-gallery__drag-hint" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="5 9 2 12 5 15"></polyline>
+                <polyline points="9 5 12 2 15 5"></polyline>
+                <polyline points="15 19 12 22 9 19"></polyline>
+                <polyline points="19 9 22 12 19 15"></polyline>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+              </svg>
+              <span>DRAG TO EXPLORE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-overview" id="projects-overview" aria-labelledby="projects-overview-heading">
+          <div class="projects-overview__ambient" aria-hidden="true"></div>
+
+          <div class="projects-overview__header" data-po-header>
+            <div class="projects-overview__header-left">
+              <span class="projects-overview__pill">PROJECT SHOWCASE</span>
+              <h3 class="projects-overview__heading" id="projects-overview-heading" data-po-heading="All Projects Overview">
+                <span class="sr-only">All Projects Overview</span>
+                <span class="po-word-mask" aria-hidden="true"><span class="po-word" data-word-idx="0">All</span></span>
+                <span class="po-word-mask" aria-hidden="true"><span class="po-word" data-word-idx="1">Projects</span></span>
+                <span class="po-word-mask" aria-hidden="true"><span class="po-word" data-word-idx="2">Overview</span></span>
+              </h3>
+              <p class="projects-overview__subtitle">A closer look at the systems I&rsquo;ve built.</p>
+            </div>
+            <div class="projects-overview__counter" id="poProjectCounter" aria-live="polite" aria-label="Project count">
+              01 / 05
+            </div>
+          </div>
+
+          <div class="projects-overview__list">
+
+<!-- 01 / 05: PrintDayon -->
+            <div class="project-showcase-item" data-project-index="0">
+              <article
+                class="project-featured"
+                id="project-printdayon"
+                aria-label="Featured project: PrintDayon"
+                data-po-panel
+                data-slides='[
+                  {
+                    "src": "assets/images/printdayon-screenshot.png",
+                    "alt": "PrintDayon web application homepage showing available printing shops in Naval, Biliran with search bar, filter tabs, and shop listing cards",
+                    "caption": "PrintDayon — Landing Page & Verified Printing Shop Directory in Naval, Biliran",
+                    "label": "Landing Page"
+                  },
+                  {
+                    "src": "assets/images/printdayon-dashboard.jpg",
+                    "alt": "PrintDayon customer dashboard displaying recommended shops, distance, queue length, and pricing",
+                    "caption": "PrintDayon — Customer Dashboard with Personalized Shop Recommendations & Live Queue Status",
+                    "label": "Customer Dashboard"
+                  },
+                  {
+                    "src": "assets/images/printdayon-map.jpg",
+                    "alt": "PrintDayon interactive map showing shortest path route to print shops using MapLibre GL",
+                    "caption": "PrintDayon — Map-Based Shop Finder with Dijkstra Shortest Path Routing & Travel Estimation",
+                    "label": "Map & Routing"
+                  }
+                ]'
+              >
+                <span class="project-featured__shimmer" aria-hidden="true"></span>
+
+                <div class="project-featured__gallery-col" data-po-gallery>
+                  <div class="project-featured__preview-header">
+                    <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                    <span class="project-featured__preview-label">PROJECT PREVIEW</span>
+                  </div>
+
+                  <div class="project-featured__main-frame">
+                    <img
+                      class="project-featured__main-img"
+                      src="assets/images/printdayon-screenshot.png"
+                      alt="PrintDayon web application homepage showing available printing shops in Naval, Biliran with search bar, filter tabs, and shop listing cards"
+                      loading="eager"
+                      width="900"
+                      height="506"
+                    />
+                    <button
+                      type="button"
+                      class="project-featured__expand-btn"
+                      aria-label="Expand PrintDayon screenshot in image viewer"
+                      data-gallery-src="assets/images/printdayon-screenshot.png"
+                      data-gallery-caption="PrintDayon — Landing Page &amp; Verified Printing Shop Directory in Naval, Biliran"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="project-featured__thumbs" role="group" aria-label="PrintDayon screenshot thumbnails">
+                    <button
+                      type="button"
+                      class="project-thumb is-active"
+                      data-slide-target="1"
+                      data-gallery-src="assets/images/printdayon-dashboard.jpg"
+                      data-gallery-caption="PrintDayon — Customer Dashboard with Personalized Shop Recommendations &amp; Live Queue Status"
+                      aria-label="Preview PrintDayon Customer Dashboard screenshot"
+                      aria-pressed="false"
+                    >
+                      <img
+                        src="assets/images/printdayon-dashboard.jpg"
+                        alt="PrintDayon customer dashboard displaying recommended shops, distance, queue length, and pricing"
+                        loading="lazy"
+                        width="320"
+                        height="180"
+                      />
+                      <span class="project-thumb__label">Customer Dashboard</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="project-thumb"
+                      data-slide-target="2"
+                      data-gallery-src="assets/images/printdayon-map.jpg"
+                      data-gallery-caption="PrintDayon — Map-Based Shop Finder with Dijkstra Shortest Path Routing &amp; Travel Estimation"
+                      aria-label="Preview PrintDayon Map and Routing screenshot"
+                      aria-pressed="false"
+                    >
+                      <img
+                        src="assets/images/printdayon-map.jpg"
+                        alt="PrintDayon interactive map showing shortest path route to print shops using MapLibre GL"
+                        loading="lazy"
+                        width="320"
+                        height="180"
+                      />
+                      <span class="project-thumb__label">Map &amp; Routing</span>
+                    </button>
+                  </div>
+
+                  <div class="project-featured__nav" role="toolbar" aria-label="PrintDayon screenshot gallery controls">
+                    <button
+                      type="button"
+                      class="project-featured__arrow project-featured__arrow--prev"
+                      aria-label="Previous PrintDayon screenshot"
+                      data-po-prev
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                    </button>
+                    <span class="project-featured__nav-counter" data-po-slide-counter aria-live="polite">01 / 03</span>
+                    <button
+                      type="button"
+                      class="project-featured__arrow project-featured__arrow--next"
+                      aria-label="Next PrintDayon screenshot"
+                      data-po-next
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="project-featured__content" data-po-details>
+                  <span class="project__badge">FEATURED PROJECT</span>
+                  <h4 class="project-featured__title" data-po-title="PrintDayon">PrintDayon</h4>
+                  <p class="project-featured__subtitle">Online Printing Services &middot; Naval, Biliran</p>
+                  <p class="project-featured__desc">
+                    Recommends printing shops based on estimated completion time, combining travel time, queue waiting time, and printing time.
+                  </p>
+
+                  <ul class="project-featured__features" aria-label="PrintDayon key features">
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                          <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                      </span>
+                      <span>Smart routing</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </span>
+                      <span>Live queues</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                      </span>
+                      <span>Order tracking</span>
+                    </li>
+                  </ul>
+
+                  <div class="project__contribution" data-po-contrib>
+                    <div class="project__contribution-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                        <line x1="14" y1="4" x2="10" y2="20"></line>
+                      </svg>
+                    </div>
+                    <div class="project__contribution-body">
+                      <span class="project__contribution-eyebrow">MY CONTRIBUTION</span>
+                      <h5 class="project__contribution-role">Full-Stack Developer</h5>
+                      <p class="project__contribution-text">
+                        Built the frontend and backend, connected the database, and implemented the system&rsquo;s core functions.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-chips>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>TECHNOLOGIES</span>
+                    </div>
+                    <div class="project__tech-list" aria-label="Technologies used in PrintDayon">
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">Vite</span>
+                      <span class="tech-tag">Tailwind CSS</span>
+                      <span class="tech-tag">Node.js</span>
+                      <span class="tech-tag">Express</span>
+                      <span class="tech-tag">MongoDB</span>
+                      <span class="tech-tag">Mongoose</span>
+                      <span class="tech-tag">Socket.IO</span>
+                      <span class="tech-tag">MapLibre GL</span>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-algo>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>ALGORITHM</span>
+                    </div>
+                    <div class="project__algo-list">
+                      <span class="project__algo-pill">Routing: Dijkstra&rsquo;s algorithm + Haversine formula</span>
+                    </div>
+                  </div>
+
+                  <div class="project__links" data-po-actions>
+                    <a
+                      class="project-featured__btn project-featured__btn--primary"
+                      href="https://printdayon-thesis-production-2f2a.up.railway.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open PrintDayon live demo in a new tab"
+                    >
+                      <span>Live Demo</span>
+                      <span class="project-featured__btn-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a
+                      class="project-featured__btn project-featured__btn--outline"
+                      href="https://github.com/mahalalilvillaflores-jpg/PrintDayonThesis"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View PrintDayon source code on GitHub in a new tab"
+                    >
+                      <span>GitHub</span>
+                      <span class="project-featured__btn-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="project-featured__next-row">
+                <a class="project-featured__next-link" href="#project-roasted-route">
+                  <span class="project-featured__next-label">NEXT PROJECT</span>
+                  <span class="project-featured__next-name">Roasted Route</span>
+                  <span class="project-featured__next-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+<!-- 02 / 05: Roasted Route -->
+            <div class="project-showcase-item" data-project-index="1">
+              <article
+                class="project-featured"
+                id="project-roasted-route"
+                aria-label="Project: Roasted Route Ordering System"
+                data-po-panel
+                data-slides='[
+                  {
+                    "src": "assets/images/roasted-route-screenshot.jpg",
+                    "alt": "Roasted Route online food ordering platform homepage displaying roasted chicken hero banner, menu navigation, and ordering actions",
+                    "caption": "Roasted Route — Online Ordering System for Villa Cornejo&#39;s Roasted Chicken Destination",
+                    "label": "Homepage"
+                  },
+                  {
+                    "src": "assets/images/roasted-route-dashboard.jpg",
+                    "alt": "Roasted Route customer dashboard showing order metrics and featured chicken items",
+                    "caption": "Roasted Route — Customer Dashboard with Order Metrics & Featured Items",
+                    "label": "Dashboard"
+                  },
+                  {
+                    "src": "assets/images/roasted-route-menu.jpg",
+                    "alt": "Roasted Route order now menu page with category filters and add-to-cart buttons",
+                    "caption": "Roasted Route — Interactive Food Menu with Category Filters & Cart Overview",
+                    "label": "Order Menu"
+                  }
+                ]'
+              >
+                <span class="project-featured__shimmer" aria-hidden="true"></span>
+
+                <div class="project-featured__gallery-col" data-po-gallery>
+                  <div class="project-featured__preview-header">
+                    <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                    <span class="project-featured__preview-label">PROJECT PREVIEW</span>
+                  </div>
+
+                  <div class="project-featured__main-frame">
+                    <img
+                      class="project-featured__main-img"
+                      src="assets/images/roasted-route-screenshot.jpg"
+                      alt="Roasted Route online food ordering platform homepage displaying roasted chicken hero banner, menu navigation, and ordering actions"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                    />
+                    <button
+                      type="button"
+                      class="project-featured__expand-btn"
+                      aria-label="Expand Roasted Route screenshot in image viewer"
+                      data-gallery-src="assets/images/roasted-route-screenshot.jpg"
+                      data-gallery-caption="Roasted Route — Online Ordering System for Villa Cornejo's Roasted Chicken Destination"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="project-featured__thumbs" role="group" aria-label="Roasted Route screenshot thumbnails">
+                    <button
+                      type="button"
+                      class="project-thumb is-active"
+                      data-slide-target="1"
+                      data-gallery-src="assets/images/roasted-route-dashboard.jpg"
+                      data-gallery-caption="Roasted Route — Customer Dashboard with Order Metrics &amp; Featured Items"
+                      aria-label="Preview Roasted Route Dashboard screenshot"
+                      aria-pressed="false"
+                    >
+                      <img
+                        src="assets/images/roasted-route-dashboard.jpg"
+                        alt="Roasted Route customer dashboard showing order metrics and featured chicken items"
+                        loading="lazy"
+                        width="320"
+                        height="180"
+                      />
+                      <span class="project-thumb__label">Dashboard</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="project-thumb"
+                      data-slide-target="2"
+                      data-gallery-src="assets/images/roasted-route-menu.jpg"
+                      data-gallery-caption="Roasted Route — Interactive Food Menu with Category Filters &amp; Cart Overview"
+                      aria-label="Preview Roasted Route Order Menu screenshot"
+                      aria-pressed="false"
+                    >
+                      <img
+                        src="assets/images/roasted-route-menu.jpg"
+                        alt="Roasted Route order now menu page with category filters and add-to-cart buttons"
+                        loading="lazy"
+                        width="320"
+                        height="180"
+                      />
+                      <span class="project-thumb__label">Order Menu</span>
+                    </button>
+                  </div>
+
+                  <div class="project-featured__nav" role="toolbar" aria-label="Roasted Route screenshot gallery controls">
+                    <button
+                      type="button"
+                      class="project-featured__arrow project-featured__arrow--prev"
+                      aria-label="Previous Roasted Route screenshot"
+                      data-po-prev
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                    </button>
+                    <span class="project-featured__nav-counter" data-po-slide-counter aria-live="polite">01 / 03</span>
+                    <button
+                      type="button"
+                      class="project-featured__arrow project-featured__arrow--next"
+                      aria-label="Next Roasted Route screenshot"
+                      data-po-next
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="project-featured__content" data-po-details>
+                  <span class="project__badge">WEB APPLICATION</span>
+                  <h4 class="project-featured__title" data-po-title="Roasted Route">Roasted Route</h4>
+                  <p class="project-featured__subtitle">Online Ordering System &middot; Villa Cornejo, Kawayan</p>
+                  <p class="project-featured__desc">
+                    An online ordering system web application for Villa Cornejo&rsquo;s roasted chicken destination, featuring menu browsing, order placement, customer accounts, and real-time request handling.
+                  </p>
+
+                  <ul class="project-featured__features" aria-label="Roasted Route key features">
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                          <line x1="3" y1="6" x2="21" y2="6"></line>
+                          <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                      </span>
+                      <span>Menu &amp; cart</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                      </span>
+                      <span>Customer accounts</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                      </span>
+                      <span>Order requests</span>
+                    </li>
+                  </ul>
+
+                  <div class="project__contribution" data-po-contrib>
+                    <div class="project__contribution-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                        <line x1="14" y1="4" x2="10" y2="20"></line>
+                      </svg>
+                    </div>
+                    <div class="project__contribution-body">
+                      <span class="project__contribution-eyebrow">MY CONTRIBUTION</span>
+                      <h5 class="project__contribution-role">Full-Stack Developer</h5>
+                      <p class="project__contribution-text">
+                        Built the customer ordering interface, menu catalog, and Python backend deployed on Render.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-chips>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>TECHNOLOGIES</span>
+                    </div>
+                    <div class="project__tech-list" aria-label="Technologies used in Roasted Route">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS</span>
+                      <span class="tech-tag">Render</span>
+                    </div>
+                  </div>
+
+                  <div class="project__links" data-po-actions>
+                    <a
+                      class="project-featured__btn project-featured__btn--primary"
+                      href="https://roasted-route-5lw2.onrender.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Roasted Route live demo in a new tab"
+                    >
+                      <span>Live Demo</span>
+                      <span class="project-featured__btn-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="project-featured__next-row">
+                <a class="project-featured__next-link" href="#project-room-management">
+                  <span class="project-featured__next-label">NEXT PROJECT</span>
+                  <span class="project-featured__next-name">Room Management</span>
+                  <span class="project-featured__next-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+<!-- 03 / 05: Room Management -->
+            <div class="project-showcase-item" data-project-index="2">
+              <article
+                class="project-featured"
+                id="project-room-management"
+                aria-label="Project: Room Management"
+                data-po-panel
+                data-slides='[
+                  {
+                    "src": "assets/images/room-management-screenshot.jpg",
+                    "alt": "Room Management System dashboard interface showing room inventory, statuses, view edit delete actions, and add room panel",
+                    "caption": "Room Management — PHP & MySQL CRUD Application for Managing Room Records",
+                    "label": "Room Inventory Dashboard"
+                  }
+                ]'
+              >
+                <span class="project-featured__shimmer" aria-hidden="true"></span>
+
+                <div class="project-featured__gallery-col" data-po-gallery>
+                  <div class="project-featured__preview-header">
+                    <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                    <span class="project-featured__preview-label">PROJECT PREVIEW</span>
+                  </div>
+
+                  <div class="project-featured__main-frame">
+                    <img
+                      class="project-featured__main-img"
+                      src="assets/images/room-management-screenshot.jpg"
+                      alt="Room Management System dashboard interface showing room inventory, statuses, view edit delete actions, and add room panel"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                    />
+                    <button
+                      type="button"
+                      class="project-featured__expand-btn"
+                      aria-label="Expand Room Management screenshot in image viewer"
+                      data-gallery-src="assets/images/room-management-screenshot.jpg"
+                      data-gallery-caption="Room Management — PHP &amp; MySQL CRUD Application for Managing Room Records"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="project-featured__content" data-po-details>
+                  <span class="project__badge">CRUD APPLICATION</span>
+                  <h4 class="project-featured__title" data-po-title="Room Management">Room Management</h4>
+                  <p class="project-featured__subtitle">Web-Based Room Inventory &amp; Record Management</p>
+                  <p class="project-featured__desc">
+                    My first web project &mdash; a simple room management system that supports Create, Read, Update, and Delete operations for managing room records using PHP and MySQL.
+                  </p>
+
+                  <ul class="project-featured__features" aria-label="Room Management key features">
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                          <line x1="3" y1="9" x2="21" y2="9"></line>
+                          <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                      </span>
+                      <span>CRUD operations</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M9 11l3 3L22 4"></path>
+                          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                      </span>
+                      <span>Room availability</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                      </span>
+                      <span>MySQL storage</span>
+                    </li>
+                  </ul>
+
+                  <div class="project__contribution" data-po-contrib>
+                    <div class="project__contribution-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                        <line x1="14" y1="4" x2="10" y2="20"></line>
+                      </svg>
+                    </div>
+                    <div class="project__contribution-body">
+                      <span class="project__contribution-eyebrow">MY CONTRIBUTION</span>
+                      <h5 class="project__contribution-role">Web Developer</h5>
+                      <p class="project__contribution-text">
+                        Designed the room management dashboard and built the PHP and MySQL backend for creating, viewing, updating, and deleting room records.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-chips>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>TECHNOLOGIES</span>
+                    </div>
+                    <div class="project__tech-list" aria-label="Technologies used in Room Management">
+                      <span class="tech-tag">PHP</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <div class="project-featured__next-row">
+                <a class="project-featured__next-link" href="#project-rent-tracker">
+                  <span class="project-featured__next-label">NEXT PROJECT</span>
+                  <span class="project-featured__next-name">Rent Tracker</span>
+                  <span class="project-featured__next-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+<!-- 04 / 05: Rent Tracker -->
+            <div class="project-showcase-item" data-project-index="3">
+              <article
+                class="project-featured"
+                id="project-rent-tracker"
+                aria-label="Project: Rent Tracker"
+                data-po-panel
+              >
+                <span class="project-featured__shimmer" aria-hidden="true"></span>
+
+                <div class="project-featured__gallery-col project-featured__gallery-col--summary" data-po-gallery>
+                  <div class="project-featured__preview-header">
+                    <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                    <span class="project-featured__preview-label">PROJECT OVERVIEW</span>
+                  </div>
+
+                  <div class="project-featured__summary-box">
+                    <div class="project-featured__summary-icon" aria-hidden="true">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                    </div>
+                    <span class="project-featured__summary-kicker">CROSS-PLATFORM MOBILE APP</span>
+                    <h5 class="project-featured__summary-heading">Rental Payment &amp; Tenant Record Tracker</h5>
+                    <p class="project-featured__summary-text">
+                      Built with Dart, Flutter, and Firebase to help property managers organize tenant records and monitor monthly rental payments on mobile devices.
+                    </p>
+                    <div class="project-featured__summary-pills">
+                      <span class="project-featured__summary-pill">Tenant Records</span>
+                      <span class="project-featured__summary-pill">Payment Logs</span>
+                      <span class="project-featured__summary-pill">Firebase Sync</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-featured__content" data-po-details>
+                  <span class="project__badge">MOBILE APPLICATION</span>
+                  <h4 class="project-featured__title" data-po-title="Rent Tracker">Rent Tracker</h4>
+                  <p class="project-featured__subtitle">Mobile Rental Payment &amp; Tenant Management</p>
+                  <p class="project-featured__desc">
+                    A mobile application for tracking rental payments and tenant records, built with Dart and Flutter.
+                  </p>
+
+                  <ul class="project-featured__features" aria-label="Rent Tracker key features">
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                        </svg>
+                      </span>
+                      <span>Tenant records</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                          <line x1="2" y1="10" x2="22" y2="10"></line>
+                        </svg>
+                      </span>
+                      <span>Payment tracking</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                      </span>
+                      <span>Cloud data sync</span>
+                    </li>
+                  </ul>
+
+                  <div class="project__contribution" data-po-contrib>
+                    <div class="project__contribution-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                        <line x1="14" y1="4" x2="10" y2="20"></line>
+                      </svg>
+                    </div>
+                    <div class="project__contribution-body">
+                      <span class="project__contribution-eyebrow">MY CONTRIBUTION</span>
+                      <h5 class="project__contribution-role">Mobile App Developer</h5>
+                      <p class="project__contribution-text">
+                        Developed the Flutter mobile views and integrated Firebase for storing tenant profiles and rental payment histories.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-chips>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>TECHNOLOGIES</span>
+                    </div>
+                    <div class="project__tech-list" aria-label="Technologies used in Rent Tracker">
+                      <span class="tech-tag">Dart</span>
+                      <span class="tech-tag">Flutter</span>
+                      <span class="tech-tag">Firebase</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <div class="project-featured__next-row">
+                <a class="project-featured__next-link" href="#project-task-queuer">
+                  <span class="project-featured__next-label">NEXT PROJECT</span>
+                  <span class="project-featured__next-name">OS Task Queuer</span>
+                  <span class="project-featured__next-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+<!-- 05 / 05: OS Task Queuer -->
+            <div class="project-showcase-item" data-project-index="4">
+              <article
+                class="project-featured"
+                id="project-task-queuer"
+                aria-label="Project: OS Task Queuer"
+                data-po-panel
+              >
+                <span class="project-featured__shimmer" aria-hidden="true"></span>
+
+                <div class="project-featured__gallery-col project-featured__gallery-col--summary" data-po-gallery>
+                  <div class="project-featured__preview-header">
+                    <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                    <span class="project-featured__preview-label">PROJECT OVERVIEW</span>
+                  </div>
+
+                  <div class="project-featured__summary-box">
+                    <div class="project-featured__summary-icon" aria-hidden="true">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                      </svg>
+                    </div>
+                    <span class="project-featured__summary-kicker">CPU SCHEDULING SIMULATION</span>
+                    <h5 class="project-featured__summary-heading">First-Come, First-Served (FCFS) Task Queue</h5>
+                    <p class="project-featured__summary-text">
+                      Demonstrates operating-system process scheduling in Python by executing queued tasks in arrival order and calculating waiting and turnaround times.
+                    </p>
+                    <div class="project-featured__summary-pills">
+                      <span class="project-featured__summary-pill">Arrival Order</span>
+                      <span class="project-featured__summary-pill">Burst &amp; Wait Time</span>
+                      <span class="project-featured__summary-pill">Queue Execution</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-featured__content" data-po-details>
+                  <span class="project__badge">SCHEDULING ALGORITHM</span>
+                  <h4 class="project-featured__title" data-po-title="OS Task Queuer">OS Task Queuer</h4>
+                  <p class="project-featured__subtitle">FCFS Process &amp; Task Scheduling Program</p>
+                  <p class="project-featured__desc">
+                    A task management application implementing First-Come, First-Served (FCFS) scheduling to demonstrate CPU scheduling concepts through a practical Python program.
+                  </p>
+
+                  <ul class="project-featured__features" aria-label="Task Queuer key features">
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="8" y1="6" x2="21" y2="6"></line>
+                          <line x1="8" y1="12" x2="21" y2="12"></line>
+                          <line x1="8" y1="18" x2="21" y2="18"></line>
+                          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg>
+                      </span>
+                      <span>FIFO task queue</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                      </span>
+                      <span>Wait-time metrics</span>
+                    </li>
+                    <li class="project-featured__feature-item">
+                      <span class="project-featured__feature-icon" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="16 18 22 12 16 6"></polyline>
+                          <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                      </span>
+                      <span>Python execution</span>
+                    </li>
+                  </ul>
+
+                  <div class="project__contribution" data-po-contrib>
+                    <div class="project__contribution-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                        <line x1="14" y1="4" x2="10" y2="20"></line>
+                      </svg>
+                    </div>
+                    <div class="project__contribution-body">
+                      <span class="project__contribution-eyebrow">MY CONTRIBUTION</span>
+                      <h5 class="project__contribution-role">Python Developer</h5>
+                      <p class="project__contribution-text">
+                        Implemented the First-Come, First-Served queue logic and task scheduling execution flow in Python.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-chips>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>TECHNOLOGIES</span>
+                    </div>
+                    <div class="project__tech-list" aria-label="Technologies used in Task Queuer">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">FCFS Algorithm</span>
+                    </div>
+                  </div>
+
+                  <div class="project__meta-group" data-po-algo>
+                    <div class="project__section-label">
+                      <span class="project-featured__accent-bar" aria-hidden="true"></span>
+                      <span>ALGORITHM</span>
+                    </div>
+                    <div class="project__algo-list">
+                      <span class="project__algo-pill">Scheduling: First-Come, First-Served (FCFS)</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <div class="project-featured__next-row">
+                <a class="project-featured__next-link" href="#project-printdayon">
+                  <span class="project-featured__next-label">BACK TO TOP PROJECT</span>
+                  <span class="project-featured__next-name">PrintDayon</span>
+                  <span class="project-featured__next-arrow" aria-hidden="true">&uarr;</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-heading">
+      <div class="skills__ambient" aria-hidden="true"></div>
+
+      <div class="container skills__container">
+        <!-- Thin curved burgundy background line with two moving light dots -->
+        <div class="skills__orbit" aria-hidden="true">
+          <svg class="skills__orbit-svg" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
+            <path d="M 40 40 Q 500 120 960 40" stroke="url(#skillsOrbitGrad)" stroke-width="1.25" />
+            <defs>
+              <linearGradient id="skillsOrbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6d001a" stop-opacity="0" />
+                <stop offset="25%" stop-color="#c81640" stop-opacity="0.65" />
+                <stop offset="50%" stop-color="#ff6b8b" stop-opacity="0.85" />
+                <stop offset="75%" stop-color="#c81640" stop-opacity="0.65" />
+                <stop offset="100%" stop-color="#6d001a" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="skills__orbit-dot skills__orbit-dot--1"></span>
+          <span class="skills__orbit-dot skills__orbit-dot--2"></span>
+        </div>
+
+        <div class="skills__header" data-skills-header>
+          <div class="skills__header-left">
+            <span class="skills__pill">TECH STACK</span>
+            <h2 class="skills__heading" id="skills-heading" data-skills-heading>
+              <span class="sr-only">Skills &amp; Technologies</span>
+              <span class="skills-word-mask" aria-hidden="true"><span class="skills-word" data-word-idx="0">Skills</span></span>
+              <span class="skills-word-mask" aria-hidden="true"><span class="skills-word" data-word-idx="1">&amp;</span></span>
+              <span class="skills-word-mask" aria-hidden="true"><span class="skills-word" data-word-idx="2">Technologies</span></span>
+            </h2>
+            <span class="skills__header-line" aria-hidden="true"></span>
+            <p class="skills__subtitle">Technologies I have worked with through my projects.</p>
+          </div>
+        </div>
+
+        <div class="skills__grid" id="skillsGrid">
+
+          <!-- 01: Frontend -->
+          <div class="skill-group" data-skill-card data-card-idx="0">
+            <span class="skill-group__shimmer" aria-hidden="true"></span>
+            <div class="skill-group__header">
+              <div class="skill-group__title-wrap">
+                <span class="skill-group__icon-badge" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </span>
+                <h3 class="skill-group__title">Frontend</h3>
+              </div>
+              <span class="skill-group__index">01</span>
+            </div>
+            <div class="skill-group__divider" aria-hidden="true"></div>
+            <ul class="skill-list" aria-label="Frontend skills">
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <rect x="4" y="4" width="40" height="40" rx="4" fill="#F7DF1E" />
+                    <path
+                      d="M26.5 34.8c.9 1.5 2.1 2.6 4.2 2.6 1.8 0 2.9-.9 2.9-2.1 0-1.5-1.2-2-3.1-2.9l-1.1-.5c-3.1-1.3-5.2-3-5.2-6.5 0-3.2 2.5-5.7 6.3-5.7 2.7 0 4.7 1 6.1 3.4l-3.3 2.1c-.7-1.3-1.5-1.8-2.8-1.8-1.3 0-2.1.8-2.1 1.8 0 1.3.8 1.8 2.7 2.6l1.1.5c3.7 1.6 5.8 3.2 5.8 6.8 0 3.9-3.1 6-7.2 6-4 0-6.6-1.9-7.9-4.4l3.6-1.9zm-13.2.4c.7 1.2 1.3 2.2 2.8 2.2 1.4 0 2.3-.6 2.3-2.7V20h4.3v14.8c0 4.5-2.6 6.5-6.4 6.5-3.4 0-5.4-1.8-6.4-3.9l3.4-2.2z"
+                      fill="#000000" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">JavaScript</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                    <circle cx="24" cy="24" r="3.8" fill="#61DAFB" />
+                    <ellipse cx="24" cy="24" rx="19" ry="7.2" stroke="#61DAFB" stroke-width="2.4" />
+                    <ellipse cx="24" cy="24" rx="19" ry="7.2" transform="rotate(60 24 24)" stroke="#61DAFB" stroke-width="2.4" />
+                    <ellipse cx="24" cy="24" rx="19" ry="7.2" transform="rotate(120 24 24)" stroke="#61DAFB" stroke-width="2.4" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">React</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M24 12c-5.3 0-8.6 2.6-10 7.9 2-2.6 4.3-3.6 7-3 1.5.4 2.6 1.5 3.8 2.7 2 2 4.3 4.4 9.2 4.4 5.3 0 8.6-2.6 10-7.9-2 2.6-4.3 3.6-7 3-1.5-.4-2.6-1.5-3.8-2.7-2-2-4.3-4.4-9.2-4.4zM14 24c-5.3 0-8.6 2.6-10 7.9 2-2.6 4.3-3.6 7-3 1.5.4 2.6 1.5 3.8 2.7 2 2 4.3 4.4 9.2 4.4 5.3 0 8.6-2.6 10-7.9-2 2.6-4.3 3.6-7 3-1.5-.4-2.6-1.5-3.8-2.7-2-2-4.3-4.4-9.2-4.4z"
+                      fill="#38BDF8" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Tailwind CSS</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M8 5h32l-2.9 32.8L24 42l-13.1-4.2L8 5z" fill="#E34F26" />
+                    <path d="M24 7.8v31.3l10.6-3.4L37 7.8H24z" fill="#EF652A" />
+                    <path
+                      d="M24 19.5h-5.4l-.4-4.2H24v-4H13.8l1.1 12.2H24v-4zm0 10.6l-4.5-1.2-.3-3.3h-4.1l.6 6.4 8.3 2.3v-4.2z"
+                      fill="#EBEBEB" />
+                    <path d="M24 19.5v4h5l-.5 5.4-4.5 1.2v4.2l8.3-2.3.9-12.5H24zm0-8.2v4h9.8l.4-4H24z" fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">HTML5</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M8 5h32l-2.9 32.8L24 42l-13.1-4.2L8 5z" fill="#1572B6" />
+                    <path d="M24 7.8v31.3l10.6-3.4L37 7.8H24z" fill="#33A9DC" />
+                    <path
+                      d="M24 19.5h5.4l.4-4.2H24v-4h10.2l-1.1 12.2H24v-4zm0 10.6l4.5-1.2.5-5.4h-5v-4h9.2l-.9 12.5-8.3 2.3v-4.2z"
+                      fill="#FFFFFF" />
+                    <path
+                      d="M24 19.5v4h-8.8l-.4-4H24zm-4.5 9.4l4.5 1.2v4.2l-8.3-2.3-.6-6.4h4.1l.3 3.3zM24 11.3v4h-9.8l-.4-4H24z"
+                      fill="#EBEBEB" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">CSS3</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M13.5 13.5L22 5l18 9v20l-6 6H14l-9-9V19l8.5-5.5z" fill="#0175C2" />
+                    <path d="M13.5 13.5L34 34h6V14L22 5l-8.5 8.5z" fill="#13B9FD" />
+                    <path d="M14 40h20l-20.5-20.5V34L14 40z" fill="#00569E" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Dart</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M27.5 5L9.5 23l5.6 5.6L38.7 5H27.5z" fill="#47C5FB" />
+                    <path d="M27.3 22.8L17.6 32.5l5.6 5.7 5.6-5.6 9.9-9.8H27.3z" fill="#47C5FB" />
+                    <path d="M23.2 38.2l4.3 4.3h11.2l-9.9-9.9-5.6 5.6z" fill="#00569E" />
+                    <path d="M17.6 32.5l5.6-5.6 5.6 5.7-5.6 5.6-5.6-5.7z" fill="#00B5F8" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Flutter</span>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          
+
+          <!-- 02: Backend -->
+          <div class="skill-group" data-skill-card data-card-idx="1">
+            <span class="skill-group__shimmer" aria-hidden="true"></span>
+            <div class="skill-group__header">
+              <div class="skill-group__title-wrap">
+                <span class="skill-group__icon-badge" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </span>
+                <h3 class="skill-group__title">Backend</h3>
+              </div>
+              <span class="skill-group__index">02</span>
+            </div>
+            <div class="skill-group__divider" aria-hidden="true"></div>
+            <ul class="skill-list" aria-label="Backend skills">
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M24 4L7 13.8v19.6L24 43.2l17-9.8V13.8L24 4z" fill="#539E43" />
+                    <path d="M24 4v39.2l17-9.8V13.8L24 4z" fill="#68A063" opacity="0.85" />
+                    <path
+                      d="M21.5 30.2c0 1.8-1 2.7-2.6 2.7-1.1 0-1.9-.5-2.4-1.4l-2.3 1.4c.9 1.7 2.5 2.7 4.8 2.7 3.2 0 5.3-1.8 5.3-5.2V17h-2.8v13.2zm9.8 5.4c3.3 0 5.5-1.6 5.5-4.4 0-2.6-1.8-3.6-4.7-4.3l-.9-.2c-1.7-.4-2.5-.8-2.5-1.7 0-.9.8-1.5 2.1-1.5 1.3 0 2.2.5 2.8 1.6l2.3-1.5c-.9-1.7-2.7-2.7-5.1-2.7-2.9 0-4.9 1.6-4.9 4.1 0 2.5 1.7 3.5 4.4 4.1l.9.2c1.9.4 2.8.9 2.8 1.9 0 1-.9 1.7-2.6 1.7-1.7 0-2.8-.7-3.4-2l-2.4 1.4c.9 2 3 3.3 5.7 3.3z"
+                      fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Node.js</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <circle cx="24" cy="24" r="20" fill="#232121" stroke="#3e3838" stroke-width="1.5" />
+                    <path
+                      d="M12.5 24.8c.2 2.4 1.8 3.9 4.2 3.9 1.7 0 3-.7 3.8-1.9l2 1.2c-1.2 1.9-3.2 3-5.9 3-4.1 0-6.8-2.8-6.8-7s2.7-7 6.6-7c4 0 6.4 2.9 6.4 7v.8H12.5zm7.8-2c-.2-2.1-1.6-3.5-3.8-3.5-2.1 0-3.6 1.4-3.9 3.5h7.7zm5.1-5.5h3l3.1 4.8 3.1-4.8h3l-4.5 6.7 4.8 7h-3.1l-3.3-5-3.3 5h-3l4.7-7-4.5-6.7z"
+                      fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Express</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <ellipse cx="24" cy="24" rx="21" ry="11.5" fill="#777BB4" />
+                    <path
+                      d="M11.2 28.5l2.2-10.8h4.2c2.3 0 3.7 1.2 3.3 3.4-.4 2.4-2.1 3.7-4.5 3.7h-2.1l-.7 3.7h-2.4zm4.1-5.5h1.5c1.1 0 1.9-.6 2.1-1.7.2-1-.4-1.6-1.5-1.6h-1.5l-.6 3.3zm7.1 5.5l2.6-12.8h2.4l-.9 4.5h2c1.9 0 2.9 1 2.5 2.9l-1.1 5.4h-2.4l1-4.9c.2-.9-.2-1.4-1.1-1.4h-1.4l-1.2 6.3h-2.4zm10.2 2.5l2.6-13.3h4.2c2.3 0 3.7 1.2 3.3 3.4-.4 2.4-2.1 3.7-4.5 3.7h-2.1l-1.1 6.2h-2.4zm4.1-8h1.5c1.1 0 1.9-.6 2.1-1.7.2-1-.4-1.6-1.5-1.6h-1.5l-.6 3.3z"
+                      fill="#000000" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">PHP</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M23.8 6C17.6 6 18 8.7 18 8.7v3.1h6v1H14.5S10 12.3 10 18.8s3.9 6.3 3.9 6.3h2.3v-3c0-2.6 2.2-4.8 4.8-4.8h7.8c2.2 0 4-1.8 4-4V9.8C32.8 7.3 29.5 6 23.8 6zm-3.4 2.3c.8 0 1.4.6 1.4 1.4s-.6 1.4-1.4 1.4-1.4-.6-1.4-1.4.6-1.4 1.4-1.4z"
+                      fill="#3776AB" />
+                    <path
+                      d="M24.2 42c6.2 0 5.8-2.7 5.8-2.7v-3.1h-6v-1h9.5s4.5.5 4.5-6-3.9-6.3-3.9-6.3h-2.3v3c0 2.6-2.2 4.8-4.8 4.8h-7.8c-2.2 0-4 1.8-4 4v3.5c0 2.5 3.3 3.8 9 3.8zm3.4-2.3c-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4 1.4.6 1.4 1.4-.6 1.4-1.4 1.4z"
+                      fill="#FFD43B" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Python</span>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          
+
+          <!-- 03: Database -->
+          <div class="skill-group" data-skill-card data-card-idx="2">
+            <span class="skill-group__shimmer" aria-hidden="true"></span>
+            <div class="skill-group__header">
+              <div class="skill-group__title-wrap">
+                <span class="skill-group__icon-badge" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </span>
+                <h3 class="skill-group__title">Database</h3>
+              </div>
+              <span class="skill-group__index">03</span>
+            </div>
+            <div class="skill-group__divider" aria-hidden="true"></div>
+            <ul class="skill-list" aria-label="Database skills">
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M24 5c-1.2 2.4-9.5 8.8-9.5 19.2 0 8.5 5.8 13.5 9.5 15.3 3.7-1.8 9.5-6.8 9.5-15.3C33.5 13.8 25.2 7.4 24 5z"
+                      fill="#47A248" />
+                    <path d="M24 5v34.5c3.7-1.8 9.5-6.8 9.5-15.3C33.5 13.8 25.2 7.4 24 5z" fill="#3F8E40" />
+                    <path d="M23.3 38.5h1.4V44h-1.4z" fill="#A6A385" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">MongoDB</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M11 35.5L15.6 8.3c.2-1.1 1.6-1.4 2.2-.4l4.8 9-11.6 18.6z" fill="#FFA000" />
+                    <path d="M11 35.5l14.6-22.4c.5-.8 1.7-.7 2.1.1l4.3 8.8L11 35.5z" fill="#F57C00" />
+                    <path d="M11 35.5l24.5-16.6c.8-.5 1.9 0 2 1l2.5 15.6-15 8.5c-.6.4-1.4.4-2 0L11 35.5z" fill="#FFCA28" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Firebase</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                    <path
+                      d="M37 35c-2.5-.5-4.7-2.2-6-4.5-1.1-2-1.6-4.4-3.2-6.2-2.2-2.4-5.7-3.4-8.2-5.6-2.7-2.4-4.5-6.1-3.8-9.7 3.2.6 6.2 2.5 8.4 5 1.2-1.2 2.9-1.7 4.6-1.4-1 1.1-1.5 2.5-1.3 4 2.4 2.2 4.6 5.1 5.4 8.4.8 3.2.4 6.8 4.1 10z"
+                      stroke="#00758F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="20" cy="14" r="1.3" fill="#F29111" />
+                    <path d="M15.8 9c-2 2.5-2.8 6-1.5 9.2 1.2 3.1 4.2 5.3 6.5 7.7 2.4 2.5 3.6 6 6.2 8.2"
+                      stroke="#F29111" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">MySQL</span>
+                <span class="skill-tile__intro">Intro</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M24 7c-8.5 0-15 5.4-15 13.2 0 5.4 3.2 9.8 7.5 11.4v6.4c0 1.7 1.3 3 3 3h2c1.7 0 3-1.3 3-3v-3h2c6.8 0 12.5-5.8 12.5-14.8C39 12.4 32.5 7 24 7z"
+                      fill="#336791" />
+                    <path
+                      d="M19 18a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-6.5 6.5c1.5 1.2 3.5 1.2 5 0"
+                      stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" />
+                    <path d="M14 14c-2.5 2.5-3 7.5-1 11.5M34 14c2.5 2.5 3 7.5 1 11.5" stroke="#FFFFFF" stroke-width="2"
+                      stroke-linecap="round" fill="none" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">PostgreSQL</span>
+                <span class="skill-tile__intro">Intro</span>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          
+
+          <!-- 04: Tools -->
+          <div class="skill-group" data-skill-card data-card-idx="3">
+            <span class="skill-group__shimmer" aria-hidden="true"></span>
+            <div class="skill-group__header">
+              <div class="skill-group__title-wrap">
+                <span class="skill-group__icon-badge" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                  </svg>
+                </span>
+                <h3 class="skill-group__title">Tools</h3>
+              </div>
+              <span class="skill-group__index">04</span>
+            </div>
+            <div class="skill-group__divider" aria-hidden="true"></div>
+            <ul class="skill-list" aria-label="Development tools">
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M42.7 22.1L25.9 5.3a2.7 2.7 0 0 0-3.8 0l-3.7 3.7 4.7 4.7a3.2 3.2 0 0 1 4 4l4.5 4.5a3.2 3.2 0 1 1-1.9 1.9l-4.2-4.2v11a3.2 3.2 0 1 1-2.6-.1V19.6a3.2 3.2 0 0 1-1.7-4.2L16.5 10.7 5.3 21.9a2.7 2.7 0 0 0 0 3.8l16.8 16.8a2.7 2.7 0 0 0 3.8 0l16.8-16.8a2.7 2.7 0 0 0 0-3.6z"
+                      fill="#F05032" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Git</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M24 5C13.5 5 5 13.5 5 24c0 8.4 5.4 15.5 13 18 .9.2 1.3-.4 1.3-.9v-3.2c-5.3 1.1-6.4-2.5-6.4-2.5-.9-2.2-2.1-2.8-2.1-2.8-1.7-1.2.1-1.1.1-1.1 1.9.1 2.9 2 2.9 2 1.7 2.9 4.4 2.1 5.5 1.6.2-1.2.7-2.1 1.2-2.6-4.2-.5-8.7-2.1-8.7-9.4 0-2.1.7-3.8 2-5.1-.2-.5-.9-2.4.2-5 0 0 1.6-.5 5.2 2 1.5-.4 3.1-.6 4.8-.6 1.6 0 3.2.2 4.8.6 3.6-2.5 5.2-2 5.2-2 1 2.6.4 4.5.2 5 1.2 1.3 2 3 2 5.1 0 7.3-4.5 8.9-8.7 9.4.7.6 1.3 1.8 1.3 3.6v5.3c0 .5.3 1.1 1.3.9 7.6-2.5 13-9.6 13-18 0-10.5-8.5-19-19-19z"
+                      fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">GitHub</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path
+                      d="M35.2 5.5L18.4 21.8 8.8 14.5 5 16.4v15.2l3.8 1.9 9.6-7.3 16.8 16.3L43 38.7V9.3l-7.8-3.8zM10.5 27.8v-7.6l5 3.8-5 3.8zm23.5 5.4L23.5 24l10.5-9.2v18.4z"
+                      fill="#007ACC" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">VS Code</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <defs>
+                      <linearGradient id="agyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#60A5FA" />
+                        <stop offset="50%" stop-color="#A855F7" />
+                        <stop offset="100%" stop-color="#EC4899" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M24 5L8 39h6.8l3.4-7.6h11.6L33.2 39H40L24 5zm-3.1 20.4L24 18.2l3.1 7.2h-6.2z"
+                      fill="url(#agyGrad)" />
+                    <circle cx="38" cy="11" r="2.5" fill="#60A5FA" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Antigravity IDE</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M35.5 29.5h-22a6.5 6.5 0 0 1-1.1-12.9A10.5 10.5 0 0 1 32.8 15a7.5 7.5 0 0 1 2.7 14.5z"
+                      fill="#F38020" />
+                    <path d="M37.5 29.5a5.5 5.5 0 0 0 .5-11 7 7 0 0 0-6.8-5.5l-1.2 16.5h7.5z" fill="#FAAD3F" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Cloudflare</span>
+              </li>
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <path d="M24 8c8.8 0 16 7.2 16 16s-7.2 16-16 16V24H8C8 15.2 15.2 8 24 8z" fill="#46E3B7" />
+                    <rect x="8" y="26" width="14" height="14" rx="2" fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Render</span>
+              </li>
+            </ul>
+          </div>
+
+          
+
+        </div>
+
+        <!-- 05: Creative Skills (Compact card below technical grid) -->
+        <div class="skills__creative-wrap">
+          <div class="skill-group skill-group--creative" data-skill-card data-card-idx="4">
+            <span class="skill-group__shimmer" aria-hidden="true"></span>
+            <div class="skill-group__header">
+              <div class="skill-group__title-wrap">
+                <span class="skill-group__icon-badge" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                    <circle cx="7.5" cy="11.5" r="1.5" fill="currentColor"></circle>
+                    <circle cx="12" cy="7.5" r="1.5" fill="currentColor"></circle>
+                    <circle cx="16.5" cy="11.5" r="1.5" fill="currentColor"></circle>
+                  </svg>
+                </span>
+                <h3 class="skill-group__title">Creative Skills</h3>
+              </div>
+              <span class="skill-group__index">05</span>
+            </div>
+            <div class="skill-group__divider" aria-hidden="true"></div>
+            <ul class="skill-list skill-list--creative" aria-label="Creative skills">
+              <li class="skill-tile" data-skill-tile>
+                <span class="skill-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                    <defs>
+                      <linearGradient id="gdTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FF3864" />
+                        <stop offset="100%" stop-color="#9B0024" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="5" y="5" width="38" height="38" rx="10" fill="url(#gdTileGrad)" fill-opacity="0.2" stroke="#FF3864" stroke-width="1.8" />
+                    <path d="M28 13L35 20L20 35H13V28L28 13Z" fill="url(#gdTileGrad)" />
+                    <path d="M25 16L32 23" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="17" cy="31" r="1.5" fill="#FFFFFF" />
+                  </svg>
+                </span>
+                <span class="skill-tile__name">Graphic Design</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="skills__footer" data-skills-footer>
+          <span class="skills__footer-icon" aria-hidden="true">&lt;/&gt;</span>
+          <span class="skills__footer-bar" aria-hidden="true"></span>
+          <p class="skills__footer-text">Built through hands-on projects. Growing with every challenge.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section certificates" id="certificates" aria-labelledby="certificates-heading">
+      <!-- Ambient background lighting -->
+      <div class="certificates__ambient" aria-hidden="true"></div>
+
+      <!-- Thin decorative burgundy background curve with 2 moving dots -->
+      <div class="certificates__orbit" aria-hidden="true">
+        <svg viewBox="0 0 1200 320" fill="none" preserveAspectRatio="none">
+          <path d="M-50,220 C300,60 850,280 1250,90" stroke="url(#certOrbitGrad)" stroke-width="1.2" stroke-dasharray="6 6" />
+          <defs>
+            <linearGradient id="certOrbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6D001A" stop-opacity="0" />
+              <stop offset="35%" stop-color="#C31C42" stop-opacity="0.55" />
+              <stop offset="70%" stop-color="#6D001A" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="#6D001A" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="cert-orbit-dot cert-orbit-dot--1"></span>
+        <span class="cert-orbit-dot cert-orbit-dot--2"></span>
+      </div>
+
+      <div class="container certificates__container">
+        <!-- Section Header -->
+        <div class="certificates__header" data-certificates-header>
+          <div class="certificates__header-left">
+            <span class="certificates__pill">LEARNING &amp; GROWTH</span>
+            <h2 class="certificates__heading" id="certificates-heading" data-certificates-heading>
+              <span class="sr-only">Certificates &amp; Credentials</span>
+              <span class="cert-word-mask" aria-hidden="true"><span class="cert-word" data-word-idx="0">Certificates</span></span>
+              <span class="cert-word-mask" aria-hidden="true"><span class="cert-word" data-word-idx="1">&amp;</span></span>
+              <span class="cert-word-mask" aria-hidden="true"><span class="cert-word" data-word-idx="2">Credentials</span></span>
+            </h2>
+            <span class="certificates__header-line" aria-hidden="true"></span>
+            <p class="certificates__subtitle">Professional training and continuous learning.</p>
+          </div>
+          <div class="certificates__counter-badge" id="certCounterBadge" aria-label="02 certificates">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span class="certificates__counter-text" id="certCountText">02 certificates</span>
+          </div>
+        </div>
+
+        <!-- Certificates Grid (2 equal-width cards on desktop, 1 column on mobile) -->
+        <div class="certificates__grid" id="certificatesGrid">
+
+          <!-- Card 1: Micro-credential -->
+          <article class="cert-card" data-cert-card data-card-idx="0" aria-labelledby="cert-title-0">
+            <span class="cert-card__sweep" aria-hidden="true"></span>
+
+            <div class="cert-card__top">
+              <div class="cert-card__badge-wrap">
+                <span class="cert-card__award-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                </span>
+                <span class="cert-card__category">MICRO-CREDENTIAL</span>
+              </div>
+              <span class="cert-card__index" aria-hidden="true">01</span>
+            </div>
+
+            <div class="cert-card__frame">
+              <div class="cert-card__preview gallery-trigger"
+                data-gallery-src="assets/images/cert-ai-literacy.jpg"
+                data-gallery-caption="Certificate of Completion — Introduction to AI Literacy and Responsible Use (CHED &bull; Mapúa University) · ID: 6YOR8GAQ9BAGM">
+                <img src="assets/images/cert-ai-literacy.jpg"
+                  alt="Certificate of Completion for Introduction to AI Literacy and Responsible Use issued to Mahalalil Villaflores by CHED and Mapua University"
+                  loading="lazy" width="800" height="565" />
+                <button type="button" class="cert-card__expand-btn cert-expand-trigger" aria-label="Expand certificate: Introduction to AI Literacy and Responsible Use"
+                  data-gallery-src="assets/images/cert-ai-literacy.jpg"
+                  data-gallery-caption="Certificate of Completion — Introduction to AI Literacy and Responsible Use (CHED &bull; Mapúa University) · ID: 6YOR8GAQ9BAGM">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+              <p class="cert-card__frame-hint" aria-hidden="true">Click to view full document</p>
+            </div>
+
+            <div class="cert-card__body">
+              <h3 class="cert-card__title" id="cert-title-0">Introduction to AI Literacy and Responsible Use</h3>
+              <p class="cert-card__issuer">Commission on Higher Education (CHED) &bull; Mapúa University</p>
+
+              <div class="cert-card__meta">
+                <span class="cert-card__meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>14 September 2026</span>
+                </span>
+                <span class="cert-card__meta-sep" aria-hidden="true">&bull;</span>
+                <span class="cert-card__meta-id" title="Credential ID">ID: 6YOR8GAQ9BAGM</span>
+              </div>
+
+              <div class="cert-card__actions">
+                <button type="button" class="cert-card__btn cert-card__btn--view cert-view-trigger"
+                  data-gallery-src="assets/images/cert-ai-literacy.jpg"
+                  data-gallery-caption="Certificate of Completion — Introduction to AI Literacy and Responsible Use (CHED &bull; Mapúa University) · ID: 6YOR8GAQ9BAGM">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>View Certificate</span>
+                </button>
+                <a href="assets/images/cert-ai-literacy.jpg"
+                  download="Certificate-AI-Literacy-Mahalalil-Villaflores.jpg"
+                  class="cert-card__btn cert-card__btn--download"
+                  aria-label="Download Introduction to AI Literacy and Responsible Use certificate">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Professional Academy -->
+          <article class="cert-card" data-cert-card data-card-idx="1" aria-labelledby="cert-title-1">
+            <span class="cert-card__sweep" aria-hidden="true"></span>
+
+            <div class="cert-card__top">
+              <div class="cert-card__badge-wrap">
+                <span class="cert-card__award-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                </span>
+                <span class="cert-card__category">PROFESSIONAL ACADEMY</span>
+              </div>
+              <span class="cert-card__index" aria-hidden="true">02</span>
+            </div>
+
+            <div class="cert-card__frame">
+              <div class="cert-card__preview gallery-trigger"
+                data-gallery-src="assets/images/cert-cisco-networking.jpg"
+                data-gallery-caption="Cisco Networking Academy — Networking Basics Certificate · Cert ID: b8c22e7f-33af-497a-9d76-5b63e6bcc408">
+                <img src="assets/images/cert-cisco-networking.jpg"
+                  alt="Cisco Networking Academy Certificate awarded to M Villaflores for successfully completing Networking Basics"
+                  loading="lazy" width="800" height="565" />
+                <button type="button" class="cert-card__expand-btn cert-expand-trigger" aria-label="Expand certificate: Networking Basics"
+                  data-gallery-src="assets/images/cert-cisco-networking.jpg"
+                  data-gallery-caption="Cisco Networking Academy — Networking Basics Certificate · Cert ID: b8c22e7f-33af-497a-9d76-5b63e6bcc408">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+              <p class="cert-card__frame-hint" aria-hidden="true">Click to view full document</p>
+            </div>
+
+            <div class="cert-card__body">
+              <h3 class="cert-card__title" id="cert-title-1">Networking Basics</h3>
+              <p class="cert-card__issuer">Cisco Networking Academy</p>
+
+              <div class="cert-card__meta">
+                <span class="cert-card__meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>08 May 2026</span>
+                </span>
+                <span class="cert-card__meta-sep" aria-hidden="true">&bull;</span>
+                <span class="cert-card__meta-id" title="Certificate ID">Cert ID: b8c22e7f-33af-497a-9d76-5b63e6bcc408</span>
+              </div>
+
+              <div class="cert-card__actions">
+                <button type="button" class="cert-card__btn cert-card__btn--view cert-view-trigger"
+                  data-gallery-src="assets/images/cert-cisco-networking.jpg"
+                  data-gallery-caption="Cisco Networking Academy — Networking Basics Certificate · Cert ID: b8c22e7f-33af-497a-9d76-5b63e6bcc408">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>View Certificate</span>
+                </button>
+                <a href="assets/images/cert-cisco-networking.jpg"
+                  download="Certificate-Cisco-Networking-Basics-Mahalalil-Villaflores.jpg"
+                  class="cert-card__btn cert-card__btn--download"
+                  aria-label="Download Cisco Networking Academy Networking Basics certificate">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact__header" data-contact-header>
+          <span class="contact__pill">GET IN TOUCH</span>
+          <h2 class="contact__heading" id="contact-heading" data-contact-heading>
+            <span class="sr-only">Contact</span>
+            <span class="contact-word-mask" aria-hidden="true"><span class="contact-word" data-word-idx="0">Contact</span></span>
+          </h2>
+          <span class="contact__heading-line" aria-hidden="true"></span>
+          <p class="section__subtitle contact__subtitle">
+            Feel free to reach out for collaborations, opportunities, or just to connect.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <a class="contact__card" data-contact-card data-item-idx="0" href="mailto:mahalalilvillaflores@gmail.com"
+            aria-label="Send an email to Mahalalil Villaflores">
+            <span class="contact__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <span class="contact__label">Email</span>
+            <span class="contact__value">mahalalilvillaflores@gmail.com</span>
+          </a>
+
+          <a class="contact__card" data-contact-card data-item-idx="1" href="https://github.com/mahalalilvillaflores-jpg" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit Mahalalil's GitHub profile (opens in new tab)">
+            <span class="contact__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </span>
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">mahalalilvillaflores-jpg</span>
+          </a>
+
+          <a class="contact__card" data-contact-card data-item-idx="2" href="https://www.linkedin.com/in/mahalalil-villaflores-7a5136265" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit Mahalalil's LinkedIn profile (opens in new tab)">
+            <span class="contact__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </span>
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">mahalalil-villaflores</span>
+          </a>
+
+          <a class="contact__card" data-contact-card data-item-idx="3" href="https://www.facebook.com/share/1MfKE8io5u/" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit Mahalalil's Facebook profile (opens in new tab)">
+            <span class="contact__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </span>
+            <span class="contact__label">Facebook</span>
+            <span class="contact__value">Mahalalil Villaflores</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p class="footer__name">Mahalalil P. Villaflores</p>
+      <p class="footer__copy">&copy; <span id="footerYear"></span> All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Project Preview Modal"
+    aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Close modal">&times;</button>
+      <div class="modal__image-wrapper">
+        <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          alt="" />
+      </div>
+      <p class="modal__caption" id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

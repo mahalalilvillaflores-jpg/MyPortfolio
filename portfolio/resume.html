@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('mpv-portfolio-theme');
+        var theme = saved;
+        if (!theme || (theme !== 'dark' && theme !== 'light')) {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Resume of Mahalalil P. Villaflores — Aspiring Full-Stack Web Developer." />
+  <title>Resume — Mahalalil P. Villaflores</title>
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://myportfolio-mahalalil.vercel.app/resume.html" />
+  <meta property="og:title" content="Mahalalil P. Villaflores | Resume" />
+  <meta property="og:description" content="Resume of Mahalalil P. Villaflores — Aspiring Full-Stack Web Developer." />
+  <meta property="og:image" content="https://myportfolio-mahalalil.vercel.app/assets/images/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mahalalil P. Villaflores | Resume" />
+  <meta name="twitter:description" content="Resume of Mahalalil P. Villaflores — Aspiring Full-Stack Web Developer." />
+  <meta name="twitter:image" content="https://myportfolio-mahalalil.vercel.app/assets/images/og-preview.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="css/resume.css" />
+</head>
+<body>
+
+  <div class="resume-toolbar no-print">
+    <div class="resume-toolbar__inner">
+      <a class="btn-back" href="index.html">&larr; Back to Portfolio</a>
+      <div class="resume-toolbar__actions">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          title="Toggle light/dark mode"
+        >
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="btn-print" id="resumePrintBtn" type="button">Save As PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="resume-page" id="resume">
+    <header class="resume-header">
+      <div class="resume-header__inner">
+        <div class="resume-header__photo-wrap">
+          <img
+            class="resume-header__photo"
+            src="assets/images/resume-photo.jpg"
+            alt="Portrait of Mahalalil P. Villaflores"
+            width="112"
+            height="112"
+          />
+        </div>
+        <div class="resume-header__info">
+          <h1 class="resume-name">MAHALALIL P. VILLAFLORES</h1>
+          <p class="resume-title">Aspiring Full-Stack Web Developer</p>
+          <div class="resume-contact">
+            <span>Kawayan, Biliran, Philippines</span>
+            <span class="sep">&bull;</span>
+            <a href="mailto:mahalalilvillaflores@gmail.com">mahalalilvillaflores@gmail.com</a>
+            <span class="sep">&bull;</span>
+            <a href="https://github.com/mahalalilvillaflores-jpg" target="_blank" rel="noopener noreferrer">github.com/mahalalilvillaflores-jpg</a>
+            <span class="sep">&bull;</span>
+            <a href="https://www.linkedin.com/in/mahalalil-villaflores-7a5136265" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahalalil-villaflores-7a5136265</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2 class="resume-section__title">Professional Summary</h2>
+      <p class="resume-summary">
+        Fourth-year Computer Science student with hands-on project experience developing web and mobile applications. Skilled in React, JavaScript, Node.js, Express, and MongoDB. Developed PrintDayon, an online printing services platform combining shop recommendations, shortest-path routing, and real-time queue tracking. Seeking opportunities to contribute to practical software projects and grow as a full-stack web developer.
+      </p>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="resume-section__title">Technical Skills</h2>
+      <div class="resume-skills">
+        <p><strong>Frontend:</strong> JavaScript (ES6+), React, HTML5, CSS3, Tailwind CSS, Vite</p>
+        <p><strong>Mobile Development:</strong> Dart, Flutter</p>
+        <p><strong>Backend:</strong> Node.js, Express, PHP, Python, REST APIs, Socket.IO</p>
+        <p><strong>Databases:</strong> MongoDB, Firebase, MySQL (introductory), PostgreSQL (introductory)</p>
+        <p><strong>Database Tools:</strong> Mongoose</p>
+        <p><strong>Development Tools:</strong> Git, GitHub, Visual Studio Code, Antigravity IDE</p>
+        <p><strong>Deployment:</strong> Cloudflare Pages, Render, Railway</p>
+        <p><strong>Additional Skills:</strong> Graphic Design, CRUD Development, Dijkstra&rsquo;s Algorithm, Haversine Formula, First-Come, First-Served (FCFS) Scheduling</p>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="resume-section__title">Project Experience</h2>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">PrintDayon &mdash; Online Printing Services with Spatial Routing and Queue Optimization</h3>
+          <span class="resume-item__date">Full-Stack Developer</span>
+        </div>
+        <p class="resume-item__tech">Technologies: React, Vite, Tailwind CSS, Node.js, Express, MongoDB, Socket.IO, MapLibre GL</p>
+        <ul class="resume-item__bullets">
+          <li>Developed the frontend, backend, and database integration for a printing services platform serving customers and printing shops in Naval, Biliran.</li>
+          <li>Implemented shop recommendations based on estimated completion time, combining travel time, queue waiting time, and printing duration.</li>
+          <li>Used Dijkstra&rsquo;s algorithm for shortest-path routing and the Haversine formula for geographic distance calculations.</li>
+          <li>Built real-time order status updates and queue tracking using Socket.IO.</li>
+          <li>Integrated MapLibre GL to display printing shop locations and routes.</li>
+          <li>Deployed the frontend on Cloudflare Pages and the backend on Render.</li>
+        </ul>
+      </article>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Roasted Route &mdash; Online Food Ordering Platform</h3>
+          <span class="resume-item__date">Developer</span>
+        </div>
+        <p class="resume-item__tech">Technologies: Python, HTML5, CSS3, Render</p>
+        <ul class="resume-item__bullets">
+          <li>Developed a web application for a local roasted chicken business with customer registration, menu browsing, and order submission.</li>
+          <li>Deployed the application on Render.</li>
+        </ul>
+      </article>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Room Management System</h3>
+          <span class="resume-item__date">Developer</span>
+        </div>
+        <p class="resume-item__tech">Technologies: PHP, MySQL, HTML, CSS</p>
+        <ul class="resume-item__bullets">
+          <li>Built a web application for creating, viewing, updating, and deleting room records.</li>
+          <li>Connected the application to a MySQL database for room information storage and retrieval.</li>
+        </ul>
+      </article>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Rent Tracker &mdash; Mobile Rental Management Application</h3>
+          <span class="resume-item__date">Developer</span>
+        </div>
+        <p class="resume-item__tech">Technologies: Dart, Flutter, Firebase</p>
+        <ul class="resume-item__bullets">
+          <li>Developed a mobile application for recording tenant information and tracking rental payments.</li>
+          <li>Integrated Firebase to store and synchronize tenant and payment records.</li>
+        </ul>
+      </article>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Task Queuer &mdash; CPU Scheduling Application</h3>
+          <span class="resume-item__date">Developer</span>
+        </div>
+        <p class="resume-item__tech">Technology: Python</p>
+        <ul class="resume-item__bullets">
+          <li>Developed an application demonstrating First-Come, First-Served process scheduling.</li>
+          <li>Implemented process execution sequencing and calculations for waiting time and turnaround time.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="resume-section__title">Education</h2>
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Bachelor of Science in Computer Science</h3>
+          <span class="resume-item__date">Fourth-Year Student</span>
+        </div>
+        <p class="resume-item__sub">Biliran Province State University &bull; Naval, Biliran, Philippines</p>
+      </article>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="resume-section__title">Certifications &amp; Credentials</h2>
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Introduction to AI Literacy and Responsible Use</h3>
+          <span class="resume-item__date">September 2026</span>
+        </div>
+        <p class="resume-item__sub">Commission on Higher Education (CHED) &bull; Map&uacute;a University (Credential ID: 6YOR8GAQ9BAGM)</p>
+      </article>
+
+      <article class="resume-item">
+        <div class="resume-item__header">
+          <h3 class="resume-item__title">Networking Basics</h3>
+          <span class="resume-item__date">May 2026</span>
+        </div>
+        <p class="resume-item__sub">Cisco Networking Academy (Cert ID: b8c22e7f-33af-497a-9d76-5b63e6bcc408)</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

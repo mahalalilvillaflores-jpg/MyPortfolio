@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Vercel deployment folder
+.vercel/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE and temp files
+.vscode/
+*.log
+
