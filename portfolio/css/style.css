@@ -1062,18 +1062,140 @@ a:hover {
   z-index: 1;
 }
 
-/* One-Time Reveal Animation (16px upward + fade) */
+/* ── About Section Scroll-Triggered Animations (Smooth 600–800ms Gentle Easing) ── */
 [data-about-reveal] {
+  opacity: 1;
+}
+
+/* 1. Left Quote Card: Fade in moving 30px from the left */
+.about__statement-card[data-about-reveal] {
   opacity: 0;
-  transform: translate3d(0, 16px, 0);
+  transform: translate3d(-30px, 0, 0);
   transition:
-    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
     border-color 240ms ease,
     box-shadow 240ms ease;
 }
 
-[data-about-reveal].is-revealed {
+.about__statement-card[data-about-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 2. Right Story Column: Fade in moving upward by 24px */
+.about__story-col[data-about-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about__story-col[data-about-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Story Content Paragraphs: Staggered upward fade */
+.about__story-label,
+.about__story-text,
+.about__story-closing {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about__story-col.is-revealed .about__story-label {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms;
+}
+
+.about__story-col.is-revealed .about__story-text:nth-of-type(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 160ms;
+}
+
+.about__story-col.is-revealed .about__story-text:nth-of-type(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+.about__story-col.is-revealed .about__story-closing {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 660ms;
+}
+
+/* 3. Project Buttons: 80ms Staggered Reveal */
+.about__project-pills-wrap {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1) 280ms,
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1) 280ms;
+}
+
+.about__story-col.is-revealed .about__project-pills-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__project-pill {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.about__story-col.is-revealed .about__project-pill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__story-col.is-revealed .about__project-pill:nth-child(1) {
+  transition-delay: 300ms, 300ms, 0ms, 0ms, 0ms;
+}
+.about__story-col.is-revealed .about__project-pill:nth-child(2) {
+  transition-delay: 380ms, 380ms, 0ms, 0ms, 0ms;
+}
+.about__story-col.is-revealed .about__project-pill:nth-child(3) {
+  transition-delay: 460ms, 460ms, 0ms, 0ms, 0ms;
+}
+.about__story-col.is-revealed .about__project-pill:nth-child(4) {
+  transition-delay: 540ms, 540ms, 0ms, 0ms, 0ms;
+}
+.about__story-col.is-revealed .about__project-pill:nth-child(5) {
+  transition-delay: 620ms, 620ms, 0ms, 0ms, 0ms;
+}
+
+.about__story-col.is-revealed .about__project-pill:hover,
+.about__story-col.is-revealed .about__project-pill:focus-visible {
+  transform: translateY(-2px);
+  transition-delay: 0ms;
+}
+
+/* 4. Bottom Detail Cards */
+.about__card[data-about-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.about__card[data-about-reveal].is-revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -1088,6 +1210,127 @@ a:hover {
 
 .about__card--3[data-about-reveal] {
   transition-delay: 300ms, 300ms, 0ms, 0ms;
+}
+
+/* 5. Heading and Subtitle: Fade in moving upward by 20px */
+.about__heading,
+.about__subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about__heading .about-word {
+  transform: none;
+  opacity: 1;
+  transition: none;
+}
+
+.about__header-row.is-revealed .about__heading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__header-row.is-revealed .about__subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+/* 6. Burgundy Underline: Expand from left to right when heading enters view */
+.about__header-line {
+  display: block;
+  width: 58px;
+  height: 3px;
+  margin-top: 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d41944 0%, #6d001a 100%);
+  box-shadow: 0 0 12px rgba(180, 16, 52, 0.65);
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1) 240ms,
+    opacity 400ms ease 240ms;
+}
+
+.about__header-row.is-revealed .about__header-line {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* 7. Statistics Bar: Fade in with three items appearing in sequence */
+.about__stats-strip {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1) 140ms,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 140ms;
+}
+
+.about__header-row.is-revealed .about__stats-strip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__stat-item,
+.about__stat-divider {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about__header-row.is-revealed .about__stat-item:nth-of-type(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 220ms;
+}
+.about__header-row.is-revealed .about__stat-divider:nth-of-type(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 300ms;
+}
+.about__header-row.is-revealed .about__stat-item:nth-of-type(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 380ms;
+}
+.about__header-row.is-revealed .about__stat-divider:nth-of-type(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 460ms;
+}
+.about__header-row.is-revealed .about__stat-item:nth-of-type(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 540ms;
+}
+
+/* Mobile Movement Reduction */
+@media (max-width: 768px) {
+  .about__statement-card[data-about-reveal] {
+    transform: translate3d(-12px, 0, 0);
+  }
+  .about__story-col[data-about-reveal] {
+    transform: translate3d(0, 14px, 0);
+  }
+  .about__heading,
+  .about__subtitle {
+    transform: translateY(12px);
+  }
+  .about__stat-item,
+  .about__stat-divider,
+  .about__story-label,
+  .about__story-text,
+  .about__story-closing,
+  .about__project-pills-wrap,
+  .about__project-pill {
+    transform: translateY(10px);
+  }
 }
 
 /* Section Header Row */
@@ -1137,16 +1380,6 @@ a:hover {
   color: #d4d4d8;
   line-height: 1.45;
   margin-top: var(--heading-sub-gap);
-}
-
-.about__header-line {
-  display: block;
-  width: 58px;
-  height: 3px;
-  margin-top: 0.85rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #d41944 0%, #6d001a 100%);
-  box-shadow: 0 0 12px rgba(180, 16, 52, 0.65);
 }
 
 /* Right Compact Horizontal Statistics Strip */
@@ -5322,6 +5555,17 @@ a:hover {
 html:not(.anim-ready) .hero__char,
 html:not(.anim-ready) .hero__greeting,
 html:not(.anim-ready) .about-word,
+html:not(.anim-ready) .about__heading,
+html:not(.anim-ready) .about__statement-card,
+html:not(.anim-ready) .about__story-col,
+html:not(.anim-ready) .about__story-label,
+html:not(.anim-ready) .about__story-text,
+html:not(.anim-ready) .about__story-closing,
+html:not(.anim-ready) .about__project-pills-wrap,
+html:not(.anim-ready) .about__project-pill,
+html:not(.anim-ready) .about__stats-strip,
+html:not(.anim-ready) .about__stat-item,
+html:not(.anim-ready) .about__stat-divider,
 html:not(.anim-ready) .wg-word,
 html:not(.anim-ready) .po-word,
 html:not(.anim-ready) .skills-word,
@@ -5353,6 +5597,17 @@ html:not(.anim-ready) .contact__heading-line {
   .hero__char,
   .hero__greeting,
   .about-word,
+  .about__heading,
+  .about__statement-card,
+  .about__story-col,
+  .about__story-label,
+  .about__story-text,
+  .about__story-closing,
+  .about__project-pills-wrap,
+  .about__project-pill,
+  .about__stats-strip,
+  .about__stat-item,
+  .about__stat-divider,
   .wg-word,
   .po-word,
   .skills-word,
