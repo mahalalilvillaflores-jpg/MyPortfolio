@@ -4923,6 +4923,43 @@ a:hover {
   margin-bottom: var(--header-content-gap);
 }
 
+/* ── Contact Section Scroll-Triggered Animations (Smooth 600–700ms Gentle Easing) ── */
+
+/* 1. Badge, Heading, and Description: Gentle fade upward, staggered by 100ms */
+.contact__pill,
+.contact__heading,
+.contact__subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact__heading .contact-word {
+  transform: none;
+  opacity: 1;
+  transition: none;
+}
+
+.contact__header.is-revealed .contact__pill {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0ms;
+}
+
+.contact__header.is-revealed .contact__heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 100ms;
+}
+
+.contact__header.is-revealed .contact__subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 200ms;
+}
+
 .contact__pill {
   display: inline-block;
   font-size: 0.72rem;
@@ -4946,6 +4983,7 @@ a:hover {
   margin: 0 0 0.65rem;
 }
 
+/* 2. Burgundy Underline: Expand from left to right (origin on left) */
 .contact__heading-line {
   display: block;
   width: 38px;
@@ -4953,6 +4991,17 @@ a:hover {
   background: #6D001A;
   border-radius: 2px;
   margin-bottom: 0.85rem;
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+  transition:
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 150ms,
+    opacity 400ms ease 150ms;
+}
+
+.contact__header.is-revealed .contact__heading-line {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .contact__subtitle {
@@ -4969,6 +5018,7 @@ a:hover {
   gap: var(--grid-gap);
 }
 
+/* 3. Contact Cards: Fade upward of 24px, staggered by 100ms in Email -> GitHub -> LinkedIn -> Facebook order */
 .contact__card {
   display: flex;
   flex-direction: column;
@@ -4980,16 +5030,61 @@ a:hover {
   background: linear-gradient(155deg, rgba(20, 4, 8, 0.95) 0%, rgba(12, 12, 12, 0.98) 100%);
   text-decoration: none;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(24px);
   transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
     border-color 250ms ease,
-    box-shadow 250ms ease,
-    transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow 250ms ease;
 }
 
-.contact__card:hover {
+.contact__card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Desktop stagger (Email: 0ms, GitHub: 100ms, LinkedIn: 200ms, Facebook: 300ms) */
+@media (min-width: 1024px) {
+  .contact__card:nth-child(1) {
+    transition-delay: 0ms, 0ms, 0ms, 0ms;
+  }
+  .contact__card:nth-child(2) {
+    transition-delay: 100ms, 100ms, 0ms, 0ms;
+  }
+  .contact__card:nth-child(3) {
+    transition-delay: 200ms, 200ms, 0ms, 0ms;
+  }
+  .contact__card:nth-child(4) {
+    transition-delay: 300ms, 300ms, 0ms, 0ms;
+  }
+}
+
+/* Tablet 2-column stagger (0ms & 100ms per row) */
+@media (min-width: 480px) and (max-width: 1023px) {
+  .contact__card:nth-child(odd) {
+    transition-delay: 0ms, 0ms, 0ms, 0ms;
+  }
+  .contact__card:nth-child(even) {
+    transition-delay: 100ms, 100ms, 0ms, 0ms;
+  }
+}
+
+/* Mobile single column: Reveal immediately upon entering viewport without waiting */
+@media (max-width: 479px) {
+  .contact__card {
+    transition-delay: 0ms, 0ms, 0ms, 0ms;
+  }
+}
+
+/* Preserve hover transition responsiveness after revealed */
+.contact__card.is-revealed:hover,
+.contact__card.is-revealed:focus-visible {
   border-color: rgba(195, 28, 66, 0.75);
   box-shadow: 0 16px 36px -8px rgba(109, 0, 26, 0.45);
   transform: translateY(-4px);
+  transition-duration: 250ms;
+  transition-delay: 0ms;
   text-decoration: none;
 }
 
@@ -5023,11 +5118,30 @@ a:hover {
   word-break: break-all;
 }
 
+/* 4. Footer Scroll-Triggered Fade In */
 .site-footer {
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
   padding-block: 1.75rem;
+  opacity: 0;
+  transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-footer.is-revealed {
+  opacity: 1;
+}
+
+/* Mobile Movement Reduction */
+@media (max-width: 768px) {
+  .contact__pill,
+  .contact__heading,
+  .contact__subtitle {
+    transform: translateY(12px);
+  }
+  .contact__card {
+    transform: translateY(14px);
+  }
 }
 
 .footer__inner {
@@ -5427,8 +5541,7 @@ a:hover {
 .wg-word,
 .po-word,
 .skills-word,
-.cert-word,
-.contact-word {
+.cert-word {
   display: inline-block;
   transform: translateY(20px);
   opacity: 0;
@@ -5443,8 +5556,6 @@ a:hover {
 .is-revealed .po-word,
 .is-revealed .skills-word,
 .is-revealed .cert-word,
-.is-revealed .contact-word,
-.contact__header.is-revealed .contact-word,
 .about__header-row.is-revealed .about-word {
   transform: translateY(0);
   opacity: 1;
@@ -5454,8 +5565,7 @@ a:hover {
 .about__header-line,
 .work-gallery__heading-line,
 .skills__header-line,
-.certificates__header-line,
-.contact__heading-line {
+.certificates__header-line {
   transform-origin: left center;
   transform: scaleX(0);
   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) 180ms;
@@ -5465,8 +5575,6 @@ a:hover {
 .is-revealed .work-gallery__heading-line,
 .is-revealed .skills__header-line,
 .is-revealed .certificates__header-line,
-.is-revealed .contact__heading-line,
-.contact__header.is-revealed .contact__heading-line,
 .about__header-row.is-revealed .about__header-line {
   transform: scaleX(1);
 }
@@ -5477,7 +5585,6 @@ a:hover {
 .projects-overview__subtitle,
 .skills__subtitle,
 .certificates__subtitle,
-.contact__subtitle,
 .about__story-text,
 .about__quote-sub {
   opacity: 0;
@@ -5492,18 +5599,15 @@ a:hover {
 .is-revealed .projects-overview__subtitle,
 .is-revealed .skills__subtitle,
 .is-revealed .certificates__subtitle,
-.is-revealed .contact__subtitle,
 .is-revealed .about__story-text,
 .is-revealed .about__quote-sub,
-.contact__header.is-revealed .contact__subtitle,
 .about__header-row.is-revealed .about__subtitle {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 5. Skills, Certificates, Contact, and Project Cards (600ms, translateY(20px), 80ms stagger, <1.2s) */
-.about__card,
-.contact__card {
+/* 5. Skills, Certificates, and About Cards (600ms, translateY(20px), 80ms stagger, <1.2s) */
+.about__card {
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -5515,9 +5619,7 @@ a:hover {
 }
 
 .is-revealed.about__card,
-.about__card.is-revealed,
-.contact__card.is-revealed,
-.contact.is-revealed .contact__card {
+.about__card.is-revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -5576,6 +5678,8 @@ html:not(.anim-ready) .work-gallery__subtitle,
 html:not(.anim-ready) .projects-overview__subtitle,
 html:not(.anim-ready) .skills__subtitle,
 html:not(.anim-ready) .certificates__subtitle,
+html:not(.anim-ready) .contact__pill,
+html:not(.anim-ready) .contact__heading,
 html:not(.anim-ready) .contact__subtitle,
 html:not(.anim-ready) .about__card,
 html:not(.anim-ready) .contact__card,
@@ -5585,7 +5689,8 @@ html:not(.anim-ready) .about__header-line,
 html:not(.anim-ready) .work-gallery__heading-line,
 html:not(.anim-ready) .skills__header-line,
 html:not(.anim-ready) .certificates__header-line,
-html:not(.anim-ready) .contact__heading-line {
+html:not(.anim-ready) .contact__heading-line,
+html:not(.anim-ready) .site-footer {
   opacity: 1 !important;
   transform: none !important;
   transition: none !important;
@@ -5618,6 +5723,8 @@ html:not(.anim-ready) .contact__heading-line {
   .projects-overview__subtitle,
   .skills__subtitle,
   .certificates__subtitle,
+  .contact__pill,
+  .contact__heading,
   .contact__subtitle,
   .about__card,
   .contact__card,
@@ -5628,6 +5735,7 @@ html:not(.anim-ready) .contact__heading-line {
   .skills__header-line,
   .certificates__header-line,
   .contact__heading-line,
+  .site-footer,
   [data-scroll-parallax] {
     opacity: 1 !important;
     transform: none !important;

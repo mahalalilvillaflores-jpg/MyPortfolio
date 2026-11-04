@@ -851,7 +851,8 @@ const revealTargetSelectors = [
   '.work-gallery__header',
   '.work-gallery-wrap',
   '.contact__header',
-  '.contact__card'
+  '.contact__card',
+  '.site-footer'
 ];
 
 const unifiedRevealElements = document.querySelectorAll(revealTargetSelectors.join(', '));
@@ -865,6 +866,11 @@ if (unifiedRevealElements.length > 0) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-revealed');
             observer.unobserve(entry.target);
+            if (entry.target.classList.contains('contact__card')) {
+              setTimeout(() => {
+                entry.target.style.transitionDelay = '0ms';
+              }, 1000);
+            }
           }
         });
       },
