@@ -4749,7 +4749,7 @@ a:hover {
 .cert-card__issuer {
   font-size: 0.88rem;
   color: #9da3ae;
-  margin: 0 0 0.85rem;
+  margin: 0;
   font-weight: 500;
 }
 
