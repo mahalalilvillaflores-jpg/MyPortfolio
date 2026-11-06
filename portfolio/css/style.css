@@ -5106,18 +5106,16 @@ a:hover {
 }
 
 .contact__label {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #ff94a8;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  transition: color 200ms ease;
 }
 
-.contact__value {
-  font-size: 0.92rem;
-  color: #ffffff;
-  font-weight: 600;
-  word-break: break-all;
+.contact__card:hover .contact__label,
+.contact__card:focus-visible .contact__label {
+  color: #ff94a8;
 }
 
 /* 4. Footer Scroll-Triggered Fade In */
@@ -6870,11 +6868,12 @@ body,
 }
 
 [data-theme="light"] .contact__label {
-  color: #525252;
+  color: #111111;
 }
 
-[data-theme="light"] .contact__value {
-  color: #111111;
+[data-theme="light"] .contact__card:hover .contact__label,
+[data-theme="light"] .contact__card:focus-visible .contact__label {
+  color: #6D001A;
 }
 
 /* 8. Footer */
