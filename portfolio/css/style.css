@@ -4033,13 +4033,15 @@ a:hover {
   max-width: 480px;
 }
 
-.skill-list--creative {
+.skill-list.skill-list--creative {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.85rem;
 }
 
-.skill-list--creative .skill-tile {
-  min-width: 110px;
+.skill-list.skill-list--creative .skill-tile {
+  min-width: 105px;
 }
 
 .skill-group {
