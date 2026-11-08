@@ -14,6 +14,7 @@
   --color-badge-text: #ffffff;
 
   --font-display: 'Anton', Impact, 'Arial Narrow', 'Franklin Gothic Heavy', sans-serif;
+  --font-headline: 'Bebas Neue', 'Anton', Impact, 'Arial Narrow', sans-serif;
   --font-script: 'Caveat', 'Segoe Script', 'Brush Script MT', cursive;
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
@@ -527,37 +528,18 @@ a:hover {
   justify-content: center;
 }
 
-.hero__bg-word-mask::after {
-  content: '';
-  position: absolute;
-  left: -20px;
-  right: -20px;
-  bottom: -10px;
-  height: 52%;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.45) 35%,
-    rgba(0, 0, 0, 0.88) 75%,
-    #000000 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-
 .hero__bg-word {
-  font-family: var(--font-display);
-  font-size: clamp(3.8rem, 19.8vw, 21.5rem);
+  font-family: var(--font-headline);
+  font-size: clamp(4.5rem, 23vw, 25rem);
   font-weight: 400;
-  line-height: 0.96;
+  line-height: 0.9;
   letter-spacing: -0.015em;
   text-transform: uppercase;
   white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
   display: inline-flex;
-  padding-top: 0.5rem;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+  padding-top: 0.35rem;
 }
 
 .hero__bg-char {
@@ -568,12 +550,11 @@ a:hover {
   animation-delay: calc(50ms + var(--bg-char-index, 0) * 48ms);
   background: linear-gradient(
     180deg,
-    #cf1e3c 0%,
-    #b3122c 25%,
-    #7a0219 50%,
-    #38000b 72%,
-    #120003 86%,
-    #000000 100%
+    #850322 0%,
+    #72001B 35%,
+    #600017 65%,
+    #460011 85%,
+    #35000C 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6048,27 +6029,17 @@ body,
 [data-theme="light"] .hero__bg-char {
   background: linear-gradient(
     180deg,
-    #cf788f 0%,
-    #a84860 30%,
-    #7a263d 60%,
-    #4a1020 82%,
-    #FFFFFF 100%
+    #b84d65 0%,
+    #9c344d 35%,
+    #821f37 65%,
+    #691026 85%,
+    #54091c 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
   opacity: 0.85;
-}
-
-[data-theme="light"] .hero__bg-word-mask::after {
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.45) 35%,
-    rgba(255, 255, 255, 0.9) 75%,
-    #FFFFFF 100%
-  );
 }
 
 [data-theme="light"] .hero__greeting {
