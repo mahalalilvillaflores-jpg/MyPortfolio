@@ -6164,8 +6164,8 @@ body,
   --color-bg-alt: #F8F6F7;
   --color-card: #FFFFFF;
   --color-skill-tile: #F8F6F7;
-  --color-text: #111111;
-  --color-text-muted: #525252;
+  --color-text: #000000;
+  --color-text-muted: #000000;
   --color-primary: #6D001A;
   --color-accent: #6D001A;
   --color-accent-dark: #4D0012;
@@ -6177,7 +6177,7 @@ body,
 
 [data-theme="light"] body {
   background-color: #FFFFFF;
-  color: #111111;
+  color: #000000;
 }
 
 /* 1. Header & Navigation */
@@ -6188,11 +6188,11 @@ body,
 }
 
 [data-theme="light"] .nav__logo-white {
-  fill: #111111;
+  fill: #000000;
 }
 
 [data-theme="light"] .nav__brand-name {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .nav__brand-divider {
@@ -6200,7 +6200,7 @@ body,
 }
 
 [data-theme="light"] .nav__link {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .nav__link:hover,
@@ -6215,7 +6215,7 @@ body,
 [data-theme="light"] .hamburger,
 [data-theme="light"] .hamburger::before,
 [data-theme="light"] .hamburger::after {
-  background: #111111;
+  background: #000000;
 }
 
 [data-theme="light"] .nav__toggle {
@@ -6226,7 +6226,7 @@ body,
 [data-theme="light"] .nav__theme-toggle {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
   box-shadow: 0 2px 8px rgba(109, 0, 26, 0.06);
 }
 
@@ -6278,11 +6278,11 @@ body,
 [data-theme="light"] .hero__name,
 [data-theme="light"] .hero__name-line,
 [data-theme="light"] .hero__char {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__role-text {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__role-cursor {
@@ -6290,7 +6290,7 @@ body,
 }
 
 [data-theme="light"] .hero__desc {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__btn--primary {
@@ -6308,7 +6308,7 @@ body,
 
 [data-theme="light"] .hero__btn--outline {
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
   background: #FFFFFF;
 }
 
@@ -6319,7 +6319,7 @@ body,
 }
 
 [data-theme="light"] .hero__interests {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__dot {
@@ -6337,7 +6337,7 @@ body,
 }
 
 [data-theme="light"] .hero__motto-text {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__project-item {
@@ -6356,11 +6356,11 @@ body,
 }
 
 [data-theme="light"] .hero__project-name {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__scroll-cue {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .hero__scroll-cue:hover {
@@ -6389,7 +6389,7 @@ body,
 
 [data-theme="light"] .about__heading,
 [data-theme="light"] .about-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__header-line {
@@ -6397,7 +6397,7 @@ body,
 }
 
 [data-theme="light"] .about__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__stats-strip {
@@ -6407,11 +6407,11 @@ body,
 }
 
 [data-theme="light"] .about__stat-val {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__stat-lbl {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__stat-divider {
@@ -6435,11 +6435,11 @@ body,
 }
 
 [data-theme="light"] .about__statement-title {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__statement-sub {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__code-badge {
@@ -6453,7 +6453,7 @@ body,
 }
 
 [data-theme="light"] .about__footer-motto {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__story-label {
@@ -6472,7 +6472,7 @@ body,
 [data-theme="light"] .about__project-pill {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__project-pill:hover,
@@ -6488,7 +6488,7 @@ body,
 }
 
 [data-theme="light"] .about__story-closing {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__card {
@@ -6514,7 +6514,7 @@ body,
 }
 
 [data-theme="light"] .about__card-label {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__card-index {
@@ -6523,17 +6523,17 @@ body,
 }
 
 [data-theme="light"] .about__card-primary {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .about__card-secondary {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .about__hobby-pill {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 /* 4. Projects & Work Gallery */
@@ -6549,7 +6549,7 @@ body,
 
 [data-theme="light"] .work-gallery__heading,
 [data-theme="light"] .wg-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__header-line {
@@ -6557,7 +6557,7 @@ body,
 }
 
 [data-theme="light"] .work-gallery__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__more-btn {
@@ -6581,7 +6581,7 @@ body,
 [data-theme="light"] .work-gallery__status-pill {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__center-glow {
@@ -6591,7 +6591,7 @@ body,
 [data-theme="light"] .work-gallery__nav-btn {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__nav-btn:hover {
@@ -6617,7 +6617,7 @@ body,
 }
 
 [data-theme="light"] .work-gallery__active-title {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__active-subtitle {
@@ -6625,21 +6625,21 @@ body,
 }
 
 [data-theme="light"] .work-gallery__active-desc {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__tech .tech-badge {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__role-label {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__role-value {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__btn--primary {
@@ -6656,7 +6656,7 @@ body,
 [data-theme="light"] .work-gallery__btn--outline {
   background: #FFFFFF;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__btn--outline:hover {
@@ -6671,11 +6671,11 @@ body,
 }
 
 [data-theme="light"] .work-gallery__selector {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__selector:hover {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .work-gallery__selector.active {
@@ -6702,17 +6702,17 @@ body,
 
 [data-theme="light"] .projects-overview__heading,
 [data-theme="light"] .po-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .projects-overview__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .projects-overview__counter {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured {
@@ -6732,7 +6732,7 @@ body,
 }
 
 [data-theme="light"] .project-featured__preview-label {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__accent-bar {
@@ -6747,7 +6747,7 @@ body,
 [data-theme="light"] .project-featured__expand-btn {
   background: rgba(255, 255, 255, 0.92);
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__expand-btn:hover {
@@ -6763,7 +6763,7 @@ body,
 [data-theme="light"] .project-featured__slide-nav {
   background: rgba(255, 255, 255, 0.9);
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
   box-shadow: 0 6px 18px rgba(109, 0, 26, 0.12);
 }
 
@@ -6808,7 +6808,7 @@ body,
 [data-theme="light"] .project-featured__arrow {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__arrow:hover {
@@ -6818,11 +6818,11 @@ body,
 }
 
 [data-theme="light"] .project-featured__nav-counter {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__title {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__subtitle {
@@ -6830,11 +6830,11 @@ body,
 }
 
 [data-theme="light"] .project-featured__desc {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__feature-item {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__feature-icon {
@@ -6855,7 +6855,7 @@ body,
 [data-theme="light"] .project-featured__btn--outline {
   background: #FFFFFF;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__btn--outline:hover {
@@ -6878,17 +6878,17 @@ body,
 }
 
 [data-theme="light"] .project-featured__summary-heading {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__summary-text {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__summary-pill {
   background: #FFFFFF;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__next-row {
@@ -6896,7 +6896,7 @@ body,
 }
 
 [data-theme="light"] .project-featured__next-label {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .project-featured__next-name {
@@ -6920,7 +6920,7 @@ body,
 
 [data-theme="light"] .skills__heading,
 [data-theme="light"] .skills-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .skills__header-line {
@@ -6928,7 +6928,7 @@ body,
 }
 
 [data-theme="light"] .skills__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .skill-group {
@@ -6949,7 +6949,7 @@ body,
 }
 
 [data-theme="light"] .skill-group__title {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .skill-group__index {
@@ -6973,7 +6973,7 @@ body,
 }
 
 [data-theme="light"] .skill-tile__name {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .skills__footer-icon {
@@ -6985,7 +6985,7 @@ body,
 }
 
 [data-theme="light"] .skills__footer-text {
-  color: #525252;
+  color: #000000;
 }
 
 /* 6. Certificates Section */
@@ -7005,7 +7005,7 @@ body,
 
 [data-theme="light"] .certificates__heading,
 [data-theme="light"] .cert-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .certificates__header-line {
@@ -7013,7 +7013,7 @@ body,
 }
 
 [data-theme="light"] .certificates__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .certificates__counter-badge {
@@ -7022,7 +7022,7 @@ body,
 }
 
 [data-theme="light"] .certificates__counter-text {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card {
@@ -7056,7 +7056,7 @@ body,
 [data-theme="light"] .cert-card__expand-btn {
   background: rgba(255, 255, 255, 0.92);
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__expand-btn:hover {
@@ -7066,19 +7066,19 @@ body,
 }
 
 [data-theme="light"] .cert-card__frame-hint {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__title {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__issuer {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__meta-item {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__meta-sep {
@@ -7088,7 +7088,7 @@ body,
 [data-theme="light"] .cert-card__meta-id {
   background: #F8F6F7;
   border-color: #E5D7DC;
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__btn--view {
@@ -7105,7 +7105,7 @@ body,
 [data-theme="light"] .cert-card__btn--download {
   background: #FFFFFF;
   border-color: #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .cert-card__btn--download:hover {
@@ -7127,7 +7127,7 @@ body,
 
 [data-theme="light"] .contact__heading,
 [data-theme="light"] .contact-word {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .contact__heading-line {
@@ -7135,7 +7135,7 @@ body,
 }
 
 [data-theme="light"] .contact__subtitle {
-  color: #525252;
+  color: #000000;
 }
 
 [data-theme="light"] .contact__card {
@@ -7156,7 +7156,7 @@ body,
 }
 
 [data-theme="light"] .contact__label {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .contact__card:hover .contact__label,
@@ -7171,11 +7171,11 @@ body,
 }
 
 [data-theme="light"] .footer__name {
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .footer__copy {
-  color: #525252;
+  color: #000000;
 }
 
 /* 9. Modal / Lightbox / Image Viewer */
@@ -7183,13 +7183,13 @@ body,
   background: #FFFFFF;
   border: 1px solid #E5D7DC;
   box-shadow: 0 20px 60px rgba(109, 0, 26, 0.15);
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .modal__close {
   background: #F8F6F7;
   border: 1px solid #E5D7DC;
-  color: #111111;
+  color: #000000;
 }
 
 [data-theme="light"] .modal__close:hover {
@@ -7199,7 +7199,7 @@ body,
 }
 
 [data-theme="light"] .modal__caption {
-  color: #525252;
+  color: #000000;
 }
 
 /* 10. Scroll Progress Bar */

@@ -8,8 +8,8 @@
 
 :root {
   --font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --color-text: #1c080d;
-  --color-muted: #5c3e45;
+  --color-text: #000000;
+  --color-muted: #111111;
   --color-border: #e6d0d5;
   --color-accent: #6d001a;
   --bg-page: #ffffff;
