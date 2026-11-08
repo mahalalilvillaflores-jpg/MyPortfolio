@@ -1385,14 +1385,14 @@ a:hover {
   margin-top: var(--heading-sub-gap);
 }
 
-/* Right Compact Horizontal Statistics Strip */
+/* Right Compact Horizontal Statistics Strip (Pill Capsule) */
 .about__stats-strip {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 1.15rem;
-  padding: 1rem 1.45rem;
-  border-radius: 18px;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 2.2rem);
+  padding: 0.85rem clamp(1.2rem, 2.2vw, 2.2rem);
+  border-radius: 999px;
   border: 1px solid rgba(175, 20, 56, 0.6);
   background: linear-gradient(135deg, rgba(109, 0, 26, 0.36) 0%, rgba(20, 3, 8, 0.92) 55%, rgba(8, 2, 4, 0.96) 100%);
   box-shadow:
@@ -1402,40 +1402,54 @@ a:hover {
 
 .about__stat-item {
   display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
 }
 
 .about__stat-val {
   font-family: var(--font-sans);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.15;
   color: #ffffff;
 }
 
-.about__stat-val--creativity {
-  font-size: clamp(0.98rem, 1.35vw, 1.25rem);
-  letter-spacing: 0.02em;
-}
-
 .about__stat-lbl {
-  font-size: 0.86rem;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
   font-weight: 400;
-  color: #e4e4e7;
+  color: #d4d4d8;
+  line-height: 1.25;
   white-space: nowrap;
-}
-
-.about__stat-lbl--creativity {
-  white-space: normal;
 }
 
 .about__stat-divider {
   width: 1px;
-  height: 26px;
+  height: 32px;
   background-color: rgba(175, 20, 56, 0.55);
   flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .about__stats-strip {
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.1rem 1.4rem;
+    width: 100%;
+  }
+
+  .about__stat-divider {
+    width: 60%;
+    height: 1px;
+  }
+
+  .about__stat-lbl {
+    white-space: normal;
+  }
 }
 
 /* Main Two-Column Content Grid */
