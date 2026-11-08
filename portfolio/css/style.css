@@ -5220,7 +5220,7 @@ a:hover {
   .hero__stage {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
     min-height: clamp(500px, 75vh, 700px);
     padding-top: clamp(4rem, 10vw, 6.5rem);
@@ -5230,6 +5230,9 @@ a:hover {
   .hero__intro {
     position: relative;
     z-index: 4;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
     max-width: 380px;
     padding-bottom: 1.5rem;
   }
@@ -5323,7 +5326,7 @@ a:hover {
   .hero__stage {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
     min-height: clamp(560px, calc(100vh - 90px), 880px);
     padding-top: clamp(4.5rem, 11vh, 8rem);
@@ -5333,6 +5336,9 @@ a:hover {
   .hero__intro {
     position: relative;
     z-index: 4;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
     max-width: 440px;
     padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem);
   }
