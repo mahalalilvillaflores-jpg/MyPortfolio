@@ -1596,12 +1596,12 @@ a:hover {
 }
 
 .about__statement-title {
-  font-size: clamp(1.65rem, 2.75vw, 2.3rem);
-  font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .about__statement-sub {
