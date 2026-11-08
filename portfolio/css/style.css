@@ -6460,70 +6460,69 @@ body,
   background-color: rgba(185, 22, 58, 0.28);
 }
 
-/* Statement Card */
+/* Statement Card: Remains Signature Rich Burgundy in Light Mode */
 [data-theme="light"] .about__statement-card {
   background:
-    radial-gradient(120% 100% at 12% 0%, rgba(190, 24, 62, 0.08) 0%, rgba(109, 0, 26, 0.04) 42%, transparent 80%),
-    linear-gradient(145deg, #FFFFFF 0%, #FFF5F8 55%, #FDF0F4 100%);
-  border: 1px solid rgba(185, 22, 58, 0.28);
+    radial-gradient(120% 100% at 12% 0%, rgba(185, 16, 58, 0.75) 0%, rgba(109, 0, 26, 0.65) 42%, rgba(35, 2, 9, 0.98) 85%, #180105 100%);
+  border: 1px solid rgba(220, 38, 76, 0.7);
   box-shadow:
-    0 20px 44px rgba(109, 0, 26, 0.08),
-    0 2px 10px rgba(109, 0, 26, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 22px 50px rgba(109, 0, 26, 0.28),
+    0 6px 20px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 170, 195, 0.35);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
 [data-theme="light"] .about__statement-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(185, 22, 58, 0.6);
+  border-color: rgba(255, 65, 105, 0.92);
   box-shadow:
-    0 24px 50px rgba(109, 0, 26, 0.13),
-    0 0 30px rgba(190, 24, 62, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+    0 26px 58px rgba(109, 0, 26, 0.35),
+    0 0 34px rgba(190, 24, 62, 0.3),
+    inset 0 1px 0 rgba(255, 190, 210, 0.45);
 }
 
 [data-theme="light"] .about__shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(190, 24, 62, 0.45) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 170, 195, 0.85) 50%, transparent 100%);
 }
 
 [data-theme="light"] .about__orbit-svg ellipse {
-  stroke: rgba(185, 22, 58, 0.32);
+  stroke: url(#aboutOrbitGrad);
 }
 
 [data-theme="light"] .about__orbit-dot {
-  background-color: #BE183E;
+  background-color: #ffdbe4;
   box-shadow:
-    0 0 10px 2px rgba(190, 24, 62, 0.7),
-    0 0 18px 4px rgba(109, 0, 26, 0.35);
+    0 0 8px 2px rgba(255, 120, 155, 0.9),
+    0 0 18px 5px rgba(185, 16, 55, 0.75);
 }
 
 [data-theme="light"] .about__quote-mark {
-  color: #6D001A;
-  opacity: 0.9;
+  color: #ffffff;
+  opacity: 0.96;
 }
 
 [data-theme="light"] .about__statement-title {
-  color: #000000;
+  color: #ffffff;
   font-weight: 700;
 }
 
 [data-theme="light"] .about__statement-sub {
-  color: #000000;
+  color: #e4e4e7;
 }
 
 [data-theme="light"] .about__code-badge {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FFF0F4 100%);
-  border: 1px solid rgba(185, 22, 58, 0.25);
-  color: #6D001A;
+  background: rgba(109, 0, 26, 0.35);
+  border: 1px solid rgba(190, 24, 62, 0.7);
+  color: #ffffff;
   font-weight: 700;
 }
 
 [data-theme="light"] .about__footer-sep {
-  background-color: rgba(185, 22, 58, 0.25);
+  background-color: rgba(255, 170, 195, 0.3);
 }
 
 [data-theme="light"] .about__footer-motto {
-  color: #000000;
+  color: #e4e4e7;
 }
 
 [data-theme="light"] .about__story-label {
