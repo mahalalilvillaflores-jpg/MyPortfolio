@@ -5430,10 +5430,6 @@ a:hover {
     margin-left: 0.35rem;
   }
 
-  .nav__theme-toggle--desktop {
-    display: none !important;
-  }
-
   .hero__stage {
     display: grid;
     grid-template-columns: 1.08fr 0.92fr;
@@ -6058,65 +6054,37 @@ html:not(.anim-ready) .site-footer {
   outline-offset: 2px;
 }
 
-/* Default (Dark Mode): Sun icon shown, Moon icon hidden */
+/* Default (Dark Mode): Moon icon shown, Sun icon hidden */
 .theme-toggle__icon--moon {
-  display: none;
+  display: block;
 }
 .theme-toggle__icon--sun {
-  display: block;
+  display: none;
 }
 
-/* Light Mode: Moon icon shown, Sun icon hidden */
+/* Light Mode: Sun icon shown, Moon icon hidden */
 [data-theme="light"] .theme-toggle__icon--moon {
-  display: block;
+  display: none;
 }
 [data-theme="light"] .theme-toggle__icon--sun {
-  display: none;
+  display: block;
 }
 
-/* Mobile Menu Theme Row */
-.nav__menu-theme {
-  display: none;
-}
-
-.nav__theme-label {
-  display: none;
-}
-
+/* Mobile & Desktop Placement for Theme Toggle in Nav */
 @media (max-width: 860px) {
-  .nav__menu-theme {
-    display: block;
-    width: 100%;
+  .nav__cta-item {
+    margin-top: 0.65rem;
     padding-top: 0.65rem;
-    margin-top: 0.5rem;
     border-top: 1px solid rgba(185, 22, 58, 0.35);
-  }
-
-  .nav__theme-toggle--mobile {
-    width: 100%;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.65rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .nav__theme-toggle--mobile .nav__theme-label {
-    display: inline-block;
   }
 }
 
 @media (min-width: 861px) {
-  .nav__theme-toggle--mobile {
-    display: none;
-  }
-  .nav__theme-toggle--desktop {
+  .nav__cta-item {
+    margin-top: 0;
+    margin-left: 0.55rem;
     display: inline-flex;
+    align-items: center;
   }
 }
 
