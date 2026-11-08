@@ -265,6 +265,48 @@ body {
   line-height: 1.45;
 }
 
+/* ── Export to PDF State (forces clean white background and black text regardless of screen theme) ── */
+.is-exporting {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  box-shadow: none !important;
+  max-width: 8.5in !important;
+  padding: 0.5in !important;
+}
+
+.is-exporting .resume-header {
+  border-bottom: 1.5pt solid #111827 !important;
+  text-align: center !important;
+}
+
+.is-exporting .resume-name {
+  color: #000000 !important;
+}
+
+.is-exporting .resume-title {
+  color: #6d001a !important;
+}
+
+.is-exporting .resume-section__title {
+  color: #6d001a !important;
+  border-bottom: 1px solid #d1d5db !important;
+}
+
+.is-exporting .resume-item__title {
+  color: #000000 !important;
+}
+
+.is-exporting .resume-contact,
+.is-exporting .resume-item__date,
+.is-exporting .resume-item__sub,
+.is-exporting .resume-item__tech {
+  color: #4b5563 !important;
+}
+
+.is-exporting .resume-contact a {
+  color: #000000 !important;
+}
+
 @media print {
   @page {
     size: letter;
