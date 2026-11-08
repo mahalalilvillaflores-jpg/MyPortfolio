@@ -518,10 +518,10 @@ a:hover {
 /* Giant Browser-Rendered Background Word: PORTFOLIO */
 .hero__bg-word-mask {
   position: absolute;
-  top: clamp(0.25rem, 1vh, 1.25rem);
+  top: 0;
   left: clamp(0.5rem, 1.8vw, 2rem);
   right: clamp(0.5rem, 1.8vw, 2rem);
-  bottom: clamp(0.5rem, 2vh, 2rem);
+  bottom: 0;
   overflow: visible;
   pointer-events: none;
   z-index: 1;
@@ -532,9 +532,9 @@ a:hover {
 
 .hero__bg-word {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 21.8vw, 34rem);
+  font-size: clamp(5.5rem, 23vw, 36rem);
   font-weight: 400;
-  line-height: 0.86;
+  line-height: 0.82;
   text-transform: uppercase;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -543,7 +543,7 @@ a:hover {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  transform: scaleY(2.45);
+  transform: scaleY(2.85);
   transform-origin: center center;
   padding: 0;
   margin: 0;
