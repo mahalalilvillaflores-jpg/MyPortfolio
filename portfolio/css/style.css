@@ -6269,16 +6269,21 @@ body,
   background: transparent;
 }
 
+[data-theme="light"] .hero__bg-word {
+  color: #c9184a;
+}
+
 [data-theme="light"] .hero__bg-char {
-  background: linear-gradient(180deg, rgba(140, 10, 40, 0.22) 0%, rgba(109, 0, 26, 0.05) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.95;
+  color: #c9184a;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  opacity: 0.88;
 }
 
 [data-theme="light"] .hero__greeting {
-  color: #6D001A;
+  color: #c9184a;
   font-weight: 700;
 }
 
