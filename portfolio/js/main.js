@@ -983,6 +983,7 @@ if (projectsOverviewEl) {
         imgEl.loading = sIdx === currentSlideIdx ? 'eager' : 'lazy';
         imgEl.width = 900;
         imgEl.height = 506;
+        imgEl.draggable = false;
 
         slideEl.appendChild(imgEl);
         viewport.appendChild(slideEl);

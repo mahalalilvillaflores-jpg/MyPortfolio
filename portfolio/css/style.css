@@ -3312,8 +3312,8 @@ a:hover {
   object-fit: cover;
   object-position: top center;
   display: block;
+  -webkit-user-select: none;
   user-select: none;
-  -webkit-user-drag: none;
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -3334,8 +3334,8 @@ a:hover {
   border-radius: 50%;
   border: 1.5px solid rgba(195, 28, 66, 0.55);
   background: rgba(12, 3, 7, 0.85);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -3347,6 +3347,7 @@ a:hover {
     background 200ms ease,
     border-color 200ms ease,
     box-shadow 200ms ease;
+  -webkit-user-select: none;
   user-select: none;
 }
 
