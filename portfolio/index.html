@@ -655,8 +655,8 @@
                   data-role="Python Developer"
                   data-demo="#project-task-queuer"
                   data-repo=""
-                  data-gallery-src="assets/images/printdayon-dashboard.jpg"
-                  data-gallery-caption="OS Task Queuer — CPU Scheduling Simulation in Python"
+                  data-gallery-src="assets/images/os-task-queuer-screenshot.jpg"
+                  data-gallery-caption="OS Task Queuer — FCFS Process &amp; Task Scheduling Simulation in Python"
                   role="group"
                   aria-roledescription="slide"
                   aria-label="5 of 5: OS Task Queuer"
@@ -664,11 +664,11 @@
                 >
                   <div class="wg-slide__card">
                     <img
-                      src="assets/images/printdayon-dashboard.jpg"
-                      alt="OS Task Queuer CPU scheduling simulation dashboard"
+                      src="assets/images/os-task-queuer-screenshot.jpg"
+                      alt="OS Task Queuer FCFS process scheduling simulation interface showing process queue, execution controls, and scheduling results table"
                       loading="lazy"
-                      width="800"
-                      height="450"
+                      width="1024"
+                      height="640"
                       draggable="false"
                     />
                   </div>
@@ -1566,32 +1566,47 @@
                 id="project-task-queuer"
                 aria-label="Project: OS Task Queuer"
                 data-po-panel
+                data-slides='[
+                  {
+                    "src": "assets/images/os-task-queuer-screenshot.jpg",
+                    "alt": "OS Task Queuer FCFS process scheduling simulation interface showing process queue, execution controls, and scheduling results table",
+                    "caption": "OS Task Queuer — FCFS Process & Task Scheduling Simulation in Python",
+                    "label": "FCFS Simulation Dashboard"
+                  }
+                ]'
               >
                 <span class="project-featured__shimmer" aria-hidden="true"></span>
 
-                <div class="project-featured__gallery-col project-featured__gallery-col--summary" data-po-gallery>
+                <div class="project-featured__gallery-col" data-po-gallery>
                   <div class="project-featured__preview-header">
                     <span class="project-featured__accent-bar" aria-hidden="true"></span>
-                    <span class="project-featured__preview-label">PROJECT OVERVIEW</span>
+                    <span class="project-featured__preview-label">PROJECT PREVIEW</span>
                   </div>
 
-                  <div class="project-featured__summary-box">
-                    <div class="project-featured__summary-icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 17 10 11 4 5"></polyline>
-                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                  <div class="project-featured__main-frame">
+                    <img
+                      class="project-featured__main-img"
+                      src="assets/images/os-task-queuer-screenshot.jpg"
+                      alt="OS Task Queuer FCFS process scheduling simulation interface showing process queue, execution controls, and scheduling results table"
+                      loading="lazy"
+                      width="1024"
+                      height="640"
+                      draggable="false"
+                    />
+                    <button
+                      type="button"
+                      class="project-featured__expand-btn"
+                      aria-label="Expand OS Task Queuer screenshot in image viewer"
+                      data-gallery-src="assets/images/os-task-queuer-screenshot.jpg"
+                      data-gallery-caption="OS Task Queuer — FCFS Process &amp; Task Scheduling Simulation in Python"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
                       </svg>
-                    </div>
-                    <span class="project-featured__summary-kicker">CPU SCHEDULING SIMULATION</span>
-                    <h5 class="project-featured__summary-heading">First-Come, First-Served (FCFS) Task Queue</h5>
-                    <p class="project-featured__summary-text">
-                      Demonstrates operating-system process scheduling in Python by executing queued tasks in arrival order and calculating waiting and turnaround times.
-                    </p>
-                    <div class="project-featured__summary-pills">
-                      <span class="project-featured__summary-pill">Arrival Order</span>
-                      <span class="project-featured__summary-pill">Burst &amp; Wait Time</span>
-                      <span class="project-featured__summary-pill">Queue Execution</span>
-                    </div>
+                    </button>
                   </div>
                 </div>
 
