@@ -923,30 +923,16 @@ if (projectsOverviewEl) {
       tag.style.setProperty('--chip-idx', String(tIdx));
     });
 
-    // Main screenshot click opens modal
-    const mainImg = panel.querySelector('.project-featured__main-img');
+    // ── Project Screenshot Carousel ──
+    const mainFrame = panel.querySelector('.project-featured__main-frame');
     const expandBtn = panel.querySelector('.project-featured__expand-btn');
+    const thumbs = Array.from(panel.querySelectorAll('.project-thumb'));
+    const prevArrow = panel.querySelector('[data-po-prev]');
+    const nextArrow = panel.querySelector('[data-po-next]');
+    const slideCounter = panel.querySelector('[data-po-slide-counter]');
+    const activeTitleEl = panel.querySelector('[data-po-active-title]');
+    const activeCaptionEl = panel.querySelector('[data-po-active-caption]');
 
-    if (expandBtn) {
-      expandBtn.addEventListener('click', () => {
-        const src = expandBtn.getAttribute('data-gallery-src');
-        const caption = expandBtn.getAttribute('data-gallery-caption');
-        const alt = mainImg ? mainImg.getAttribute('alt') : '';
-        if (src) openModal(src, caption, alt);
-      });
-    }
-
-    if (mainImg) {
-      mainImg.addEventListener('click', () => {
-        if (expandBtn) {
-          expandBtn.click();
-        } else {
-          openModal(mainImg.src, mainImg.getAttribute('alt'), mainImg.getAttribute('alt'));
-        }
-      });
-    }
-
-    // Slides & Photo Navigation (Arrows & Thumbnails)
     let slides = [];
     const rawSlides = panel.getAttribute('data-slides');
     if (rawSlides) {
@@ -957,76 +943,254 @@ if (projectsOverviewEl) {
       }
     }
 
-    let currentSlideIdx = 0;
-    const prevArrow = panel.querySelector('[data-po-prev]');
-    const nextArrow = panel.querySelector('[data-po-next]');
-    const slideCounter = panel.querySelector('[data-po-slide-counter]');
-    const thumbs = Array.from(panel.querySelectorAll('.project-thumb'));
+    if (slides && slides.length > 0 && mainFrame) {
+      // Find initial slide index from whichever thumbnail is active, or default to 0
+      const activeThumb = thumbs.find(t => t.classList.contains('is-active'));
+      let initialIdx = activeThumb ? parseInt(activeThumb.getAttribute('data-slide-target'), 10) : 0;
+      if (isNaN(initialIdx) || initialIdx < 0 || initialIdx >= slides.length) {
+        initialIdx = 0;
+      }
+      let currentSlideIdx = initialIdx;
+      let isAnimating = false;
 
-    function goToSlide(newIdx) {
-      if (!slides || slides.length === 0) return;
-      currentSlideIdx = (newIdx + slides.length) % slides.length;
-      const targetSlide = slides[currentSlideIdx];
-      if (!targetSlide || !mainImg) return;
-
-      // Update counter text e.g. 01 / 03
-      if (slideCounter) {
-        const cPadded = String(currentSlideIdx + 1).padStart(2, '0');
-        const tPadded = String(slides.length).padStart(2, '0');
-        slideCounter.textContent = `${cPadded} / ${tPadded}`;
+      // Ensure carousel viewport exists
+      let viewport = mainFrame.querySelector('.project-featured__carousel-viewport');
+      if (!viewport) {
+        viewport = document.createElement('div');
+        viewport.className = 'project-featured__carousel-viewport';
+        const existingImg = mainFrame.querySelector('.project-featured__main-img');
+        if (existingImg) {
+          mainFrame.insertBefore(viewport, existingImg);
+          viewport.appendChild(existingImg);
+        } else {
+          mainFrame.prepend(viewport);
+        }
       }
 
-      // Update active state on thumbnails
-      thumbs.forEach(t => {
-        const tIdx = parseInt(t.getAttribute('data-slide-target'), 10);
-        const isActive = tIdx === currentSlideIdx;
-        t.classList.toggle('is-active', isActive);
-        t.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      // Pre-render slides inside viewport
+      viewport.innerHTML = '';
+      slides.forEach((slideData, sIdx) => {
+        const slideEl = document.createElement('div');
+        slideEl.className = sIdx === currentSlideIdx ? 'project-featured__slide is-active' : 'project-featured__slide';
+        slideEl.setAttribute('data-slide-index', String(sIdx));
+        slideEl.setAttribute('role', 'tabpanel');
+        slideEl.setAttribute('aria-label', `Screenshot ${sIdx + 1} of ${slides.length}: ${slideData.label || slideData.caption || ''}`);
+
+        const imgEl = document.createElement('img');
+        imgEl.className = 'project-featured__slide-img project-featured__main-img';
+        imgEl.src = slideData.src;
+        imgEl.alt = slideData.alt || slideData.caption || '';
+        imgEl.loading = sIdx === currentSlideIdx ? 'eager' : 'lazy';
+        imgEl.width = 900;
+        imgEl.height = 506;
+
+        slideEl.appendChild(imgEl);
+        viewport.appendChild(slideEl);
       });
 
-      // Switch main image with crossfade
-      if (prefersReducedMotion) {
-        mainImg.src = targetSlide.src;
-        mainImg.alt = targetSlide.alt || '';
+      // Add overlay Prev & Next buttons if slides.length > 1 and not already present
+      let overlayPrev = mainFrame.querySelector('[data-po-slide-prev]');
+      let overlayNext = mainFrame.querySelector('[data-po-slide-next]');
+      if (slides.length > 1) {
+        if (!overlayPrev) {
+          overlayPrev = document.createElement('button');
+          overlayPrev.type = 'button';
+          overlayPrev.className = 'project-featured__slide-nav project-featured__slide-nav--prev';
+          overlayPrev.setAttribute('aria-label', 'Previous screenshot');
+          overlayPrev.setAttribute('data-po-slide-prev', '');
+          overlayPrev.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          `;
+          mainFrame.appendChild(overlayPrev);
+        }
+        if (!overlayNext) {
+          overlayNext = document.createElement('button');
+          overlayNext.type = 'button';
+          overlayNext.className = 'project-featured__slide-nav project-featured__slide-nav--next';
+          overlayNext.setAttribute('aria-label', 'Next screenshot');
+          overlayNext.setAttribute('data-po-slide-next', '');
+          overlayNext.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          `;
+          mainFrame.appendChild(overlayNext);
+        }
+      }
+
+      function updateSlideUI(slideData) {
+        if (slideCounter) {
+          const cPadded = String(currentSlideIdx + 1).padStart(2, '0');
+          const tPadded = String(slides.length).padStart(2, '0');
+          slideCounter.textContent = `${cPadded} / ${tPadded}`;
+        }
+        if (activeTitleEl) {
+          activeTitleEl.textContent = slideData.label || slideData.caption || '';
+        }
+        if (activeCaptionEl) {
+          activeCaptionEl.textContent = slideData.caption || slideData.label || '';
+        }
         if (expandBtn) {
-          expandBtn.setAttribute('data-gallery-src', targetSlide.src);
-          expandBtn.setAttribute('data-gallery-caption', targetSlide.caption || '');
+          expandBtn.setAttribute('data-gallery-src', slideData.src);
+          expandBtn.setAttribute('data-gallery-caption', slideData.caption || '');
+          expandBtn.setAttribute('aria-label', `Expand ${slideData.label || 'screenshot'} in image viewer`);
         }
-      } else {
-        mainImg.classList.add('is-fading');
-        setTimeout(() => {
-          mainImg.src = targetSlide.src;
-          mainImg.alt = targetSlide.alt || '';
-          if (expandBtn) {
-            expandBtn.setAttribute('data-gallery-src', targetSlide.src);
-            expandBtn.setAttribute('data-gallery-caption', targetSlide.caption || '');
-          }
-          mainImg.classList.remove('is-fading');
-        }, 180);
+        thumbs.forEach(t => {
+          const tIdx = parseInt(t.getAttribute('data-slide-target'), 10);
+          const isActive = tIdx === currentSlideIdx;
+          t.classList.toggle('is-active', isActive);
+          t.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
       }
-    }
 
-    if (prevArrow) {
-      prevArrow.addEventListener('click', () => {
-        goToSlide(currentSlideIdx - 1);
+      // Initialize UI for current slide
+      updateSlideUI(slides[currentSlideIdx]);
+
+      function goToSlide(targetIdx, direction = 1) {
+        if (slides.length <= 1 || isAnimating) return;
+        const nextIdx = (targetIdx + slides.length) % slides.length;
+        if (nextIdx === currentSlideIdx) return;
+
+        const currentSlide = viewport.querySelector(`.project-featured__slide[data-slide-index="${currentSlideIdx}"]`);
+        const nextSlide = viewport.querySelector(`.project-featured__slide[data-slide-index="${nextIdx}"]`);
+        if (!currentSlide || !nextSlide) return;
+
+        const targetData = slides[nextIdx];
+        currentSlideIdx = nextIdx;
+        updateSlideUI(targetData);
+
+        if (prefersReducedMotion) {
+          currentSlide.className = 'project-featured__slide';
+          nextSlide.className = 'project-featured__slide is-active';
+          return;
+        }
+
+        isAnimating = true;
+        const enterClass = direction > 0 ? 'is-entering-right' : 'is-entering-left';
+        const exitClass  = direction > 0 ? 'is-exiting-left' : 'is-exiting-right';
+
+        nextSlide.style.transition = 'none';
+        nextSlide.className = `project-featured__slide ${enterClass}`;
+        void nextSlide.offsetWidth;
+        nextSlide.style.transition = '';
+
+        requestAnimationFrame(() => {
+          currentSlide.className = `project-featured__slide is-active ${exitClass}`;
+          nextSlide.className = 'project-featured__slide is-active';
+        });
+
+        setTimeout(() => {
+          currentSlide.className = 'project-featured__slide';
+          currentSlide.style.transition = '';
+          nextSlide.className = 'project-featured__slide is-active';
+          nextSlide.style.transition = '';
+          isAnimating = false;
+        }, 520);
+      }
+
+      // Overlay arrow events
+      if (overlayPrev) {
+        overlayPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(currentSlideIdx - 1, -1);
+        });
+      }
+      if (overlayNext) {
+        overlayNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(currentSlideIdx + 1, 1);
+        });
+      }
+
+      // Bottom bar arrow events
+      if (prevArrow) {
+        prevArrow.addEventListener('click', () => {
+          goToSlide(currentSlideIdx - 1, -1);
+        });
+      }
+      if (nextArrow) {
+        nextArrow.addEventListener('click', () => {
+          goToSlide(currentSlideIdx + 1, 1);
+        });
+      }
+
+      // Thumbnail clicks: animate in appropriate direction
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const target = parseInt(thumb.getAttribute('data-slide-target'), 10);
+          if (!isNaN(target) && target !== currentSlideIdx) {
+            const dir = target > currentSlideIdx ? 1 : -1;
+            goToSlide(target, dir);
+          }
+        });
       });
-    }
 
-    if (nextArrow) {
-      nextArrow.addEventListener('click', () => {
-        goToSlide(currentSlideIdx + 1);
-      });
-    }
+      // Keyboard arrow navigation on focused gallery frame
+      mainFrame.setAttribute('tabindex', '0');
+      mainFrame.setAttribute('role', 'region');
+      mainFrame.setAttribute('aria-roledescription', 'carousel');
+      mainFrame.setAttribute('aria-label', `${panel.querySelector('.project-featured__title')?.textContent || 'Project'} screenshot gallery`);
 
-    // Thumbnail click switches main screenshot preview
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const target = parseInt(thumb.getAttribute('data-slide-target'), 10);
-        if (!isNaN(target)) {
-          goToSlide(target);
+      mainFrame.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goToSlide(currentSlideIdx + 1, 1);
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goToSlide(currentSlideIdx - 1, -1);
         }
       });
-    });
+
+      // Swipe gestures for touch devices
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+
+      mainFrame.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      mainFrame.addEventListener('touchend', (e) => {
+        if (e.changedTouches.length === 1) {
+          touchEndX = e.changedTouches[0].clientX;
+          touchEndY = e.changedTouches[0].clientY;
+          const deltaX = touchEndX - touchStartX;
+          const deltaY = touchEndY - touchStartY;
+          if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+            if (deltaX < 0) {
+              goToSlide(currentSlideIdx + 1, 1);
+            } else {
+              goToSlide(currentSlideIdx - 1, -1);
+            }
+          }
+        }
+      }, { passive: true });
+
+      // Click on viewport / main screenshot opens fullscreen viewer
+      viewport.addEventListener('click', (e) => {
+        if (e.target.closest('.project-featured__slide-nav')) return;
+        const currentData = slides[currentSlideIdx];
+        if (currentData) {
+          openModal(currentData.src, currentData.caption, currentData.alt);
+        }
+      });
+    }
+
+    // Expand button click opens fullscreen viewer
+    if (expandBtn) {
+      expandBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const src = expandBtn.getAttribute('data-gallery-src');
+        const caption = expandBtn.getAttribute('data-gallery-caption');
+        if (src) openModal(src, caption, caption);
+      });
+    }
   });
 
   // Enable animation classes
