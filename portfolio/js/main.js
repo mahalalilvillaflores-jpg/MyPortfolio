@@ -767,7 +767,7 @@ function refreshScrollMetrics() {
   if (!prefersReducedMotion && window.innerWidth > 860) {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     cachedParallaxItems = Array.from(document.querySelectorAll(
-      '.about__ambient, .about__orbit, .skills__ambient, .skills__orbit, .certificates__ambient, .certificates__orbit, .hero__bg-word'
+      '.about__ambient, .about__orbit, .skills__ambient, .skills__orbit, .certificates__ambient, .certificates__orbit'
     )).map(el => {
       const rect = el.getBoundingClientRect();
       return {
