@@ -1609,6 +1609,13 @@ a:hover {
   opacity: 0.96;
 }
 
+.about__quote-mark--closing {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 1.25rem;
+}
+
 .about__statement-title {
   font-size: clamp(1.35rem, 2.1vw, 1.85rem);
   font-weight: 700;
