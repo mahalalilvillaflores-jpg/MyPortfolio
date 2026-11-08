@@ -1275,4 +1275,16 @@ if (certificatesSection) {
   }
 }
 
+// Smart Email handler: mobile devices use mailto: to launch native mail apps, desktop uses web compose
+const emailContactCard = document.querySelector('[data-contact-email]');
+if (emailContactCard) {
+  emailContactCard.addEventListener('click', (e) => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      e.preventDefault();
+      window.location.href = 'mailto:mahalalilvillaflores@gmail.com';
+    }
+  });
+}
+
 
