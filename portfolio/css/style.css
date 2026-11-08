@@ -6277,6 +6277,7 @@ body,
   color: #c9184a;
   background: none;
   -webkit-background-clip: initial;
+  background-clip: initial;
   -webkit-text-fill-color: initial;
   opacity: 0.88;
 }
