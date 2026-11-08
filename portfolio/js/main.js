@@ -977,7 +977,8 @@ if (projectsOverviewEl) {
         slideEl.setAttribute('aria-label', `Screenshot ${sIdx + 1} of ${slides.length}: ${slideData.label || slideData.caption || ''}`);
 
         const imgEl = document.createElement('img');
-        imgEl.className = 'project-featured__slide-img project-featured__main-img';
+        const isContain = slideData.src && slideData.src.includes('rent-tracker');
+        imgEl.className = 'project-featured__slide-img project-featured__main-img' + (isContain ? ' img--contain' : '');
         imgEl.src = slideData.src;
         imgEl.alt = slideData.alt || slideData.caption || '';
         imgEl.loading = sIdx === currentSlideIdx ? 'eager' : 'lazy';

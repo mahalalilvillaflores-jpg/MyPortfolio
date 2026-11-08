@@ -617,12 +617,12 @@
                   data-title="Rent Tracker"
                   data-subtitle="Rental Payment &amp; Tenant Record Management App"
                   data-desc="A mobile application for tracking monthly rental payments, due dates, and tenant records built with Dart, Flutter, and Firebase."
-                  data-tech="Dart,Flutter,Firebase,MapLibre"
-                  data-role="Full-Stack Developer"
+                  data-tech="Dart,Flutter,Firebase"
+                  data-role="Mobile App Developer"
                   data-demo="#project-rent-tracker"
                   data-repo=""
-                  data-gallery-src="assets/images/printdayon-map.jpg"
-                  data-gallery-caption="Interactive Map &amp; Route Finder Interface"
+                  data-gallery-src="assets/images/rent-tracker-screenshot.png"
+                  data-gallery-caption="Rent Tracker — Mobile Rental Payment &amp; Tenant Record Management App"
                   role="group"
                   aria-roledescription="slide"
                   aria-label="4 of 5: Rent Tracker"
@@ -630,11 +630,12 @@
                 >
                   <div class="wg-slide__card">
                     <img
-                      src="assets/images/printdayon-map.jpg"
-                      alt="Interactive map and shop finder interface"
+                      class="img--contain"
+                      src="assets/images/rent-tracker-screenshot.png"
+                      alt="Rent Tracker mobile application mockup displaying tenant directory, dashboard with monthly collection metrics, and payment logs"
                       loading="lazy"
-                      width="800"
-                      height="450"
+                      width="1024"
+                      height="652"
                       draggable="false"
                     />
                   </div>
@@ -1437,32 +1438,47 @@
                 id="project-rent-tracker"
                 aria-label="Project: Rent Tracker"
                 data-po-panel
+                data-slides='[
+                  {
+                    "src": "assets/images/rent-tracker-screenshot.png",
+                    "alt": "Rent Tracker mobile application mockup displaying tenant directory, dashboard with monthly collection metrics, and payment logs",
+                    "caption": "Rent Tracker — Mobile Rental Payment & Tenant Record Management App",
+                    "label": "Mobile App Interface"
+                  }
+                ]'
               >
                 <span class="project-featured__shimmer" aria-hidden="true"></span>
 
-                <div class="project-featured__gallery-col project-featured__gallery-col--summary" data-po-gallery>
+                <div class="project-featured__gallery-col" data-po-gallery>
                   <div class="project-featured__preview-header">
                     <span class="project-featured__accent-bar" aria-hidden="true"></span>
-                    <span class="project-featured__preview-label">PROJECT OVERVIEW</span>
+                    <span class="project-featured__preview-label">PROJECT PREVIEW</span>
                   </div>
 
-                  <div class="project-featured__summary-box">
-                    <div class="project-featured__summary-icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  <div class="project-featured__main-frame">
+                    <img
+                      class="project-featured__main-img img--contain"
+                      src="assets/images/rent-tracker-screenshot.png"
+                      alt="Rent Tracker mobile application mockup displaying tenant directory, dashboard with monthly collection metrics, and payment logs"
+                      loading="lazy"
+                      width="1024"
+                      height="652"
+                      draggable="false"
+                    />
+                    <button
+                      type="button"
+                      class="project-featured__expand-btn"
+                      aria-label="Expand Rent Tracker screenshot in image viewer"
+                      data-gallery-src="assets/images/rent-tracker-screenshot.png"
+                      data-gallery-caption="Rent Tracker — Mobile Rental Payment &amp; Tenant Record Management App"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
                       </svg>
-                    </div>
-                    <span class="project-featured__summary-kicker">CROSS-PLATFORM MOBILE APP</span>
-                    <h5 class="project-featured__summary-heading">Rental Payment &amp; Tenant Record Tracker</h5>
-                    <p class="project-featured__summary-text">
-                      Built with Dart, Flutter, and Firebase to help property managers organize tenant records and monitor monthly rental payments on mobile devices.
-                    </p>
-                    <div class="project-featured__summary-pills">
-                      <span class="project-featured__summary-pill">Tenant Records</span>
-                      <span class="project-featured__summary-pill">Payment Logs</span>
-                      <span class="project-featured__summary-pill">Firebase Sync</span>
-                    </div>
+                    </button>
                   </div>
                 </div>
 
