@@ -139,40 +139,14 @@ body {
   border-bottom: 2px solid var(--color-border);
   padding-bottom: 0.85rem;
   margin-bottom: 1rem;
-}
-
-.resume-header__inner {
-  display: flex;
-  align-items: center;
-  gap: 1.35rem;
-}
-
-.resume-header__photo-wrap {
-  flex-shrink: 0;
-}
-
-.resume-header__photo {
-  width: 112px;
-  height: 112px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 8px;
-  border: 2px solid var(--color-border);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-  display: block;
-}
-
-.resume-header__info {
-  flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .resume-name {
   font-size: 20pt;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   color: var(--color-text);
   margin-bottom: 0.2rem;
 }
@@ -180,7 +154,7 @@ body {
 .resume-title {
   font-size: 11pt;
   font-weight: 600;
-  color: var(--color-muted);
+  color: var(--color-accent);
   margin-bottom: 0.45rem;
 }
 
@@ -189,22 +163,9 @@ body {
   color: var(--color-muted);
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 0.35rem 0.5rem;
-}
-
-@media (max-width: 640px) {
-  .resume-header__inner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .resume-header__info {
-    text-align: center;
-  }
-  .resume-contact {
-    justify-content: center;
-  }
 }
 
 .resume-contact a {
@@ -340,34 +301,23 @@ body {
   }
 
   .resume-header {
-    border-bottom-color: #111827;
+    border-bottom: 1.5pt solid #111827;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
-  .resume-header__inner {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
+  .resume-name {
+    font-size: 18pt;
+    color: #000000;
   }
 
-  .resume-header__photo {
-    width: 88px;
-    height: 88px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 4px;
-    border: 1px solid #d1d5db;
-    box-shadow: none;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  .resume-header__info {
-    text-align: left;
+  .resume-title {
+    color: #6d001a;
   }
 
   .resume-contact {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .resume-contact,
