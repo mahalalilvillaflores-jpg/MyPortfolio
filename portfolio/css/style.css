@@ -518,10 +518,10 @@ a:hover {
 /* Giant Browser-Rendered Background Word: PORTFOLIO */
 .hero__bg-word-mask {
   position: absolute;
-  top: 40px;
-  left: 5%;
-  right: 5%;
-  bottom: 80px;
+  top: clamp(1rem, 2.8vh, 2.5rem);
+  left: clamp(0.5rem, 1.8vw, 2rem);
+  right: clamp(0.5rem, 1.8vw, 2rem);
+  bottom: clamp(1.5rem, 5vh, 4rem);
   overflow: visible;
   pointer-events: none;
   z-index: 1;
@@ -531,18 +531,18 @@ a:hover {
 }
 
 .hero__bg-word {
-  font-family: var(--font-headline);
-  font-size: clamp(3.8rem, 21vw, 25rem);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 21.8vw, 34rem);
   font-weight: 400;
-  line-height: 0.88;
-  letter-spacing: -0.015em;
+  line-height: 0.86;
   text-transform: uppercase;
   white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   padding: 0;
   margin: 0;
 }
@@ -555,11 +555,12 @@ a:hover {
   animation-delay: calc(50ms + var(--bg-char-index, 0) * 48ms);
   background: linear-gradient(
     180deg,
-    #850322 0%,
-    #72001B 35%,
-    #600017 65%,
-    #460011 85%,
-    #35000C 100%
+    #b81422 0%,
+    #a10f1c 20%,
+    #820b16 45%,
+    #58050e 70%,
+    #2a0106 88%,
+    #0c0003 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -6242,17 +6243,17 @@ body,
 [data-theme="light"] .hero__bg-char {
   background: linear-gradient(
     180deg,
-    #b84d65 0%,
-    #9c344d 35%,
-    #821f37 65%,
-    #691026 85%,
-    #54091c 100%
+    #d12c44 0%,
+    #b31d33 25%,
+    #8f1325 55%,
+    #690a19 80%,
+    #4a0510 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  opacity: 0.85;
+  opacity: 0.88;
 }
 
 [data-theme="light"] .hero__greeting {
