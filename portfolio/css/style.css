@@ -1649,32 +1649,46 @@ a:hover {
   width: 100%;
   height: 100%;
   overflow: visible;
-  animation: aboutRingsBreath 9s ease-in-out infinite alternate;
+  animation: aboutRingsBreath 4.6s ease-in-out infinite alternate;
 }
 
 .about__ring--outer {
   transform-origin: 235px 230px;
-  animation: aboutRingSpin 36s linear infinite;
+  animation: aboutRingSpin 22s linear infinite;
 }
 
 .about__ring--mid {
   transform-origin: 235px 230px;
-  animation: aboutRingSpin 48s linear infinite reverse;
+  animation: aboutRingSpin 28s linear infinite reverse;
 }
 
-/* Glowing crimson dot on upper-left outer ring */
+/* Circular Orbit Track for Glowing Crimson Dot on Upper Ring Arc */
+.about__ring-orbit-track {
+  position: absolute;
+  left: 51.08%;
+  top: 50%;
+  width: 86.95%;
+  height: 86.95%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-32deg);
+  pointer-events: none;
+  animation: aboutRingDotArc 4.2s ease-in-out infinite alternate;
+}
+
+/* Glowing crimson dot on outer ring */
 .about__ring-dot {
   position: absolute;
-  top: 9.5%;
-  left: 26.5%;
-  width: 12px;
-  height: 12px;
+  top: -6px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
   border-radius: 50%;
-  background: radial-gradient(circle, #ff2a5f 0%, #c90835 70%);
+  background: radial-gradient(circle, #ff4d79 0%, #ff1e42 45%, #c90835 100%);
   box-shadow:
-    0 0 10px 3px rgba(225, 16, 62, 0.78),
-    0 0 22px 6px rgba(201, 24, 74, 0.42);
-  animation: aboutRingDotOrbit 6s ease-in-out infinite alternate;
+    0 0 12px 4px rgba(255, 30, 66, 0.85),
+    0 0 24px 8px rgba(201, 24, 74, 0.48);
+  animation: aboutRingDotPulse 2.1s ease-in-out infinite alternate;
 }
 
 /* Floating 3D Pastel-Pink Icon Badges */
@@ -1693,13 +1707,14 @@ a:hover {
     0 14px 28px rgba(165, 12, 48, 0.22),
     0 4px 10px rgba(109, 0, 26, 0.12),
     inset 0 1px 2px #ffffff;
+  will-change: transform;
 }
 
 .about__float-badge--code {
   top: -12px;
   left: 58%;
   transform: rotate(15deg);
-  animation: aboutBadgeFloatCode 5.2s ease-in-out infinite alternate;
+  animation: aboutBadgeFloatCode 3.2s ease-in-out infinite alternate;
 }
 
 .about__float-badge--laptop {
@@ -1707,12 +1722,12 @@ a:hover {
   left: 58%;
   color: #850422;
   transform: rotate(12deg);
-  animation: aboutBadgeFloatLaptop 5.8s ease-in-out infinite alternate;
+  animation: aboutBadgeFloatLaptop 3.6s ease-in-out infinite alternate;
 }
 
 @keyframes aboutRingsBreath {
-  0% { transform: scale(0.985); }
-  100% { transform: scale(1.015); }
+  0% { transform: scale(0.95) rotate(-3deg); }
+  100% { transform: scale(1.04) rotate(3deg); }
 }
 
 @keyframes aboutRingSpin {
@@ -1720,42 +1735,45 @@ a:hover {
   to { transform: rotate(360deg); }
 }
 
-@keyframes aboutRingDotOrbit {
+@keyframes aboutRingDotArc {
   0% {
-    transform: translate3d(-10px, 7px, 0) scale(0.92);
-    box-shadow:
-      0 0 8px 2px rgba(225, 16, 62, 0.7),
-      0 0 18px 4px rgba(201, 24, 74, 0.35);
-  }
-  50% {
-    transform: translate3d(0, 0, 0) scale(1.12);
-    box-shadow:
-      0 0 14px 4px rgba(255, 42, 95, 0.95),
-      0 0 26px 8px rgba(201, 24, 74, 0.55);
+    transform: translate(-50%, -50%) rotate(-56deg);
   }
   100% {
-    transform: translate3d(12px, -6px, 0) scale(0.96);
+    transform: translate(-50%, -50%) rotate(12deg);
+  }
+}
+
+@keyframes aboutRingDotPulse {
+  0% {
+    transform: scale(0.88);
     box-shadow:
-      0 0 10px 3px rgba(225, 16, 62, 0.8),
-      0 0 20px 5px rgba(201, 24, 74, 0.42);
+      0 0 9px 2px rgba(225, 16, 62, 0.72),
+      0 0 18px 5px rgba(201, 24, 74, 0.36);
+  }
+  100% {
+    transform: scale(1.22);
+    box-shadow:
+      0 0 16px 5px rgba(255, 42, 95, 0.98),
+      0 0 30px 10px rgba(201, 24, 74, 0.62);
   }
 }
 
 @keyframes aboutBadgeFloatCode {
   0% {
-    transform: translate3d(0, 0, 0) rotate(13deg);
+    transform: translate3d(-8px, 6px, 0) rotate(9deg) scale(0.97);
   }
   100% {
-    transform: translate3d(4px, -11px, 0) rotate(18deg);
+    transform: translate3d(8px, -16px, 0) rotate(21deg) scale(1.05);
   }
 }
 
 @keyframes aboutBadgeFloatLaptop {
   0% {
-    transform: translate3d(0, 0, 0) rotate(10deg);
+    transform: translate3d(8px, -6px, 0) rotate(18deg) scale(0.97);
   }
   100% {
-    transform: translate3d(-4px, 11px, 0) rotate(15deg);
+    transform: translate3d(-8px, 16px, 0) rotate(6deg) scale(1.05);
   }
 }
 
@@ -1779,7 +1797,7 @@ a:hover {
   background: linear-gradient(90deg, transparent 0%, rgba(255, 170, 195, 0.85) 50%, transparent 100%);
   pointer-events: none;
   z-index: 2;
-  animation: aboutBorderShimmer 10s ease-in-out infinite;
+  animation: aboutBorderShimmer 6.5s ease-in-out infinite;
 }
 
 .about__card--1 .about__shimmer { animation-delay: 1.5s; }
@@ -1787,14 +1805,14 @@ a:hover {
 .about__card--3 .about__shimmer { animation-delay: 7.5s; }
 
 @keyframes aboutBorderShimmer {
-  0%, 72% {
+  0%, 55% {
     left: -120%;
     opacity: 0;
   }
-  78% {
+  65% {
     opacity: 1;
   }
-  92% {
+  90% {
     left: 140%;
     opacity: 1;
   }
@@ -1810,7 +1828,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 96px;
+  height: 102px;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -1818,28 +1836,49 @@ a:hover {
 
 .about__orbit-svg {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
   height: 100%;
-  animation: aboutCardWaveUndulate 5.5s ease-in-out infinite alternate;
+  will-change: transform;
+  animation: aboutCardWaveUndulate 3.8s ease-in-out infinite alternate;
 }
 
 .about__card-wave-glow {
   filter: blur(6px);
   opacity: 0.72;
-  animation: aboutCardWaveGlow 4s ease-in-out infinite alternate;
+  animation: aboutCardWaveGlow 2.8s ease-in-out infinite alternate;
 }
 
 .about__card-wave-line {
   filter: drop-shadow(0 0 6px rgba(255, 140, 170, 0.85));
 }
 
+.about__card-wave-pulse {
+  fill: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 14px #ff4d79);
+  stroke-dasharray: 110 620;
+  stroke-dashoffset: 730;
+  animation: aboutCardWaveLightStreak 3.4s linear infinite;
+}
+
 @keyframes aboutCardWaveUndulate {
   0% {
-    transform: scaleY(0.96) translateY(2px);
+    transform: translate3d(-5%, 4px, 0) scaleY(0.9);
   }
   100% {
-    transform: scaleY(1.05) translateY(-2px);
+    transform: translate3d(5%, -4px, 0) scaleY(1.14);
+  }
+}
+
+@keyframes aboutCardWaveLightStreak {
+  from {
+    stroke-dashoffset: 730;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
@@ -1848,7 +1887,7 @@ a:hover {
     opacity: 0.55;
   }
   100% {
-    opacity: 0.92;
+    opacity: 0.96;
   }
 }
 
@@ -2201,16 +2240,8 @@ a:hover {
   font-weight: 500;
 }
 
-/* Pause decorative animations when #about is off-screen */
-.about:not(.is-visible) .about__glow-orb,
-.about:not(.is-visible) .about__rings-svg,
-.about:not(.is-visible) .about__ring--outer,
-.about:not(.is-visible) .about__ring--mid,
-.about:not(.is-visible) .about__ring-dot,
-.about:not(.is-visible) .about__float-badge,
-.about:not(.is-visible) .about__orbit-svg,
-.about:not(.is-visible) .about__card-wave-glow,
-.about:not(.is-visible) .about__shimmer {
+/* Pause background glow orbs when #about is off-screen */
+.about:not(.is-visible) .about__glow-orb {
   animation-play-state: paused;
 }
 
@@ -2219,7 +2250,7 @@ a:hover {
   animation-play-state: paused !important;
 }
 
-/* Disable continuous movement & entrance shifts when prefers-reduced-motion is enabled */
+/* Disable entrance shifts when prefers-reduced-motion is enabled while keeping statement card motion active */
 @media (prefers-reduced-motion: reduce) {
   [data-about-reveal] {
     opacity: 1 !important;
@@ -2227,23 +2258,8 @@ a:hover {
     transition: none !important;
   }
 
-  .about__glow-orb,
-  .about__rings-svg,
-  .about__ring--outer,
-  .about__ring--mid,
-  .about__ring-dot,
-  .about__float-badge,
-  .about__orbit-svg,
-  .about__card-wave-glow,
-  .about__shimmer {
+  .about__glow-orb {
     animation: none !important;
-  }
-
-  .about__statement-card:hover,
-  .about__card:hover,
-  .about__project-pill:hover,
-  .about__project-pill:focus-visible {
-    transform: none !important;
   }
 }
 
