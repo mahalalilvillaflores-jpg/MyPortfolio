@@ -120,6 +120,52 @@
     </header>
 
     <section class="hero" aria-labelledby="hero-heading">
+      <!-- Crimson Atmosphere & Floating Tech UI Cards -->
+      <div class="hero__bg-elements" aria-hidden="true">
+        <div class="hero__crimson-glow hero__crimson-glow--top"></div>
+        <div class="hero__crimson-glow hero__crimson-glow--center"></div>
+
+        <!-- Floating Code Snippet Card (Right) -->
+        <div class="hero__bg-card hero__bg-card--code">
+          <div class="hero__bg-card-tag">&lt;/&gt;</div>
+          <div class="hero__bg-card-lines">
+            <span class="hero__bg-line hero__bg-line--1"></span>
+            <span class="hero__bg-line hero__bg-line--2"></span>
+            <span class="hero__bg-line hero__bg-line--3"></span>
+            <span class="hero__bg-line hero__bg-line--4"></span>
+          </div>
+        </div>
+
+        <!-- Floating UI Window Card (Far Right) -->
+        <div class="hero__bg-card hero__bg-card--ui">
+          <div class="hero__bg-card-header">
+            <span class="hero__bg-dot"></span>
+            <span class="hero__bg-dot"></span>
+            <span class="hero__bg-dot"></span>
+          </div>
+          <div class="hero__bg-card-bars">
+            <span class="hero__bg-bar hero__bg-bar--1"></span>
+            <span class="hero__bg-bar hero__bg-bar--2"></span>
+            <span class="hero__bg-bar hero__bg-bar--3"></span>
+          </div>
+        </div>
+
+        <!-- Floating Media Wireframe Card (Left) -->
+        <div class="hero__bg-card hero__bg-card--media">
+          <div class="hero__bg-card-media-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <div class="hero__bg-card-lines">
+            <span class="hero__bg-line hero__bg-line--short"></span>
+            <span class="hero__bg-line hero__bg-line--med"></span>
+          </div>
+        </div>
+      </div>
+
       <div class="hero__bg-word-mask" aria-hidden="true">
         <div class="hero__bg-word" id="heroBgWord">
           <span class="hero__bg-char">P</span><span class="hero__bg-char">O</span><span
@@ -132,7 +178,10 @@
       <div class="hero__stage">
 
         <div class="hero__intro">
-          <p class="hero__greeting">Hello, I&rsquo;m</p>
+          <p class="hero__greeting">
+            <span class="hero__greeting-dash" aria-hidden="true"></span>
+            <span>Hello, I&rsquo;m</span>
+          </p>
 
           <h1 class="hero__name" id="hero-heading">
             <span class="sr-only">MAHALALIL P. VILLAFLORES</span>
@@ -145,7 +194,7 @@
               <span class="hero__name-line">
                 <span class="hero__char">P</span><span class="hero__char">.</span>
               </span>
-              <span class="hero__name-line">
+              <span class="hero__name-line hero__name-line--accent">
                 <span class="hero__char">V</span><span class="hero__char">I</span><span class="hero__char">L</span><span
                   class="hero__char">L</span><span class="hero__char">A</span><span class="hero__char">F</span><span
                   class="hero__char">L</span><span class="hero__char">O</span><span class="hero__char">R</span><span
@@ -165,8 +214,18 @@
           </p>
 
           <div class="hero__actions">
-            <a class="hero__btn hero__btn--primary" href="#projects">VIEW PROJECTS</a>
-            <a class="hero__btn hero__btn--outline" href="#about">ABOUT ME</a>
+            <a class="hero__btn hero__btn--primary" href="#projects">
+              <span>VIEW PROJECTS</span>
+              <span class="hero__btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="hero__btn hero__btn--outline" href="#about">
+              <span class="hero__btn-play" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+              </span>
+              <span>ABOUT ME</span>
+            </a>
           </div>
         </div>
 

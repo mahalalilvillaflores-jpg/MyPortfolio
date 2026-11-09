@@ -265,12 +265,16 @@ a:hover {
 .hero-frame {
   position: relative;
   margin: 6px;
-  border: 1px solid #6d001a;
+  border: 1px solid rgba(229, 16, 59, 0.45);
   border-radius: 24px;
   background-color: #000000;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 45, 85, 0.35),
+    inset 0 16px 45px rgba(229, 9, 20, 0.16),
+    0 0 45px rgba(229, 9, 20, 0.12);
 }
 
 .site-header {
@@ -516,6 +520,193 @@ a:hover {
   overflow: hidden;
 }
 
+/* ── Hero Crimson Atmosphere & Floating Tech UI Cards ── */
+.hero__bg-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Atmospheric Ambient Beams */
+.hero__crimson-glow {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(45px);
+}
+
+.hero__crimson-glow--top {
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 220px;
+  background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(229, 9, 20, 0.32) 0%, rgba(184, 13, 50, 0.12) 50%, transparent 80%);
+}
+
+.hero__crimson-glow--center {
+  top: 30%;
+  left: 62%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.22) 0%, rgba(140, 10, 40, 0.08) 55%, transparent 75%);
+  animation: heroCenterPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroCenterPulse {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Floating Tech UI Cards */
+.hero__bg-card {
+  position: absolute;
+  background: rgba(20, 3, 7, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 16, 59, 0.35);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  box-shadow:
+    0 8px 32px rgba(229, 16, 59, 0.18),
+    inset 0 1px 0 rgba(255, 65, 100, 0.22);
+  pointer-events: none;
+}
+
+/* Card 1: Code Card (Right side of portrait) */
+.hero__bg-card--code {
+  right: clamp(2rem, 9vw, 9rem);
+  top: clamp(28%, 32vh, 42%);
+  width: clamp(140px, 14vw, 190px);
+  z-index: 2;
+  animation: heroFloatCode 7s ease-in-out infinite alternate;
+}
+
+.hero__bg-card-tag {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ff1e42;
+  text-shadow: 0 0 12px rgba(255, 30, 66, 0.85);
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.hero__bg-card-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+.hero__bg-line {
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(229, 16, 59, 0.65) 0%, rgba(229, 16, 59, 0.15) 100%);
+}
+
+.hero__bg-line--1 { width: 85%; }
+.hero__bg-line--2 { width: 60%; margin-left: 10px; background: linear-gradient(90deg, rgba(255, 65, 100, 0.75) 0%, rgba(229, 16, 59, 0.2) 100%); }
+.hero__bg-line--3 { width: 72%; margin-left: 10px; }
+.hero__bg-line--4 { width: 45%; }
+
+/* Card 2: UI Wireframe Card (Far right) */
+.hero__bg-card--ui {
+  right: clamp(1rem, 3.5vw, 4rem);
+  bottom: clamp(18%, 24vh, 32%);
+  width: clamp(110px, 11vw, 150px);
+  padding: 0.75rem 0.85rem;
+  z-index: 1;
+  opacity: 0.75;
+  animation: heroFloatUI 8.5s ease-in-out infinite alternate 1.5s;
+}
+
+.hero__bg-card-header {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 0.55rem;
+}
+
+.hero__bg-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff1e42;
+  box-shadow: 0 0 6px rgba(255, 30, 66, 0.8);
+}
+
+.hero__bg-dot:nth-child(2) { opacity: 0.6; }
+.hero__bg-dot:nth-child(3) { opacity: 0.35; }
+
+.hero__bg-card-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero__bg-bar {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(229, 16, 59, 0.35);
+}
+
+.hero__bg-bar--1 { width: 90%; }
+.hero__bg-bar--2 { width: 70%; }
+.hero__bg-bar--3 { width: 50%; }
+
+/* Card 3: Media Card (Left side behind intro) */
+.hero__bg-card--media {
+  left: clamp(2rem, 8vw, 7rem);
+  bottom: clamp(14%, 18vh, 26%);
+  width: clamp(120px, 12vw, 160px);
+  padding: 0.75rem 0.9rem;
+  z-index: 1;
+  opacity: 0.65;
+  animation: heroFloatMedia 9s ease-in-out infinite alternate 0.8s;
+}
+
+.hero__bg-card-media-box {
+  color: #ff1e42;
+  margin-bottom: 0.45rem;
+  display: inline-flex;
+}
+
+.hero__bg-line--short { width: 50%; }
+.hero__bg-line--med { width: 78%; }
+
+/* Floating Keyframes */
+@keyframes heroFloatCode {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.2deg); }
+  100% { transform: translateY(-4px) rotate(-0.8deg); }
+}
+
+@keyframes heroFloatUI {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1.5deg); }
+  100% { transform: translateY(6px) rotate(1deg); }
+}
+
+@keyframes heroFloatMedia {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(4px); }
+}
+
+/* Hide on narrow mobile to keep intro clean */
+@media (max-width: 768px) {
+  .hero__bg-card--media { display: none; }
+  .hero__bg-card--ui { display: none; }
+  .hero__bg-card--code {
+    right: 1rem;
+    top: 20%;
+    transform: scale(0.85);
+  }
+}
+
 /* Giant Browser-Rendered Background Word: PORTFOLIO */
 .hero__bg-word-mask {
   position: absolute;
@@ -536,7 +727,8 @@ a:hover {
   line-height: 0.82;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #6d001a;
+  color: #a80728;
+  text-shadow: 0 0 45px rgba(229, 16, 59, 0.45);
   white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
@@ -594,6 +786,19 @@ a:hover {
   transform-origin: left bottom;
   opacity: 0;
   animation: greetingFadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hero__greeting-dash {
+  display: inline-block;
+  width: clamp(24px, 3.2vw, 38px);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff1e42 0%, #b80d32 100%);
+  box-shadow: 0 0 10px rgba(255, 30, 66, 0.85);
+  flex-shrink: 0;
 }
 
 @keyframes greetingFadeIn {
@@ -750,32 +955,63 @@ a:hover {
     transform var(--transition);
 }
 
+.hero__name-line--accent .hero__char {
+  color: #ff1e42;
+  text-shadow: 0 0 24px rgba(255, 30, 66, 0.65);
+}
+
 .hero__btn--primary {
-  background-color: #6d001a;
+  background: linear-gradient(135deg, #e50914 0%, #b80d32 100%);
   color: #ffffff;
-  border: 1.5px solid #6d001a;
+  border: 1.5px solid #ff1e42;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.45);
 }
 
 .hero__btn--primary:hover,
 .hero__btn--primary:focus-visible {
-  background-color: #8a0022;
-  border-color: #8a0022;
+  background: linear-gradient(135deg, #ff1e42 0%, #d90429 100%);
+  border-color: #ff4766;
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(255, 30, 66, 0.65);
 }
 
 .hero__btn--outline {
-  background-color: #000000;
+  background-color: rgba(18, 2, 6, 0.65);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: #ffffff;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid rgba(229, 16, 59, 0.55);
 }
 
 .hero__btn--outline:hover,
 .hero__btn--outline:focus-visible {
-  border-color: #6d001a;
-  background-color: #6d001a;
+  border-color: #ff1e42;
+  background-color: rgba(229, 16, 59, 0.22);
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(229, 16, 59, 0.4);
+}
+
+.hero__btn-arrow {
+  margin-left: 0.45rem;
+  transition: transform 200ms ease;
+}
+
+.hero__btn--primary:hover .hero__btn-arrow {
+  transform: translateX(3px);
+}
+
+.hero__btn-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  margin-right: 0.45rem;
+  padding-left: 1.5px;
 }
 
 .hero__interests {
@@ -791,12 +1027,12 @@ a:hover {
 }
 
 .hero__dot {
-  color: #6d001a;
+  color: #ff1e42;
   font-size: 0.95rem;
   line-height: 1;
 }
 
-/* Center Column: Supplied Transparent Portrait Layer */
+/* Center Column: Supplied Transparent Portrait Layer with Crimson Rim Lighting */
 .hero__portrait-wrap {
   position: relative;
   z-index: 3;
@@ -808,6 +1044,21 @@ a:hover {
   pointer-events: none;
 }
 
+.hero__portrait-wrap::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 520px 600px at 50% 60%, rgba(229, 9, 20, 0.45) 0%, rgba(184, 13, 50, 0.2) 45%, transparent 75%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: -1;
+  animation: heroPhotoBacklight 5s ease-in-out infinite alternate;
+}
+
 .hero__portrait {
   width: auto;
   max-width: min(100%, 340px);
@@ -815,7 +1066,24 @@ a:hover {
   object-fit: contain;
   object-position: bottom center;
   opacity: 0;
-  animation: portraitFadeIn 900ms ease-out 220ms forwards;
+  filter: drop-shadow(0 0 16px rgba(255, 20, 60, 0.75)) drop-shadow(0 0 45px rgba(200, 10, 45, 0.48));
+  animation:
+    portraitFadeIn 900ms ease-out 220ms forwards,
+    portraitRimGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes heroPhotoBacklight {
+  0% { opacity: 0.75; transform: translateX(-50%) scale(0.96); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+}
+
+@keyframes portraitRimGlow {
+  0% {
+    filter: drop-shadow(0 0 14px rgba(255, 20, 60, 0.65)) drop-shadow(0 0 38px rgba(200, 10, 45, 0.38));
+  }
+  100% {
+    filter: drop-shadow(0 0 24px rgba(255, 35, 75, 0.92)) drop-shadow(0 0 58px rgba(229, 16, 59, 0.62));
+  }
 }
 
 @keyframes portraitFadeIn {
@@ -6367,10 +6635,32 @@ body,
   z-index: 10;
 }
 
+[data-theme="light"] .hero__greeting-dash {
+  display: none !important;
+}
+
 [data-theme="light"] .hero__name,
 [data-theme="light"] .hero__name-line,
 [data-theme="light"] .hero__char {
   color: #000000;
+}
+
+[data-theme="light"] .hero__name-line--accent .hero__char {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .hero__bg-elements {
+  display: none !important;
+}
+
+[data-theme="light"] .hero__portrait-wrap::before {
+  display: none !important;
+}
+
+[data-theme="light"] .hero__portrait {
+  filter: none !important;
+  animation: portraitFadeIn 900ms ease-out 220ms forwards !important;
 }
 
 [data-theme="light"] .hero__role-text {
