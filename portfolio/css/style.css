@@ -6305,40 +6305,6 @@ body,
   opacity: 0.65;
 }
 
-[data-theme="light"] .hero__portrait-wrap::before {
-  content: "";
-  position: absolute;
-  width: clamp(280px, 32vw, 430px);
-  height: clamp(280px, 32vw, 430px);
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 24, 74, 0.18) 0%, rgba(255, 210, 226, 0.35) 45%, rgba(255, 255, 255, 0) 72%);
-  border: 1px solid rgba(201, 24, 74, 0.2);
-  box-shadow:
-    0 0 45px rgba(201, 24, 74, 0.12),
-    inset 0 0 25px rgba(255, 255, 255, 0.75);
-  pointer-events: none;
-  z-index: -1;
-  animation: heroPortraitHalo 7s ease-in-out infinite alternate;
-}
-
-[data-theme="light"] .hero__portrait-wrap::after {
-  content: "";
-  position: absolute;
-  width: clamp(340px, 39vw, 520px);
-  height: clamp(340px, 39vw, 520px);
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px dashed rgba(185, 22, 58, 0.22);
-  pointer-events: none;
-  z-index: -1;
-  animation: heroOrbitalSpin 42s linear infinite;
-}
-
 @keyframes heroLightAura {
   0% {
     opacity: 0.75;
@@ -6354,30 +6320,8 @@ body,
   }
 }
 
-@keyframes heroPortraitHalo {
-  0% {
-    transform: translate(-50%, -50%) scale(0.96);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.04);
-    opacity: 1;
-  }
-}
-
-@keyframes heroOrbitalSpin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  [data-theme="light"] .hero::before,
-  [data-theme="light"] .hero__portrait-wrap::before,
-  [data-theme="light"] .hero__portrait-wrap::after {
+  [data-theme="light"] .hero::before {
     animation: none !important;
   }
 }
