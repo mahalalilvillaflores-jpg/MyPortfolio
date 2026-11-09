@@ -6262,11 +6262,124 @@ body,
 
 /* 2. Hero Section */
 [data-theme="light"] .hero-frame {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F8 50%, #FAF0F4 100%);
+  border: 1px solid rgba(185, 22, 58, 0.24);
+  background:
+    radial-gradient(ellipse 800px 520px at 65% 55%, rgba(201, 24, 74, 0.1) 0%, rgba(255, 215, 228, 0.18) 38%, transparent 70%),
+    radial-gradient(circle at 10% 20%, rgba(109, 0, 26, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(201, 24, 74, 0.07) 0%, transparent 50%),
+    linear-gradient(175deg, #FFFFFF 0%, #FFF7FA 45%, #FDEFF4 100%);
+  box-shadow:
+    0 20px 48px rgba(109, 0, 26, 0.06),
+    0 2px 10px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 [data-theme="light"] .hero {
   background: transparent;
+  position: relative;
+}
+
+[data-theme="light"] .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 700px 500px at 68% 52%, rgba(201, 24, 74, 0.13) 0%, rgba(255, 180, 202, 0.1) 40%, transparent 72%),
+    radial-gradient(ellipse 520px 360px at 14% 30%, rgba(109, 0, 26, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroLightAura 10s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(185, 22, 58, 0.11) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 88% 78% at 50% 50%, black 20%, transparent 85%);
+  mask-image: radial-gradient(ellipse 88% 78% at 50% 50%, black 20%, transparent 85%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+}
+
+[data-theme="light"] .hero__portrait-wrap::before {
+  content: "";
+  position: absolute;
+  width: clamp(280px, 32vw, 430px);
+  height: clamp(280px, 32vw, 430px);
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 24, 74, 0.18) 0%, rgba(255, 210, 226, 0.35) 45%, rgba(255, 255, 255, 0) 72%);
+  border: 1px solid rgba(201, 24, 74, 0.2);
+  box-shadow:
+    0 0 45px rgba(201, 24, 74, 0.12),
+    inset 0 0 25px rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+  z-index: -1;
+  animation: heroPortraitHalo 7s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .hero__portrait-wrap::after {
+  content: "";
+  position: absolute;
+  width: clamp(340px, 39vw, 520px);
+  height: clamp(340px, 39vw, 520px);
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(185, 22, 58, 0.22);
+  pointer-events: none;
+  z-index: -1;
+  animation: heroOrbitalSpin 42s linear infinite;
+}
+
+@keyframes heroLightAura {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-6px);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(0.98) translateY(4px);
+  }
+}
+
+@keyframes heroPortraitHalo {
+  0% {
+    transform: translate(-50%, -50%) scale(0.96);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes heroOrbitalSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="light"] .hero::before,
+  [data-theme="light"] .hero__portrait-wrap::before,
+  [data-theme="light"] .hero__portrait-wrap::after {
+    animation: none !important;
+  }
 }
 
 [data-theme="light"] .hero__bg-word {
