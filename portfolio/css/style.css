@@ -549,7 +549,7 @@ a:hover {
   width: 100%;
   height: clamp(95px, 15vh, 165px);
   pointer-events: none;
-  z-index: 4;
+  z-index: 1;
 }
 
 .hero__wave-line {
@@ -6679,7 +6679,7 @@ body,
 [data-theme="light"] .hero__wave {
   display: block !important;
   height: clamp(95px, 15vh, 165px);
-  z-index: 4;
+  z-index: 1;
 }
 
 [data-theme="light"] .hero__wave-fill,
