@@ -540,6 +540,69 @@ a:hover {
   overflow: hidden;
 }
 
+/* Bottom glowing light wave */
+.hero__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: clamp(110px, 18vh, 200px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__wave-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: heroWaveDraw 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.hero__wave-line--glow {
+  stroke-width: 9;
+  opacity: 0.55;
+  filter: blur(6px);
+}
+
+.hero__wave-line--thin {
+  stroke-width: 1.2;
+  opacity: 0.6;
+  animation-delay: 0.9s;
+}
+
+.hero__wave-fill {
+  opacity: 0;
+  animation: heroWaveFill 1.6s ease 1.4s forwards, heroWavePulse 5s ease-in-out 3s infinite alternate;
+}
+
+@keyframes heroWaveDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes heroWaveFill {
+  to { opacity: 1; }
+}
+
+@keyframes heroWavePulse {
+  from { opacity: 1; }
+  to { opacity: 0.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__wave-line {
+    animation: none !important;
+    stroke-dashoffset: 0;
+  }
+
+  .hero__wave-fill {
+    animation: none !important;
+    opacity: 1;
+  }
+}
+
 /* Giant Browser-Rendered Background Word: PORTFOLIO */
 .hero__bg-word-mask {
   position: absolute;
@@ -6458,7 +6521,8 @@ body,
   text-shadow: none !important;
 }
 
-[data-theme="light"] .hero__bg-elements {
+[data-theme="light"] .hero__bg-elements,
+[data-theme="light"] .hero__wave {
   display: none !important;
 }
 

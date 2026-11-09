@@ -122,6 +122,25 @@
     </header>
 
     <section class="hero" aria-labelledby="hero-heading">
+      <!-- Glowing crimson light wave (bottom) -->
+      <svg class="hero__wave" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="heroWaveGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#ff1e42" stop-opacity="0"></stop>
+            <stop offset="0.45" stop-color="#ff1e42" stop-opacity="0.9"></stop>
+            <stop offset="1" stop-color="#ff4d6a" stop-opacity="1"></stop>
+          </linearGradient>
+          <linearGradient id="heroWaveFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#b80d32" stop-opacity="0.55"></stop>
+            <stop offset="1" stop-color="#3a0010" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <path class="hero__wave-fill" d="M0 220 L0 200 C 420 205, 820 150, 1440 40 L1440 220 Z" fill="url(#heroWaveFill)"></path>
+        <path class="hero__wave-line hero__wave-line--glow" d="M0 200 C 420 205, 820 150, 1440 40" stroke="url(#heroWaveGrad)"></path>
+        <path class="hero__wave-line" d="M0 200 C 420 205, 820 150, 1440 40" stroke="url(#heroWaveGrad)"></path>
+        <path class="hero__wave-line hero__wave-line--thin" d="M120 214 C 520 214, 900 175, 1440 85" stroke="url(#heroWaveGrad)"></path>
+      </svg>
+
       <div class="hero__bg-word-mask" aria-hidden="true">
         <div class="hero__bg-word" id="heroBgWord">
           <span class="hero__bg-char">P</span><span class="hero__bg-char">O</span><span
