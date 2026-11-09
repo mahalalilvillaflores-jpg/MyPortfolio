@@ -6623,6 +6623,7 @@ body,
 
 [data-theme="light"] .hero__wave-line {
   display: block !important;
+  stroke: #6d001a;
   opacity: 0.9;
 }
 
