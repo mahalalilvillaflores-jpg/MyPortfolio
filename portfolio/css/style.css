@@ -7084,11 +7084,11 @@ body,
 }
 
 [data-theme="light"] .work-gallery__cat-badge {
-  background: linear-gradient(135deg, #8B0024 0%, #6D001A 50%, #3B000E 100%);
-  border: 1px solid rgba(220, 38, 76, 0.7);
+  background: linear-gradient(135deg, #b8143a 0%, #8b0024 55%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.75);
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(109, 0, 26, 0.25), inset 0 1px 0 rgba(255, 170, 195, 0.25);
+  box-shadow: 0 4px 12px rgba(109, 0, 26, 0.22), inset 0 1px 0 rgba(255, 175, 200, 0.3);
 }
 
 [data-theme="light"] .work-gallery__active-title {
@@ -7362,6 +7362,14 @@ body,
 [data-theme="light"] .project-featured__nav-counter {
   color: #000000;
   font-weight: 700;
+}
+
+[data-theme="light"] .project__badge {
+  background: linear-gradient(135deg, #b8143a 0%, #8b0024 55%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.75);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(109, 0, 26, 0.22), inset 0 1px 0 rgba(255, 175, 200, 0.3);
 }
 
 [data-theme="light"] .project-featured__title {
