@@ -6633,12 +6633,12 @@ body,
 }
 
 [data-theme="light"] .hero__bg-word {
-  color: #f15179;
+  color: #b80d32;
   filter: none;
 }
 
 [data-theme="light"] .hero__bg-char {
-  background: linear-gradient(180deg, #f15179 0%, #f683a0 45%, #fcc6d5 78%, rgba(255, 246, 249, 0.08) 100%);
+  background: linear-gradient(180deg, #b80d32 0%, #d4284e 42%, #ee829c 78%, rgba(255, 246, 249, 0.08) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
