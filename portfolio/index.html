@@ -292,22 +292,81 @@
         <div class="about__main-grid">
 
           <div class="about__statement-card" data-about-reveal>
-            <span class="about__shimmer" aria-hidden="true"></span>
-
-            <div class="about__orbit" aria-hidden="true">
-              <svg class="about__orbit-svg" viewBox="0 0 500 340" fill="none" preserveAspectRatio="none">
-                <ellipse cx="330" cy="185" rx="195" ry="112" transform="rotate(-24 330 185)"
-                  stroke="url(#aboutOrbitGrad)" stroke-width="1.25" />
+            <!-- Outer Concentric Orbit Rings, Glowing Dot & Floating 3D Icon Badges -->
+            <div class="about__statement-backdrop" aria-hidden="true">
+              <svg class="about__rings-svg" viewBox="0 0 460 460" fill="none">
                 <defs>
-                  <linearGradient id="aboutOrbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#6d001a" stop-opacity="0.08" />
-                    <stop offset="55%" stop-color="#d41c47" stop-opacity="0.55" />
-                    <stop offset="100%" stop-color="#ff7a9a" stop-opacity="0.75" />
+                  <linearGradient id="aboutRingOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#c9184a" stop-opacity="0.78" />
+                    <stop offset="50%" stop-color="#e05277" stop-opacity="0.38" />
+                    <stop offset="100%" stop-color="#f4a2b8" stop-opacity="0.22" />
+                  </linearGradient>
+                  <linearGradient id="aboutRingMid" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#d43860" stop-opacity="0.36" />
+                    <stop offset="100%" stop-color="#f29cb3" stop-opacity="0.15" />
                   </linearGradient>
                 </defs>
+                <circle class="about__ring about__ring--outer" cx="235" cy="230" r="200" stroke="url(#aboutRingOuter)" stroke-width="1.6" />
+                <circle class="about__ring about__ring--mid" cx="235" cy="230" r="162" stroke="url(#aboutRingMid)" stroke-width="1.2" />
+                <circle class="about__ring about__ring--inner" cx="235" cy="230" r="126" stroke="rgba(212, 56, 96, 0.16)" stroke-width="1" />
               </svg>
-              <span class="about__orbit-dot about__orbit-dot--1"></span>
-              <span class="about__orbit-dot about__orbit-dot--2"></span>
+
+              <!-- Glowing crimson dot on upper-left outer ring -->
+              <span class="about__ring-dot"></span>
+
+              <!-- Top floating 3D badge: Code </> -->
+              <div class="about__float-badge about__float-badge--code">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="8 7 3 12 8 17"></polyline>
+                  <polyline points="16 7 21 12 16 17"></polyline>
+                  <line x1="13.5" y1="5" x2="10.5" y2="19"></line>
+                </svg>
+              </div>
+
+              <!-- Bottom floating 3D badge: Laptop -->
+              <div class="about__float-badge about__float-badge--laptop">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="5" width="16" height="11" rx="1.8"></rect>
+                  <path d="M2 18.5h20"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Clipped Card Surface: Rich Crimson-Burgundy Gradient, Shimmer & Glowing S-Wave -->
+            <div class="about__statement-surface" aria-hidden="true">
+              <span class="about__shimmer"></span>
+
+              <div class="about__orbit">
+                <svg class="about__orbit-svg" viewBox="0 0 600 130" fill="none" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="aboutCardWaveFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ff2a5f" stop-opacity="0.65" />
+                      <stop offset="45%" stop-color="#c9103e" stop-opacity="0.45" />
+                      <stop offset="100%" stop-color="#4d0013" stop-opacity="0.2" />
+                    </linearGradient>
+                    <linearGradient id="aboutCardWaveLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ff8da8" stop-opacity="0.85" />
+                      <stop offset="22%" stop-color="#ffffff" stop-opacity="1" />
+                      <stop offset="48%" stop-color="#ffd1dc" stop-opacity="0.98" />
+                      <stop offset="72%" stop-color="#ff2e63" stop-opacity="0.85" />
+                      <stop offset="100%" stop-color="#9e082a" stop-opacity="0.25" />
+                    </linearGradient>
+                    <linearGradient id="aboutCardWaveSub" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ff4772" stop-opacity="0.35" />
+                      <stop offset="45%" stop-color="#ff8da8" stop-opacity="0.6" />
+                      <stop offset="100%" stop-color="#b80938" stop-opacity="0.15" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Wave fill area at bottom of card -->
+                  <path class="about__card-wave-fill" d="M0 74 C 95 78, 175 118, 255 112 C 335 106, 405 46, 505 52 C 550 55, 580 65, 600 74 L600 130 L0 130 Z" fill="url(#aboutCardWaveFill)" />
+                  <!-- Secondary subtle wave curve -->
+                  <path class="about__card-wave-sub" d="M0 98 C 110 84, 190 120, 275 114 C 360 108, 435 76, 600 94" stroke="url(#aboutCardWaveSub)" stroke-width="1.4" />
+                  <!-- Soft glow behind main wave line -->
+                  <path class="about__card-wave-glow" d="M0 74 C 95 78, 175 118, 255 112 C 335 106, 405 46, 505 52 C 550 55, 580 65, 600 74" stroke="#ff2a5f" stroke-width="7" stroke-linecap="round" />
+                  <!-- Main bright glowing S-wave line -->
+                  <path class="about__card-wave-line" d="M0 74 C 95 78, 175 118, 255 112 C 335 106, 405 46, 505 52 C 550 55, 580 65, 600 74" stroke="url(#aboutCardWaveLine)" stroke-width="2.4" stroke-linecap="round" />
+                </svg>
+              </div>
             </div>
 
             <div class="about__statement-inner">

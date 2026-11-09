@@ -1606,16 +1606,19 @@ a:hover {
 /* Left: Featured Statement Card */
 .about__statement-card {
   position: relative;
+  isolation: isolate;
   border-radius: 22px;
   padding: var(--card-pad);
-  border: 1px solid rgba(190, 24, 62, 0.65);
+  padding-bottom: calc(var(--card-pad) + 1.15rem);
+  margin-block: 3.4rem;
+  border: 1px solid rgba(235, 55, 95, 0.72);
   background:
-    radial-gradient(120% 100% at 12% 0%, rgba(158, 12, 46, 0.55) 0%, rgba(109, 0, 26, 0.3) 42%, rgba(12, 2, 5, 0.96) 85%, #050103 100%);
+    radial-gradient(115% 110% at 14% 8%, #e31248 0%, #b50934 38%, #7d0220 75%, #4d0013 100%);
   box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.65),
-    0 0 28px rgba(109, 0, 26, 0.24),
-    inset 0 1px 0 rgba(255, 160, 185, 0.25);
-  overflow: hidden;
+    0 20px 44px rgba(109, 0, 26, 0.38),
+    0 6px 18px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 175, 200, 0.38);
+  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1623,11 +1626,147 @@ a:hover {
 
 .about__statement-card:hover {
   transform: translate3d(0, -4px, 0);
-  border-color: rgba(230, 45, 85, 0.88);
+  border-color: rgba(255, 80, 120, 0.92);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.72),
-    0 0 34px rgba(145, 10, 42, 0.36),
-    inset 0 1px 0 rgba(255, 180, 200, 0.35);
+    0 24px 52px rgba(145, 10, 42, 0.45),
+    0 0 34px rgba(210, 20, 65, 0.35),
+    inset 0 1px 0 rgba(255, 195, 215, 0.45);
+}
+
+/* Outer Concentric Rings, Glowing Dot & Floating 3D Icon Badges */
+.about__statement-backdrop {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(300px, 86%, 430px);
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about__rings-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: aboutRingsBreath 9s ease-in-out infinite alternate;
+}
+
+.about__ring--outer {
+  transform-origin: 235px 230px;
+  animation: aboutRingSpin 36s linear infinite;
+}
+
+.about__ring--mid {
+  transform-origin: 235px 230px;
+  animation: aboutRingSpin 48s linear infinite reverse;
+}
+
+/* Glowing crimson dot on upper-left outer ring */
+.about__ring-dot {
+  position: absolute;
+  top: 9.5%;
+  left: 26.5%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff2a5f 0%, #c90835 70%);
+  box-shadow:
+    0 0 10px 3px rgba(225, 16, 62, 0.78),
+    0 0 22px 6px rgba(201, 24, 74, 0.42);
+  animation: aboutRingDotOrbit 6s ease-in-out infinite alternate;
+}
+
+/* Floating 3D Pastel-Pink Icon Badges */
+.about__float-badge {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #fff6f9 0%, #fbd0de 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  color: #9e082a;
+  box-shadow:
+    0 14px 28px rgba(165, 12, 48, 0.22),
+    0 4px 10px rgba(109, 0, 26, 0.12),
+    inset 0 1px 2px #ffffff;
+}
+
+.about__float-badge--code {
+  top: -12px;
+  left: 58%;
+  transform: rotate(15deg);
+  animation: aboutBadgeFloatCode 5.2s ease-in-out infinite alternate;
+}
+
+.about__float-badge--laptop {
+  bottom: -14px;
+  left: 58%;
+  color: #850422;
+  transform: rotate(12deg);
+  animation: aboutBadgeFloatLaptop 5.8s ease-in-out infinite alternate;
+}
+
+@keyframes aboutRingsBreath {
+  0% { transform: scale(0.985); }
+  100% { transform: scale(1.015); }
+}
+
+@keyframes aboutRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes aboutRingDotOrbit {
+  0% {
+    transform: translate3d(-10px, 7px, 0) scale(0.92);
+    box-shadow:
+      0 0 8px 2px rgba(225, 16, 62, 0.7),
+      0 0 18px 4px rgba(201, 24, 74, 0.35);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.12);
+    box-shadow:
+      0 0 14px 4px rgba(255, 42, 95, 0.95),
+      0 0 26px 8px rgba(201, 24, 74, 0.55);
+  }
+  100% {
+    transform: translate3d(12px, -6px, 0) scale(0.96);
+    box-shadow:
+      0 0 10px 3px rgba(225, 16, 62, 0.8),
+      0 0 20px 5px rgba(201, 24, 74, 0.42);
+  }
+}
+
+@keyframes aboutBadgeFloatCode {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(13deg);
+  }
+  100% {
+    transform: translate3d(4px, -11px, 0) rotate(18deg);
+  }
+}
+
+@keyframes aboutBadgeFloatLaptop {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  100% {
+    transform: translate3d(-4px, 11px, 0) rotate(15deg);
+  }
+}
+
+/* Clipped Surface Inside Card */
+.about__statement-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Faint Top-Border Shimmer Every 10s */
@@ -1665,10 +1804,13 @@ a:hover {
   }
 }
 
-/* Decorative Orbit Curve & Slowly Moving Light Dots */
+/* Bottom Glowing S-Wave Inside Quote Card */
 .about__orbit {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -1679,60 +1821,34 @@ a:hover {
   inset: 0;
   width: 100%;
   height: 100%;
+  animation: aboutCardWaveUndulate 5.5s ease-in-out infinite alternate;
 }
 
-.about__orbit-dot {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #ffdbe4;
-  box-shadow:
-    0 0 8px 2px rgba(255, 120, 155, 0.9),
-    0 0 18px 5px rgba(185, 16, 55, 0.75);
+.about__card-wave-glow {
+  filter: blur(6px);
+  opacity: 0.72;
+  animation: aboutCardWaveGlow 4s ease-in-out infinite alternate;
 }
 
-.about__orbit-dot--1 {
-  top: 17%;
-  right: 11%;
-  animation: aboutOrbitDot1 14s ease-in-out infinite alternate;
+.about__card-wave-line {
+  filter: drop-shadow(0 0 6px rgba(255, 140, 170, 0.85));
 }
 
-.about__orbit-dot--2 {
-  bottom: 11%;
-  right: 17%;
-  width: 6px;
-  height: 6px;
-  animation: aboutOrbitDot2 16s ease-in-out infinite alternate;
-}
-
-@keyframes aboutOrbitDot1 {
+@keyframes aboutCardWaveUndulate {
   0% {
-    transform: translate3d(-28px, 6px, 0) scale(0.9);
-    opacity: 0.75;
-  }
-  50% {
-    transform: translate3d(0, 0, 0) scale(1.15);
-    opacity: 1;
+    transform: scaleY(0.96) translateY(2px);
   }
   100% {
-    transform: translate3d(18px, 22px, 0) scale(0.95);
-    opacity: 0.85;
+    transform: scaleY(1.05) translateY(-2px);
   }
 }
 
-@keyframes aboutOrbitDot2 {
+@keyframes aboutCardWaveGlow {
   0% {
-    transform: translate3d(24px, -16px, 0) scale(0.9);
-    opacity: 0.75;
-  }
-  50% {
-    transform: translate3d(0, 0, 0) scale(1.15);
-    opacity: 1;
+    opacity: 0.55;
   }
   100% {
-    transform: translate3d(-32px, 10px, 0) scale(0.95);
-    opacity: 0.8;
+    opacity: 0.92;
   }
 }
 
@@ -2087,7 +2203,13 @@ a:hover {
 
 /* Pause decorative animations when #about is off-screen */
 .about:not(.is-visible) .about__glow-orb,
-.about:not(.is-visible) .about__orbit-dot,
+.about:not(.is-visible) .about__rings-svg,
+.about:not(.is-visible) .about__ring--outer,
+.about:not(.is-visible) .about__ring--mid,
+.about:not(.is-visible) .about__ring-dot,
+.about:not(.is-visible) .about__float-badge,
+.about:not(.is-visible) .about__orbit-svg,
+.about:not(.is-visible) .about__card-wave-glow,
 .about:not(.is-visible) .about__shimmer {
   animation-play-state: paused;
 }
@@ -2106,7 +2228,13 @@ a:hover {
   }
 
   .about__glow-orb,
-  .about__orbit-dot,
+  .about__rings-svg,
+  .about__ring--outer,
+  .about__ring--mid,
+  .about__ring-dot,
+  .about__float-badge,
+  .about__orbit-svg,
+  .about__card-wave-glow,
   .about__shimmer {
     animation: none !important;
   }
@@ -6698,12 +6826,12 @@ body,
 /* Statement Card: Remains Signature Rich Burgundy in Light Mode */
 [data-theme="light"] .about__statement-card {
   background:
-    radial-gradient(120% 100% at 12% 0%, #c9184a 0%, #9b082c 45%, #78001d 82%, #630017 100%);
-  border: 1px solid rgba(220, 38, 76, 0.75);
+    radial-gradient(115% 110% at 14% 8%, #e31248 0%, #b50934 38%, #7d0220 75%, #4d0013 100%);
+  border: 1px solid rgba(235, 50, 90, 0.78);
   box-shadow:
-    0 22px 50px rgba(109, 0, 26, 0.28),
+    0 22px 50px rgba(145, 8, 42, 0.28),
     0 6px 20px rgba(109, 0, 26, 0.14),
-    inset 0 1px 0 rgba(255, 170, 195, 0.38);
+    inset 0 1px 0 rgba(255, 180, 205, 0.42);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
@@ -6711,24 +6839,13 @@ body,
   transform: translateY(-4px);
   border-color: rgba(255, 65, 105, 0.92);
   box-shadow:
-    0 26px 58px rgba(109, 0, 26, 0.35),
+    0 26px 58px rgba(145, 8, 42, 0.35),
     0 0 34px rgba(190, 24, 62, 0.3),
-    inset 0 1px 0 rgba(255, 190, 210, 0.45);
+    inset 0 1px 0 rgba(255, 195, 215, 0.48);
 }
 
 [data-theme="light"] .about__shimmer {
   background: linear-gradient(90deg, transparent 0%, rgba(255, 170, 195, 0.85) 50%, transparent 100%);
-}
-
-[data-theme="light"] .about__orbit-svg ellipse {
-  stroke: url(#aboutOrbitGrad);
-}
-
-[data-theme="light"] .about__orbit-dot {
-  background-color: #ffdbe4;
-  box-shadow:
-    0 0 8px 2px rgba(255, 120, 155, 0.9),
-    0 0 18px 5px rgba(185, 16, 55, 0.75);
 }
 
 [data-theme="light"] .about__quote-mark {
