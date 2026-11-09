@@ -6660,23 +6660,24 @@ body,
 
 /* Stats Strip: Remains Signature Rich Burgundy in Light Mode */
 [data-theme="light"] .about__stats-strip {
-  background: linear-gradient(135deg, rgba(109, 0, 26, 0.75) 0%, rgba(35, 2, 9, 0.96) 60%, #180105 100%);
-  border: 1px solid rgba(220, 38, 76, 0.65);
+  background: linear-gradient(135deg, #b8143a 0%, #8b0024 50%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.75);
   box-shadow:
     0 12px 32px rgba(109, 0, 26, 0.25),
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 170, 195, 0.3);
+    0 4px 12px rgba(109, 0, 26, 0.12),
+    inset 0 1px 0 rgba(255, 170, 195, 0.35);
   border-radius: 9999px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 [data-theme="light"] .about__stats-strip:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 65, 105, 0.9);
+  background: linear-gradient(135deg, #c9184a 0%, #9b062a 50%, #7a001e 100%);
+  border-color: rgba(255, 65, 105, 0.92);
   box-shadow:
     0 16px 36px rgba(109, 0, 26, 0.32),
     0 0 24px rgba(190, 24, 62, 0.25),
-    inset 0 1px 0 rgba(255, 190, 210, 0.4);
+    inset 0 1px 0 rgba(255, 190, 210, 0.45);
 }
 
 [data-theme="light"] .about__stat-val {
@@ -6686,23 +6687,23 @@ body,
 }
 
 [data-theme="light"] .about__stat-lbl {
-  color: #f0e6e9;
+  color: #f8e8ec;
   font-weight: 500;
 }
 
 [data-theme="light"] .about__stat-divider {
-  background-color: rgba(255, 170, 195, 0.35);
+  background-color: rgba(255, 185, 205, 0.42);
 }
 
 /* Statement Card: Remains Signature Rich Burgundy in Light Mode */
 [data-theme="light"] .about__statement-card {
   background:
-    radial-gradient(120% 100% at 12% 0%, rgba(185, 16, 58, 0.75) 0%, rgba(109, 0, 26, 0.65) 42%, rgba(35, 2, 9, 0.98) 85%, #180105 100%);
-  border: 1px solid rgba(220, 38, 76, 0.7);
+    radial-gradient(120% 100% at 12% 0%, #c9184a 0%, #9b082c 45%, #78001d 82%, #630017 100%);
+  border: 1px solid rgba(220, 38, 76, 0.75);
   box-shadow:
     0 22px 50px rgba(109, 0, 26, 0.28),
-    0 6px 20px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 170, 195, 0.35);
+    0 6px 20px rgba(109, 0, 26, 0.14),
+    inset 0 1px 0 rgba(255, 170, 195, 0.38);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
@@ -6785,19 +6786,19 @@ body,
 
 /* Project Pills: Remain Signature Rich Burgundy in Light Mode */
 [data-theme="light"] .about__project-pill {
-  background: linear-gradient(135deg, rgba(109, 0, 26, 0.8) 0%, rgba(35, 2, 9, 0.96) 100%);
-  border: 1px solid rgba(220, 38, 76, 0.68);
+  background: linear-gradient(135deg, #a80d32 0%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.72);
   color: #ffffff;
   font-weight: 600;
   box-shadow:
-    0 4px 14px rgba(109, 0, 26, 0.2),
-    inset 0 1px 0 rgba(255, 170, 195, 0.25);
+    0 4px 14px rgba(109, 0, 26, 0.22),
+    inset 0 1px 0 rgba(255, 170, 195, 0.28);
   transition: all 0.25s ease;
 }
 
 [data-theme="light"] .about__project-pill:hover,
 [data-theme="light"] .about__project-pill:focus-visible {
-  background: linear-gradient(135deg, #8B0024 0%, #4D0012 100%);
+  background: linear-gradient(135deg, #c9184a 0%, #8b0024 100%);
   border-color: rgba(255, 65, 105, 0.95);
   color: #ffffff !important;
   transform: translateY(-2px);
@@ -7267,6 +7268,25 @@ body,
 
 [data-theme="light"] .project__section-label span {
   color: #000000;
+}
+
+[data-theme="light"] .project__contribution {
+  background: linear-gradient(135deg, #b8143a 0%, #8b0024 55%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.72);
+  box-shadow: 0 8px 22px rgba(109, 0, 26, 0.2), inset 0 1px 0 rgba(255, 175, 200, 0.3);
+}
+
+[data-theme="light"] .tech-tag,
+[data-theme="light"] .project__algo-pill {
+  background: linear-gradient(135deg, #a80d32 0%, #6d001a 100%);
+  border: 1px solid rgba(220, 38, 76, 0.7);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(109, 0, 26, 0.16);
+}
+
+[data-theme="light"] .tech-tag:hover {
+  background: linear-gradient(135deg, #c9184a 0%, #8b0024 100%);
+  border-color: rgba(255, 65, 105, 0.92);
 }
 
 [data-theme="light"] .project-featured__feature-icon {
