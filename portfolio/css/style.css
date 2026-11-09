@@ -547,39 +547,39 @@ a:hover {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: clamp(130px, 22vh, 230px);
+  height: clamp(95px, 15vh, 165px);
   pointer-events: none;
   z-index: 1;
 }
 
 .hero__wave-line {
   fill: none;
-  stroke-width: 2.5;
+  stroke-width: 2.4;
   stroke-linecap: round;
-  stroke-dasharray: 1800;
-  stroke-dashoffset: 1800;
-  animation: heroWaveDraw 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+  stroke-dasharray: 2200;
+  stroke-dashoffset: 2200;
+  animation: heroWaveDraw 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
 }
 
 .hero__wave-line--glow {
-  stroke-width: 9;
-  opacity: 0.55;
-  filter: blur(6px);
+  stroke-width: 11;
+  opacity: 0.68;
+  filter: blur(7px);
 }
 
 .hero__wave-line--thin {
-  stroke-width: 1.2;
-  opacity: 0.6;
-  animation-delay: 0.9s;
+  stroke-width: 1.3;
+  opacity: 0.65;
+  animation-delay: 0.8s;
 }
 
 .hero__wave-fill {
   opacity: 0;
-  animation: heroWaveFill 1.6s ease 1.4s forwards, heroWavePulse 5s ease-in-out 3s infinite alternate;
+  animation: heroWaveFill 1.5s ease 1.1s forwards, heroWavePulse 5s ease-in-out 2.6s infinite alternate;
 }
 
 .hero__wave-light {
-  display: block;
+  display: none;
 }
 
 @keyframes heroWaveDraw {
@@ -6678,19 +6678,19 @@ body,
 
 [data-theme="light"] .hero__wave {
   display: block !important;
-  height: clamp(130px, 22vh, 230px);
+  height: clamp(95px, 15vh, 165px);
   z-index: 1;
 }
 
 [data-theme="light"] .hero__wave-fill,
-[data-theme="light"] .hero__wave-line--glow {
+[data-theme="light"] .hero__wave-line.hero__wave-line--glow {
   display: none !important;
 }
 
-[data-theme="light"] .hero__wave-line {
+[data-theme="light"] .hero__wave-line:not(.hero__wave-line--glow) {
   display: block !important;
-  stroke: #6d001a;
-  opacity: 0.9;
+  stroke: url(#heroWaveLightLine);
+  opacity: 0.95;
 }
 
 [data-theme="light"] .hero__wave-light {
