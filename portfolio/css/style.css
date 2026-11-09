@@ -7032,6 +7032,15 @@ body,
   color: #000000;
 }
 
+[data-theme="light"] .project__section-label {
+  color: #000000;
+  font-weight: 800;
+}
+
+[data-theme="light"] .project__section-label span {
+  color: #000000;
+}
+
 [data-theme="light"] .project-featured__feature-icon {
   color: #6D001A;
 }
