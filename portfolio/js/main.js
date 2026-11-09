@@ -1043,37 +1043,8 @@ if (projectsOverviewEl) {
         viewport.appendChild(slideEl);
       });
 
-      // Add overlay Prev & Next buttons if slides.length > 1 and not already present
       let overlayPrev = mainFrame.querySelector('[data-po-slide-prev]');
       let overlayNext = mainFrame.querySelector('[data-po-slide-next]');
-      if (slides.length > 1) {
-        if (!overlayPrev) {
-          overlayPrev = document.createElement('button');
-          overlayPrev.type = 'button';
-          overlayPrev.className = 'project-featured__slide-nav project-featured__slide-nav--prev';
-          overlayPrev.setAttribute('aria-label', 'Previous screenshot');
-          overlayPrev.setAttribute('data-po-slide-prev', '');
-          overlayPrev.innerHTML = `
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          `;
-          mainFrame.appendChild(overlayPrev);
-        }
-        if (!overlayNext) {
-          overlayNext = document.createElement('button');
-          overlayNext.type = 'button';
-          overlayNext.className = 'project-featured__slide-nav project-featured__slide-nav--next';
-          overlayNext.setAttribute('aria-label', 'Next screenshot');
-          overlayNext.setAttribute('data-po-slide-next', '');
-          overlayNext.innerHTML = `
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          `;
-          mainFrame.appendChild(overlayNext);
-        }
-      }
 
       function updateSlideUI(slideData) {
         if (slideCounter) {
