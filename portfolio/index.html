@@ -75,12 +75,14 @@
                   d="M71 23h12v1h-12zM70 24h13v1h-13zM69 25h14v1h-14zM69 26h13v1h-13zM68 27h14v1h-14zM68 28h13v1h-13zM67 29h13v1h-13zM66 30h13v1h-13zM66 31h13v1h-13zM65 32h13v1h-13zM64 33h13v1h-13zM64 34h13v1h-13zM63 35h13v1h-13zM63 36h13v1h-13zM62 37h13v1h-13zM61 38h13v1h-13zM61 39h13v1h-13zM60 40h13v1h-13zM59 41h13v1h-13zM59 42h13v1h-13z" />
               </svg>
             </span>
+            <span class="nav__brand-divider" aria-hidden="true"></span>
+            <span class="nav__brand-name">PORTFOLIO</span>
           </a>
         </div>
 
         <div class="nav__actions">
           <ul class="nav__menu" id="navMenu">
-            <li><a class="nav__link" href="#about">ABOUT</a></li>
+            <li><a class="nav__link active" href="#about">ABOUT</a></li>
             <li><a class="nav__link" href="#skills">SKILLS</a></li>
             <li><a class="nav__link" href="#projects">PROJECTS</a></li>
             <li><a class="nav__link" href="#contact">CONTACT</a></li>
@@ -120,50 +122,85 @@
     </header>
 
     <section class="hero" aria-labelledby="hero-heading">
-      <!-- Crimson Atmosphere & Floating Tech UI Cards -->
+      <!-- Crimson Atmosphere & Floating Tech UI Panels -->
       <div class="hero__bg-elements" aria-hidden="true">
+        <div class="hero__grid"></div>
         <div class="hero__crimson-glow hero__crimson-glow--top"></div>
         <div class="hero__crimson-glow hero__crimson-glow--center"></div>
+        <div class="hero__crimson-glow hero__crimson-glow--bottom"></div>
 
-        <!-- Floating Code Snippet Card (Right) -->
+        <!-- Media window (left of portrait) -->
+        <div class="hero__bg-card hero__bg-card--media">
+          <div class="hero__bg-card-header">
+            <span class="hero__bg-dot"></span><span class="hero__bg-dot"></span><span class="hero__bg-dot"></span>
+          </div>
+          <div class="hero__bg-media-row">
+            <div class="hero__bg-media-thumb">
+              <svg width="30" height="24" viewBox="0 0 30 24" fill="currentColor">
+                <circle cx="21" cy="6" r="3"></circle>
+                <polygon points="0 24 10 9 17 18 21 13 30 24"></polygon>
+              </svg>
+            </div>
+            <div class="hero__bg-card-lines">
+              <span class="hero__bg-line" style="width:90%"></span>
+              <span class="hero__bg-line" style="width:65%"></span>
+              <span class="hero__bg-line" style="width:78%"></span>
+            </div>
+          </div>
+          <div class="hero__bg-card-lines hero__bg-card-lines--foot">
+            <span class="hero__bg-line" style="width:55%"></span>
+            <span class="hero__bg-line" style="width:80%"></span>
+          </div>
+        </div>
+
+        <!-- Code window (right of portrait) -->
         <div class="hero__bg-card hero__bg-card--code">
           <div class="hero__bg-card-tag">&lt;/&gt;</div>
           <div class="hero__bg-card-lines">
-            <span class="hero__bg-line hero__bg-line--1"></span>
-            <span class="hero__bg-line hero__bg-line--2"></span>
-            <span class="hero__bg-line hero__bg-line--3"></span>
-            <span class="hero__bg-line hero__bg-line--4"></span>
+            <span class="hero__bg-line" style="width:62%"></span>
+            <span class="hero__bg-line hero__bg-line--hot" style="width:88%"></span>
+            <span class="hero__bg-line" style="width:48%;margin-left:12px"></span>
+            <span class="hero__bg-line" style="width:70%;margin-left:12px"></span>
+            <span class="hero__bg-line hero__bg-line--hot" style="width:40%"></span>
+            <span class="hero__bg-line" style="width:58%"></span>
           </div>
         </div>
 
-        <!-- Floating UI Window Card (Far Right) -->
-        <div class="hero__bg-card hero__bg-card--ui">
-          <div class="hero__bg-card-header">
-            <span class="hero__bg-dot"></span>
-            <span class="hero__bg-dot"></span>
-            <span class="hero__bg-dot"></span>
-          </div>
-          <div class="hero__bg-card-bars">
-            <span class="hero__bg-bar hero__bg-bar--1"></span>
-            <span class="hero__bg-bar hero__bg-bar--2"></span>
-            <span class="hero__bg-bar hero__bg-bar--3"></span>
-          </div>
+        <!-- Faded side panels (far right) -->
+        <div class="hero__bg-panel hero__bg-panel--1">
+          <span class="hero__bg-panel-row"><i></i><b style="width:70%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:52%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:64%"></b></span>
+        </div>
+        <div class="hero__bg-panel hero__bg-panel--2">
+          <span class="hero__bg-panel-row"><i></i><b style="width:60%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:75%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:45%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:68%"></b></span>
+        </div>
+        <div class="hero__bg-panel hero__bg-panel--3">
+          <span class="hero__bg-panel-row"><i></i><b style="width:58%"></b></span>
+          <span class="hero__bg-panel-row"><i></i><b style="width:72%"></b></span>
         </div>
 
-        <!-- Floating Media Wireframe Card (Left) -->
-        <div class="hero__bg-card hero__bg-card--media">
-          <div class="hero__bg-card-media-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-          </div>
-          <div class="hero__bg-card-lines">
-            <span class="hero__bg-line hero__bg-line--short"></span>
-            <span class="hero__bg-line hero__bg-line--med"></span>
-          </div>
-        </div>
+        <!-- Glowing crimson light wave (bottom) -->
+        <svg class="hero__wave" viewBox="0 0 1440 220" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="heroWaveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#ff1e42" stop-opacity="0"></stop>
+              <stop offset="0.45" stop-color="#ff1e42" stop-opacity="0.9"></stop>
+              <stop offset="1" stop-color="#ff4d6a" stop-opacity="1"></stop>
+            </linearGradient>
+            <linearGradient id="heroWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b80d32" stop-opacity="0.55"></stop>
+              <stop offset="1" stop-color="#3a0010" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <path class="hero__wave-fill" d="M0 220 L0 200 C 420 205, 820 150, 1440 40 L1440 220 Z" fill="url(#heroWaveFill)"></path>
+          <path class="hero__wave-line hero__wave-line--glow" d="M0 200 C 420 205, 820 150, 1440 40" stroke="url(#heroWaveGrad)"></path>
+          <path class="hero__wave-line" d="M0 200 C 420 205, 820 150, 1440 40" stroke="url(#heroWaveGrad)"></path>
+          <path class="hero__wave-line hero__wave-line--thin" d="M120 214 C 520 214, 900 175, 1440 85" stroke="url(#heroWaveGrad)"></path>
+        </svg>
       </div>
 
       <div class="hero__bg-word-mask" aria-hidden="true">
@@ -189,10 +226,9 @@
               <span class="hero__name-line">
                 <span class="hero__char">M</span><span class="hero__char">A</span><span class="hero__char">H</span><span
                   class="hero__char">A</span><span class="hero__char">L</span><span class="hero__char">A</span><span
-                  class="hero__char">L</span><span class="hero__char">I</span><span class="hero__char">L</span>
-              </span>
-              <span class="hero__name-line">
-                <span class="hero__char">P</span><span class="hero__char">.</span>
+                  class="hero__char">L</span><span class="hero__char">I</span><span class="hero__char">L</span><span
+                  class="hero__char hero__char--space">&nbsp;</span><span class="hero__char">P</span><span
+                  class="hero__char">.</span>
               </span>
               <span class="hero__name-line hero__name-line--accent">
                 <span class="hero__char">V</span><span class="hero__char">I</span><span class="hero__char">L</span><span
