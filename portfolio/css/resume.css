@@ -241,9 +241,14 @@ body {
   color: var(--color-accent);
 }
 
+.resume-summary {
+  text-align: justify;
+}
+
 .resume-skills p {
   margin-bottom: 0.3rem;
   font-size: 10pt;
+  text-align: justify;
 }
 
 .resume-skills p:last-child {
@@ -302,6 +307,7 @@ body {
   font-size: 9.8pt;
   margin-bottom: 0.2rem;
   line-height: 1.45;
+  text-align: justify;
 }
 
 /* ── Export to PDF State (forces clean white background and black text regardless of screen theme) ── */
