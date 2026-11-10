@@ -67,66 +67,6 @@ try {
   }
 } catch (_) {}
 
-const resumePrintBtn = document.getElementById('resumePrintBtn');
-if (resumePrintBtn) {
-  resumePrintBtn.addEventListener('click', () => {
-    const resumeEl = document.getElementById('resume');
-    if (!resumeEl) return;
-
-    if (typeof html2pdf === 'function') {
-      const originalText = resumePrintBtn.textContent;
-      resumePrintBtn.textContent = 'Downloading...';
-      resumePrintBtn.disabled = true;
-      resumeEl.classList.add('is-exporting');
-
-      const opt = {
-        margin: [10, 12, 10, 12],
-        filename: 'Mahalalil_Villaflores_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          backgroundColor: '#ffffff'
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'letter',
-          orientation: 'portrait'
-        },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-
-      html2pdf()
-        .set(opt)
-        .from(resumeEl)
-        .save()
-        .then(() => {
-          resumeEl.classList.remove('is-exporting');
-          resumePrintBtn.textContent = originalText;
-          resumePrintBtn.disabled = false;
-        })
-        .catch(err => {
-          console.error('PDF export error:', err);
-          resumeEl.classList.remove('is-exporting');
-          resumePrintBtn.textContent = originalText;
-          resumePrintBtn.disabled = false;
-          // Fallback to static file download
-          const fallbackLink = document.createElement('a');
-          fallbackLink.href = 'Mahalalil_Villaflores_Resume.pdf';
-          fallbackLink.download = 'Mahalalil_Villaflores_Resume.pdf';
-          fallbackLink.click();
-        });
-    } else {
-      // Direct file download fallback
-      const fallbackLink = document.createElement('a');
-      fallbackLink.href = 'Mahalalil_Villaflores_Resume.pdf';
-      fallbackLink.download = 'Mahalalil_Villaflores_Resume.pdf';
-      fallbackLink.click();
-    }
-  });
-}
-
 const yearEl = document.getElementById('footerYear');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
